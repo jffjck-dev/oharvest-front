@@ -1,0 +1,6 @@
+@use '../../styles/vars';
+
+.welcome {
+    border: vars.$primary-border;
+    color: vars.$alternative-color;
+}

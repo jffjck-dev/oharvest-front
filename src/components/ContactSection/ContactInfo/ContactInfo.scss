@@ -1,0 +1,6 @@
+@use '../../../styles/vars';
+
+.contact__info {
+    border: vars.$primary-border;
+    color: vars.$alternative-color;
+}

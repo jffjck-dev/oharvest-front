@@ -1,0 +1,18 @@
+@use '../../styles/vars';
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(167, 160, 160);
+    padding: 0.4rem;
+    font-size: 1rem;
+}
+
+.footer__link {
+    margin: 0.6rem;
+
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}

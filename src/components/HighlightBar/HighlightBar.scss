@@ -1,0 +1,6 @@
+@use '../../styles/vars';
+
+.highlight {
+    border: vars.$primary-border;
+    color: vars.$alternative-color;
+}

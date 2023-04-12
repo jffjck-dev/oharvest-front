@@ -1,0 +1,23 @@
+@use '../../styles/vars';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(187, 179, 179);
+}
+
+.title {
+    display: flex;
+    margin-left: auto;
+
+}
+
+.a {
+    margin: 15px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
