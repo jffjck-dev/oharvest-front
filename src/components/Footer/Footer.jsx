@@ -5,8 +5,10 @@ import './Footer.scss';
  */
 const Footer = () => {
     return (
-        <footer className="footer">
-            Ceci est le footer!
+        <footer className='footer'>
+            <a className='footer__link' href='/' >Qui sommes-nous ?</a>
+            <a className='footer__link' href='/'>Copyright</a>
+            <a className='footer__link' href='/'>CGU</a>
         </footer>
     );
 };
