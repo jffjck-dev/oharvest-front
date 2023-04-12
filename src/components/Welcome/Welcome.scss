@@ -1,6 +1,16 @@
 @use '../../styles/vars';
 
-.welcome {
-    border: vars.$primary-border;
-    color: vars.$alternative-color;
+.welcome__img {
+    width: 100vw;
+}
+
+.welcome__title {
+    padding: 0.4rem;
+    font-size: 1rem;
+    background: vars.$background-color;
+}
+
+.welcome__description {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
