@@ -1,6 +1,7 @@
+import React from 'react';
 import Map from './Map/Map';
 import Horaire from './Horaire/Horaire';
-import ContactInfo from './ContactInfo/Contactinfo';
+import ContactInfo from './ContactInfo/ContactInfo';
 
 import './ContactSection.scss';
 
@@ -8,8 +9,8 @@ import './ContactSection.scss';
 const ContactSection = () => {
     return (
         <section className="contact">
-            <Map />
             <Horaire />
+            <Map />
             <ContactInfo />
         </section>
     );

@@ -3,9 +3,10 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    background-color: vars.$background-color;
+    background-color: vars.$secundary-color;
     padding: 0.4rem;
     font-size: 1rem;
+    margin-bottom: 6vh;
 }
 
 .footer__link {
@@ -15,4 +16,10 @@
 
 .footer__link:hover {
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 1024px) {
+    .footer {
+        margin-bottom: 0; 
+    }
 }

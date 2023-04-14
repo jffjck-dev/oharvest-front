@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Header from './Header/Header';
 import HighlightBar from './HighlightBar/HighlightBar';
 import Welcome from './Welcome/Welcome';
@@ -9,16 +11,16 @@ import './App.scss';
 
 function App() {
 
-  return (
-    <div className="App">
-      <Header />
-      <HighlightBar />
-      <Welcome />
-      <ContactSection />
-      <Footer />
-      <NavBar />
-    </div>
-  );
+    return (
+        <div className="app">
+            <Header />
+            <NavBar />
+            <HighlightBar />
+            <Welcome />
+            <ContactSection />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

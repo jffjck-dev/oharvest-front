@@ -1,6 +1,13 @@
-$primary-color: #000;
-$secundary-color: #fff;
-$alternative-color: blue;
-$background-color: rgb(167, 160, 160);
-
-$primary-border: 1px solid #000;
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
+$primary-color: #0B2B40;
+$secundary-color: #3B8C6E;
+$alternative-color: #164773;
+$background-color: #89D99D;
+$background-color-transparent: #0B2B40FF;
+$background-color-dark: #141013;
+$background-light-color:rgb(211, 245, 192);
+$background-color-dark: #141013;
+$primary-border: 1px solid #0B2B40;
+$text-font: 'Lexend', sans-serif;
+$title-font: 'Miltonian Tattoo', cursive;

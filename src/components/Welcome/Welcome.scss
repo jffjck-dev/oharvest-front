@@ -1,16 +1,27 @@
 @use '../../styles/vars';
 
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .welcome__img {
-    width: 100vw;
+    width:60vw;
+    height: auto;
+    border-radius: 10px;
 }
 
 .welcome__title {
     padding: 0.4rem;
     font-size: 1rem;
-    background: vars.$background-color;
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;  
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .welcome__description {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    text-align: center;
 }

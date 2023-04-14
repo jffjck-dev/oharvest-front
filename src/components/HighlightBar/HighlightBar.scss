@@ -1,6 +1,34 @@
-@use '../../styles/vars';
+@use "../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Normal CSS */
+/* ------------------------------------------------------ */
 
 .highlight {
-    border: vars.$primary-border;
-    color: vars.$alternative-color;
+  height: 15vh;
+}
+
+.highlight__card {
+  height: 12vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 0.6rem;
+}
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+@media screen and (max-width: 425px) {
+  .highlight {
+    height: 8vh;
+  }
+  .highlight__card {
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }

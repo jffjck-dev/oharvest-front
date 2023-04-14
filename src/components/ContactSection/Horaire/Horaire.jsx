@@ -1,9 +1,11 @@
+import React from 'react';
+
 import './Horaire.scss';
 
 const Horaire = () => {
     return (
         <div className="contact__horaire">
-            <h5>[icone montre] Les horaires</h5>
+            <h5><i className="fa-solid fa-clock"></i>NOS HORAIRES</h5>
             <table>
                 <tbody>
                     <tr>
@@ -45,6 +47,6 @@ const Horaire = () => {
             </table>
         </div>
     );
-}
+};
 
 export default Horaire;
