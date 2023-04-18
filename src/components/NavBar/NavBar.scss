@@ -32,6 +32,12 @@
   text-shadow: 0 0 0.1rem black;
 }
 
+.navbar__item-link--active {
+  color: vars.$primary-color;
+  font-weight: 700;
+  text-shadow: 0 0 0.3rem black;
+}
+
 .navbar__img {
   width: 15vw;
   height: auto;

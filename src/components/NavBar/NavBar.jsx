@@ -1,23 +1,30 @@
 import React from 'react';
-import './NavBar.scss';
+import { NavLink, Link } from 'react-router-dom';
 
+import './NavBar.scss';
 import logo from '../../assets/logo_oharvest_transparent.png';
 
 const NavBar = () => {
     return (
         <nav className="navbar">
-            <img className="navbar__img" src={logo} alt="" />
+            <Link to="/">
+                <img className="navbar__img" src={logo} alt="logo O'harvest" />
+            </Link>
             <ul className="navbar__title">
                 <li className="navbar__item">
-                    <a className="navbar__item-link" href="/">
-            Produits de saison
-                    </a>
+                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/products">
+                        Produits de saison
+                    </NavLink>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__item-link" href="/">Plan de la cueillette</a>
+                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/map">
+                        Plan de la cueillette
+                    </NavLink>
                 </li>
                 <li className="navbar__item">
-                    <a className="navbar__item-link" href="/">Visite scolaire</a>
+                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/reservation">
+                        Visite scolaire
+                    </NavLink>
                 </li>
             </ul>
         </nav>

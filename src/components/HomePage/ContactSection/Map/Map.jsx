@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
-import logo from '../../../assets/logo_oharvest_transparent.png';
+import logo from '../../../../assets/logo_oharvest_transparent.png';
 
 import './Map.scss';
 
