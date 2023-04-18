@@ -1,23 +1,96 @@
-@use '../../styles/vars';
+@use "../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+/* Mobile responsive (320px-425px) */
 
 .navbar {
-    display: flex;
-    align-items: center;
-    background-color: rgb(187, 179, 179);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background-color: vars.$background-color;
+  width: 100%;
+  z-index: 9999;
 }
 
-.title {
-    display: flex;
-    margin-left: auto;
-
+.navbar__title {
+  display: flex;
+  width: 100%;
 }
 
-.a {
-    margin: 15px;
-    text-decoration: none;
+.navbar__item {
+  margin: 1rem;
+  text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.navbar__item-link {
+  color: vars.$primary-color;
+  text-align: center;
+  font-size: 1rem;
+  text-shadow: 0 0 0.1rem black;
+}
+
+.navbar__item-link--active {
+  color: vars.$primary-color;
+  font-weight: 700;
+  text-shadow: 0 0 0.3rem black;
+}
+
+.navbar__img {
+  width: 4rem;
+  height: auto;
+}
+
+/* Tablet responsive (425px-1024px) */
+
+@media only screen and (min-width: 425px) {
+  .navbar__item-link {
+    color: vars.$background-color;
+    font-size: 1rem;
+    font-weight: 700;
+    // text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+    
+  }
+  .navbar__title {
+    justify-content: flex-end;
+  }
+  .navbar {
+    background: linear-gradient(vars.$background-color-transparent, #00000000);
+    position: fixed;
+    top: 0;
+    height: 14vh;
+    width: 100%;
+  }
+  .navbar__img {
+    width: 8rem;
+    height: auto;
+  }
+}
+
+/* Tablet responsive (1024px-1440px) */
+
+@media only screen and (min-width: 1024px) {
+  .navbar__item-link {
+    color: vars.$background-color;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+    
+  }
+  .navbar__title {
+    justify-content: flex-end;
+  }
+  .navbar {
+    background: linear-gradient(vars.$background-color-transparent, #00000000);
+    position: fixed;
+    top: 0;
+    height: 14vh;
+    width: 100%;
+  }
+  .navbar__img {
+    width: 8rem;
+    height: auto;
+  }
 }

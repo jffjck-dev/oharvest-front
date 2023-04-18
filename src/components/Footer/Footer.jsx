@@ -1,7 +1,8 @@
+import React from 'react';
 import './Footer.scss';
 
 /**
- * Il s'agit du footer qui comprends les liens vers le copyright, les CGUs et Qui Sommes-Nous
+ * Footer with link on "CGU", "copyright", and "about us" page
  */
 const Footer = () => {
     return (

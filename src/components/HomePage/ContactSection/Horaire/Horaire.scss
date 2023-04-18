@@ -1,0 +1,9 @@
+@use '../../../../styles/vars';
+
+.contact__horaire {
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}

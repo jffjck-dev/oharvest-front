@@ -1,6 +1,15 @@
 @use './reset';
+@use './vars';
 
-.container-flex {
-    display: flex;
-    justify-content: space-around;
+body {
+    font-family: vars.$text-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: vars.$title-font;
 }

@@ -1,0 +1,6 @@
+@use '../styles/vars';
+
+/* Background color of all the app */
+.app {
+    background-color: vars.$background-light-color; 
+}

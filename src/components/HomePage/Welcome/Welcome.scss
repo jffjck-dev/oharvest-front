@@ -1,0 +1,57 @@
+@use '../../../styles/vars';
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+/* If width < or = 425 pixels */
+@media only screen and (max-width: 425px) {
+    .welcome__img {
+        width: 14rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+/* If width > or = 425 pixels */
+@media only screen and (min-width: 425px) {
+    .welcome__img {
+        width: 30rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+/* If width > or = 1024 pixels */
+@media only screen and (min-width: 1024px) {
+    .welcome__img {
+        width: 40rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.welcome__img {
+    height: auto;
+    border-radius: 10px;
+}
+
+.welcome__title {
+    padding: 0.4rem;
+    font-size: 1rem;
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;  
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.welcome__description {
+    margin: 1rem;
+    text-align: center;
+}

@@ -1,0 +1,64 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .particularity__title {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .particularity__description {
+        margin: 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .particularity__title {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    .particularity__description {
+        margin: 1.4rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .particularity__title {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    .particularity__description {
+        margin: 1.4rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.particularity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.particularity__title {
+    text-align: center;
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;  
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.particularity__description {
+    text-align: center;
+}
