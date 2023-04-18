@@ -2,7 +2,7 @@ import React from 'react';
 import './Welcome.scss';
 
 /**
- * bloc contenant l'image et le texte de présentation de la cueillette en dessous de la bannière de légume qui défile.
+ * Welcome section with an image and the title inside
  */
 const Welcome = () => {
     return (

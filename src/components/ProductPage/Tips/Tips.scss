@@ -1,0 +1,109 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .tips {
+        margin: 1rem 7rem;
+    }
+
+    .tips__button {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .tips__text {
+        font-size: 0.8rem;
+    }
+
+    .visible {
+        padding-bottom: 1rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .tips {
+        margin: 1rem 7rem;
+    }
+
+    .tips__button {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+
+    }
+
+    .tips__text {
+        font-size: 1rem;
+    }
+
+    .visible {
+        padding-bottom: 1rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .tips {
+        margin: 2rem 20rem;
+    }
+
+    .tips__button {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .tips__text {
+        font-size: 1.1rem;
+    }
+
+    .visible {
+        padding-bottom: 1rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.tips {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid vars.$alternative-color;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.tips__button {
+    background-color: vars.$alternative-color;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.tips__text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    font-style: italic;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ------------------------------------------------------ */
+/* Button click event & animation */
+/* ------------------------------------------------------ */
+.visible {
+    max-height: 200rem;
+}
+
+.hidden {
+    max-height: 0;
+}

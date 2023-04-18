@@ -1,12 +1,26 @@
 @use '../../styles/vars';
 
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .footer {
+        margin-bottom: 0; 
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
 .footer {
     display: flex;
     justify-content: space-around;
     background-color: vars.$secundary-color;
     padding: 0.4rem;
     font-size: 1rem;
-    margin-bottom: 6vh;
+    margin-bottom: 4.5rem;
 }
 
 .footer__link {
@@ -18,8 +32,3 @@
     text-decoration: underline;
 }
 
-@media only screen and (min-width: 1024px) {
-    .footer {
-        margin-bottom: 0; 
-    }
-}

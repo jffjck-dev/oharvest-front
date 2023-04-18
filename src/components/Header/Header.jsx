@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 
 /**
- * Contient le caroussel où défile plusieurs grande images ou vidéos, l'équivalent de la bannière.
+ * The header with diaporama of 3 images that move on
  */
 const Header = () => {
     return (
