@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './HighlightBar.scss';
+import '../HighlightBar/HighlightBar.scss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const HighlightBar = ({products, category}) => {
+const HighlightBarHome = ({products}) => {
     // Réglage du caroussel
 
     const settings = {
@@ -43,15 +43,13 @@ const HighlightBar = ({products, category}) => {
         ],
     };
 
-    const filteredProducts = products.filter(item => item.category.name === category.name);
-
     return (
         <div>
             <div className='highlight'>
-                <h2 className='highlight__title'>{category.name}</h2>
+                <h2 className='highlight__title'>Produits disponibles</h2>
                 <Slider {...settings}>
-                    { 
-                        filteredProducts.map((product) => (
+                    {
+                        products.map((product) => (
                             <div key={product.id} className="highlight__div">
                                 <div>
                                     <img className="highlight__card" src={`http://kevin-hesse-server.eddi.cloud/images/${product.image}`} />
@@ -64,9 +62,8 @@ const HighlightBar = ({products, category}) => {
     );
 };
 
-HighlightBar.propTypes = {
-    products: PropTypes.array.isRequired, 
-    category: PropTypes.object.isRequired,
+HighlightBarHome.propTypes = {
+    products: PropTypes.array.isRequired
 };
 
-export default HighlightBar;
+export default HighlightBarHome;
