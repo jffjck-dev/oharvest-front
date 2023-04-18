@@ -1,0 +1,47 @@
+@use "../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+@media only screen and (max-width: 425px) {
+
+    .message__title {
+        background-color: vars.$color-banner-massage;
+        height: 5vh;
+    }
+    .message__p {
+        text-align: center;
+        padding-top: 0.7rem;
+    }
+
+}
+
+/* ------------------------------------------------------ */
+/* Responsive CSS 425px > 1024px */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 425px) {
+
+    .message__title {
+        background-color: grey;
+        height: 7vh;
+    }
+    .message__p {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Responsive CSS 1024px > 1440px */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 1024px) {
+
+    
+    .message__p {
+        font-size: 1.5rem;
+    }
+}
