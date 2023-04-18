@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//!import { useParams } from 'react-router-dom'; A rajouter pour le router
+import { useParams } from 'react-router-dom';
 import Banner from './Banner/Banner';
 import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
 import Particularity from './Particularity/Particularity';
@@ -9,19 +9,20 @@ import Tips from './Tips/Tips';
 
 import './ProductPage.scss';
 
-/* Container component for the Product page 
-(Banner/CalendarHArvest/Particularity/Variety/Tips) */
+/* 
+|* Container component for the Product page(Banner/CalendarHArvest/Particularity/Variety/Tips)
+*/
 const ProductPage = () => {
     const [product, setProduct] = useState({});
     const [varieties, setVarieties] = useState({});
     const [isLoading, setisLoading] = useState(true);
-    //!const { id } = useParams(); A rajouter pour récupérer l'ID
+    const { id } = useParams();
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
 
     useEffect(() => {
         const fetchData = async () => {
-            try {                       //! ${id} à rajouter à la place du chiffre
-                const response = await axios.get(url + '/products/1', { 
+            try { 
+                const response = await axios.get(url + `/products/${id}`, { 
                     headers: {
                         'accept': 'application/json',
                     },
@@ -33,18 +34,18 @@ const ProductPage = () => {
             }
         };
         fetchData();
-    }, []); //! Ajoutez [id] à la place de []
-            //!-> nvll requete lorsque l'ID change
+    }, [id]);
 
 
     useEffect(() => {
         const fetchData = async () => {
-            try {                           //! ${id} à rajouter à la place du chiffre
-                const response = await axios.get(url + '/varieties/1', {
+            try {
+                const response = await axios.get(url + `/varieties/${id}`, {
                     headers: {
                         'accept': 'application/json',
                     },
-                });
+                }); 
+                console.log(response.data);
                 setVarieties(response.data);
                 setisLoading(false);
             } catch (error) {
@@ -52,8 +53,7 @@ const ProductPage = () => {
             }
         };
         fetchData();
-    }, []); //! Ajoutez [id] à la place de []
-    //!-> nvll requete lorsque l'ID change
+    }, [id]);
 
     
     return (
@@ -63,7 +63,7 @@ const ProductPage = () => {
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 <Particularity feature={product.feature} />
-                <Variety name={varieties.name} feature={varieties.product.feature}/>
+                <Variety name={varieties.name} />
                 <Tips trick={product.trick}/>
             </>)}
         </>
