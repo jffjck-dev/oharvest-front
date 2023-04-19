@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { MapContainer, TileLayer, Rectangle, Tooltip } from 'react-leaflet';
 import PropTypes from 'prop-types';
 
@@ -9,7 +11,7 @@ const CropPlan = ({data}) => {
     const options = { color: 'green'};
 
     return (
-        <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="leaflet-map">
+        <MapContainer center={position} zoom={23} scrollWheelZoom={false} className="leaflet-map">
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -47,6 +49,6 @@ CropPlan.propTypes = {
             ),
         }),
     ),
-}
+};
 
 export default CropPlan;

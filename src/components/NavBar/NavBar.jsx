@@ -12,17 +12,17 @@ const NavBar = () => {
             </Link>
             <ul className="navbar__title">
                 <li className="navbar__item">
-                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/products">
+                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'} to="/products">
                         Produits de saison
                     </NavLink>
                 </li>
                 <li className="navbar__item">
-                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/map">
+                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'} to="/map">
                         Plan de la cueillette
                     </NavLink>
                 </li>
                 <li className="navbar__item">
-                    <NavLink className={({isActive}) => isActive ? "navbar__item-link--active" : "navbar__item-link"} to="/reservation">
+                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'} to="/reservation">
                         Visite scolaire
                     </NavLink>
                 </li>
