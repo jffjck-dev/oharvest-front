@@ -4,6 +4,7 @@ import './HighlightBar.scss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
 
 const HighlightBar = ({products, category}) => {
     // Réglage du caroussel
@@ -12,7 +13,7 @@ const HighlightBar = ({products, category}) => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
@@ -54,7 +55,9 @@ const HighlightBar = ({products, category}) => {
                         filteredProducts.map((product) => (
                             <div key={product.id} className="highlight__div">
                                 <div>
-                                    <img className="highlight__card" src={`http://kevin-hesse-server.eddi.cloud/images/${product.image}`} />
+                                    <Link to={`/products/${product.id}`}>
+                                        <img className="highlight__card" src={`http://kevin-hesse-server.eddi.cloud/images/${product.image}`} />
+                                    </Link>
                                 </div>
                             </div>
                         ))}
