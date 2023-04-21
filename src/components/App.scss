@@ -2,5 +2,6 @@
 
 /* Background color of all the app */
 .app {
-    background-color: vars.$background-light-color; 
+    background-color: vars.$background-light-color;
+    cursor: url(../assets/carrot_cursor.png), auto;
 }
