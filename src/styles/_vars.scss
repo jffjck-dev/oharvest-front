@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
-$primary-color: #0B2B40;
-$secundary-color: #3B8C6E;
-$alternative-color: #164773;
-$background-color: #89D99D;
-$calendar-color:#4caf50;
-$spring-color:rgba(74, 173, 54, 0.986);
-$summer-color:rgb(228, 127, 33);
-$automn-color:rgb(107, 58, 18);
-$background-color-transparent: #0B2B40FF;
-$background-color-dark: #141013;
-$background-light-color:rgb(211, 245, 192);
-$primary-border: 1px solid #0B2B40;
+
 $text-font: 'Lexend', sans-serif;
 $title-font: 'Miltonian Tattoo', cursive;
-$color-banner-massage: #808080;
+
+$primary-color: hsl(203, 71%, 15%);
+$secundary-color: hsl(158, 41%, 39%);
+$alternative-color: hsl(208, 68%, 27%);
+
+$background-color: hsl(135, 51%, 69%);
+$background-color-transparent: hsl(204, 71%, 15%);
+$background-color-dark: hsl(315, 11%, 7%);
+$background-light-color: hsl(98, 73%, 86%);
+
+$primary-border: 1px solid hsl(204, 71%, 15%);
+
+$color-success-light: hsl(120, 73%, 75%);
+$color-success-dark: hsl(120, 100%, 20%);
+$color-error-light: hsl(0, 79%, 72%);
+$color-error-dark: hsl(0, 100%, 27%);

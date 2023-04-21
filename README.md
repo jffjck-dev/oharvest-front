@@ -61,12 +61,16 @@ On crée une nouvelle branche pour développer la nouvelle fonctionnalité :
 ```
 git checkout -b feat/<nom-de-la-fonctionnalité>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
 Pour les commits, la convention est de commencer:
+- `config:` pour tous ce qui concerne des fichiers de configuration
 - `feat:` pour l'ajout de fonctionnalités, style
 - `fix:` pour résoudre un bug
 - `doc:` pour tous ce qui concerne de la documentation
-- `config:` pour tous ce qui concerne des fichiers de configuration
+- `refacto:` pour le refactoring
 
 Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
 

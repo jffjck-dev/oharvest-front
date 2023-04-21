@@ -6,15 +6,26 @@
 
 @media only screen and (max-width: 425px) {
 
-    .message__title {
-        background-color: vars.$color-banner-massage;
-        height: 5vh;
-    }
-    .message__p {
-        text-align: center;
-        padding-top: 0.7rem;
+    .message {
+        margin: 0 -1.3rem;
+        margin-bottom: 1rem;
+        margin-top: -1rem;
+
+        &__content {
+            text-align: center;
+            padding: 0.7rem;
+        }
     }
 
+    .--open {
+        background-color: vars.$color-success-light;
+        color: vars.$color-success-dark;
+    }
+
+    .--close {
+        background-color: vars.$color-error-light;
+        color: vars.$color-error-dark;
+    }
 }
 
 /* ------------------------------------------------------ */
@@ -23,14 +34,27 @@
 
 @media only screen and (min-width: 425px) {
 
-    .message__title {
-        background-color: grey;
-        height: 7vh;
+    .message {
+        margin: 0 -1.4rem;
+        margin-bottom: 1rem;
+        margin-top: -1rem;
+
+        &__content {
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
     }
-    .message__p {
-        text-align: center;
-        padding-top: 1rem;
-        font-size: 1.2rem;
+
+    .--open {
+        background-color: vars.$color-success-light;
+        color: vars.$color-success-dark;
+    }
+
+    .--close {
+        background-color: vars.$color-error-light;
+        color: vars.$color-error-dark;
     }
 }
 
@@ -40,8 +64,24 @@
 
 @media only screen and (min-width: 1024px) {
 
-    
-    .message__p {
-        font-size: 1.5rem;
+    .message {
+        border-radius: 10px;
+        margin: 1rem 0;
+        margin-bottom: 1rem;
+
+        &__content {
+            font-size: 1.5rem;
+            border-radius: 10px;
+        }
+    }
+
+    .--open {
+        background-color: vars.$color-success-light;
+        color: vars.$color-success-dark;
+    }
+
+    .--close {
+        background-color: vars.$color-error-light;
+        color: vars.$color-error-dark;
     }
 }

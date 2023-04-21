@@ -1,12 +1,21 @@
+import React, { useState, useEffect } from 'react';
+
 import './Message.scss';
-import React from 'react';
 
-// banner for open or closed store information
-
+/**
+ * notification for open or closed store information
+ */
 const Message = () => {
+    const [isHarvestOpen, setIsHarvestOpen] = useState(false);
+
+    useEffect(() => {
+        const currentTime = new Date();
+        (currentTime.getHours() > 9 && currentTime.getHours() < 18) && setIsHarvestOpen(true);
+    }, []);
+
     return (
-        <div className="message__title">
-            <p className="message__p">Message: Cueillette actuellement fermé</p>
+        <div className={isHarvestOpen ? 'message --open' : 'message --close'}>
+            <p className={ isHarvestOpen ? 'message__content --open' : 'message__content --close'}>{isHarvestOpen ? 'La cueillette est actuellement OUVERTE !' : 'La cueillette est actuellement FERMÉ !'}</p>
         </div>
     );
 };
