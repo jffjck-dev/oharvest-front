@@ -35,7 +35,7 @@
 .navbar__item-link--active {
   color: vars.$primary-color;
   font-weight: 700;
-  text-shadow: 0 0 0.3rem black;
+  text-shadow: 0 0 0.1rem white;
 }
 
 .navbar__img {
@@ -77,7 +77,6 @@
     font-size: 1.5rem;
     font-weight: 800;
     text-shadow: 0 0 0.1rem rgb(0, 0, 0);
-    
   }
   .navbar__title {
     justify-content: flex-end;
@@ -92,5 +91,12 @@
   .navbar__img {
     width: 8rem;
     height: auto;
+  }
+
+  .navbar__item-link--active {
+    color: vars.$primary-color;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 0.1rem white;
   }
 }

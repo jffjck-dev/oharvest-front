@@ -9,7 +9,7 @@ const Map = () => {
     const position = [49.27005386352539, 3.9190235137939453];
 
     return (
-        <MapContainer center={position} zoom={15} scrollWheelZoom={true} className="leaflet-map">
+        <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="leaflet-map">
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

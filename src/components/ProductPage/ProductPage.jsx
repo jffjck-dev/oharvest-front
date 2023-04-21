@@ -6,6 +6,7 @@ import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
 import Particularity from './Particularity/Particularity';
 import Variety from './Variety/Variety';
 import Tips from './Tips/Tips';
+import Loading from '../UI/Loading/Loading';
 
 import './ProductPage.scss';
 
@@ -58,7 +59,7 @@ const ProductPage = () => {
     
     return (
         <>
-            {isLoading && (<p>Chargement...</p>) }
+            {isLoading && <Loading /> }
             {!isLoading && (<>
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />

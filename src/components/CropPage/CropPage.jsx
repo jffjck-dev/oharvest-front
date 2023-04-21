@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CropPlan from './CropPlan/CropPlan';
 import CropTable from './CropTable/CropTable';
 import axios from 'axios';
 
-import { plots } from '../plots';
-
 import './CropPage.scss';
+import Loading from '../UI/Loading/Loading';
 
 const CropPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,22 +21,21 @@ const CropPage = () => {
     useEffect(() => {
         setTimeout(() => {
             axios
-            .get(url + '/plots/products')
-            .then((response) => {
-                response.data.forEach((plot, index) => {
-                    plot.coordinate = coordinates[index];
-                });
-                console.log(response.data);
-                setPlots(response.data);
-            })
-            .catch((err) => console.log(err));
-            setIsLoading(false);
+                .get(url + '/plots/products')
+                .then((response) => {
+                    response.data.forEach((plot, index) => {
+                        plot.coordinate = coordinates[index];
+                    });
+                    setPlots(response.data);
+                    setIsLoading(false);
+                })
+                .catch((err) => console.log(err));
         }, 3000);
-    }, [])
+    }, []);
 
     return (
         <section>
-            {isLoading && <p>Chargement...</p>}
+            {isLoading && <Loading />}
             {!isLoading && 
             <>
                 <CropPlan data={plots}/>

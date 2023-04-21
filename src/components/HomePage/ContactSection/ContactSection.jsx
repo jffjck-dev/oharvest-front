@@ -9,9 +9,11 @@ import './ContactSection.scss';
 const ContactSection = () => {
     return (
         <section className="contact">
-            <Horaire />
+            <div className="container-flex">
+                <Horaire />
+                <ContactInfo />
+            </div>
             <Map />
-            <ContactInfo />
         </section>
     );
 };

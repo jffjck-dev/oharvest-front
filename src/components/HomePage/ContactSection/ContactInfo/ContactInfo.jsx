@@ -7,7 +7,7 @@ const ContactInfo = () => {
             <h5 className="contact__info-title">CONTACTEZ-NOUS</h5>
             <ul className="contact__info-list">
                 <li className="contact__info-list-item">
-                    <i className="fa-solid fa-location-dot"></i> 22, rue de la moisson 54000 MUIZON
+                    <i className="fa-solid fa-location-dot"></i> 22, rue de la moisson<br />54000 MUIZON
                 </li>
                 <li className="contact__info-list-item">
                     <i className="fa-solid fa-envelope"></i> cueillette-oharvest@mail.com
