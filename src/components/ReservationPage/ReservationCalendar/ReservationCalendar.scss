@@ -1,0 +1,193 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .calendar__title {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .calendar__description {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .calendar__title {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .calendar__description {
+        font-size: 1.4rem;
+    }
+
+    .react-datepicker__month-container {
+        width: 22rem; // Calendar container
+    }
+    
+    .react-datepicker__day-name {
+        width: 2.5rem; // Day on name 
+    }
+    .react-datepicker__current-month {
+        padding: 0.4rem;  // Padding for month
+    } 
+    //Number of the day
+    .react-datepicker__day,
+    .react-datepicker__day--outside-month {
+        width:2.5rem;  //Day on number
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .calendar__title {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    .calendar__description {
+        font-size: 1.9rem;
+    }
+    .react-datepicker__month-container {
+        width: 40rem; // Calendar container
+    }  
+    .react-datepicker__day-name {
+        width: 5rem; // Day on name
+    }
+    .react-datepicker__current-month {
+        padding: 0.4rem; // Padding for month
+    } 
+    //Number of the day
+    .react-datepicker__day,
+    .react-datepicker__day--outside-month {
+        width:5rem; //Day on number
+    }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar__title {
+    text-align: center;
+    color: vars.$primary-color;
+    background-color: vars.$secundary-color;  
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.calendar__description {
+    text-align: center;
+    color: vars.$primary-color;   
+    margin: 2rem;
+}
+
+.calendar__select {
+    margin: 1rem;
+    border: 1px solid vars.$calendar-color;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.calendar__button {
+    background-color: vars.$calendar-color;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.calendar__button:hover {
+    background-color: vars.$alternative-color;
+    color: white;
+}
+
+/* ------------------------------------------------------ */
+/* Calendar Style by REACT DatePicker
+/* ------------------------------------------------------ */
+//Calendar general
+.react-datepicker {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    margin: 1rem;
+}
+
+//Header's calendar
+.react-datepicker__header {
+    background-color: vars.$calendar-color;
+    color: white;
+    font-size: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+//Capital letter on month
+.react-datepicker__current-month::first-letter {
+    text-transform: capitalize;  
+}
+
+//Capital letter on week days
+.react-datepicker__day-name::first-letter {
+    text-transform: capitalize;  
+}
+
+//Arrow on the left & right of the header
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+    border-color: white;
+}
+.react-datepicker__navigation--previous:hover,
+.react-datepicker__navigation--next:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+//Number of the day
+.react-datepicker__day,
+.react-datepicker__day--outside-month {
+    color: vars.$calendar-color;
+    font-weight: bold;
+}
+
+//When day are selected
+.react-datepicker__day--selected,
+.react-datepicker__day--selected:hover {
+    background-color: vars.$calendar-color;
+    color: white;
+}
+
+//When day are hovered
+.react-datepicker__day:hover {
+    background-color: rgba(76, 175, 80, 0.5);
+    color: white;
+}
+
+//When day are disable
+.react-datepicker__day--weekend {
+    color: #ccc;
+}
+.react-datepicker__day--weekend:hover {
+    background-color: rgba(175, 79, 76, 0.5);
+    color: white;
+}
+.react-datepicker__day--disabled {
+    color: #ccc;
+}
+.react-datepicker__day--disabled:hover {
+    background-color: rgba(175, 79, 76, 0.5);
+    color: white;
+}

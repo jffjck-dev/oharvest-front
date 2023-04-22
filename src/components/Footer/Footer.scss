@@ -7,7 +7,9 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .footer {
-        margin-bottom: 0; 
+        margin-bottom: 0;
+        background: rgb(174,238,192);
+        background: radial-gradient(circle, rgba(174,238,192,1) 0%, rgba(0,0,0,1) 100%);
     }
 }
 
@@ -16,8 +18,9 @@
 /* ------------------------------------------------------ */
 .footer {
     display: flex;
-    justify-content: space-around;
-    background-color: vars.$secundary-color;
+    justify-content: center;
+    background: vars.$background-color;
+    background: radial-gradient(circle, vars.$background-color-footer-light 0%, vars.$background-color-footer-dark 100%);
     padding: 0.4rem;
     font-size: 1rem;
     margin-bottom: 4.5rem;

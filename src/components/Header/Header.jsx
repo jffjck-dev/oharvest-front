@@ -6,25 +6,28 @@ import './Header.scss';
  */
 const Header = () => {
     return (
-        <div className="header">
-            <img
-                className="header__img"
-                src="https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg"
-                alt="fruits"
-            ></img>
+        <>
+            <div className="header">
+                <img
+                    className="header__img"
+                    src="https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg"
+                    alt="fruits"
+                ></img>
 
-            <img
-                className="header__img"
-                src="https://cdn.pixabay.com/photo/2018/11/10/11/03/pumpkin-3806393_960_720.jpg"
-                alt="legumes"
-            ></img>
+                <img
+                    className="header__img"
+                    src="https://cdn.pixabay.com/photo/2018/11/10/11/03/pumpkin-3806393_960_720.jpg"
+                    alt="legumes"
+                ></img>
 
-            <img
-                className="header__img"
-                src="https://cdn.pixabay.com/photo/2013/08/20/15/47/poppies-174276_960_720.jpg"
-                alt="fleurs"
-            ></img>
-        </div>
+                <img
+                    className="header__img"
+                    src="https://cdn.pixabay.com/photo/2013/08/20/15/47/poppies-174276_960_720.jpg"
+                    alt="fleurs"
+                ></img>
+            </div>
+            <p aria-hidden style={{textAlign: 'center'}}>🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾</p>
+        </>
     );
 };
 

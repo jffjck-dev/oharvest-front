@@ -6,8 +6,10 @@ import CalendarHarvest from './CalendarHarvest/CalendarHarvest';
 import Particularity from './Particularity/Particularity';
 import Variety from './Variety/Variety';
 import Tips from './Tips/Tips';
+import Loading from '../UI/Loading/Loading';
 
 import './ProductPage.scss';
+import Message from '../Message/Message.jsx';
 
 /* 
 |* Container component for the Product page(Banner/CalendarHArvest/Particularity/Variety/Tips)
@@ -58,8 +60,10 @@ const ProductPage = () => {
     
     return (
         <>
-            {isLoading && (<p>Chargement...</p>) }
+            {isLoading && <Loading /> }
             {!isLoading && (<>
+                <Message />
+                <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 <Particularity feature={product.feature} />

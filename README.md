@@ -61,12 +61,20 @@ On crée une nouvelle branche pour développer la nouvelle fonctionnalité :
 ```
 git checkout -b feat/<nom-de-la-fonctionnalité>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
-Pour les commits, la convention est de commencer:
-- `feat:` pour l'ajout de fonctionnalités, style
-- `fix:` pour résoudre un bug
-- `doc:` pour tous ce qui concerne de la documentation
+Pour les commits, la convention est de commencer pour les:
 - `config:` pour tous ce qui concerne des fichiers de configuration
+- `doc:` pour tous ce qui concerne de la documentation
+- `feat:` pour l'ajout de fonctionnalités
+- `style:` pour tous ce qui concerne le style
+- `fix:` pour résoudre un bug
+- `refacto:` pour le refactoring
+- `merge:` pour les merges et résolution de conflit
+- `prod:` pour les mises en production (merge de dev dans main)
+- `hotfix:` pour résoudre un bug sur main
 
 Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
 
@@ -75,7 +83,7 @@ Une fois le développement terminé et commité, on fait récupère les eventuel
 git pull origin feat/<nom-de-la-fonctionnalité>
 ```
 
-On résoud les conflits.
+On résoud les conflits et commit.
 
 Une fois les conflits résolus, on fait une demande de pull request sur **GitHub**, de la branche `feat/<nom-de-la-fonctionnalité>` dans la branche `dev`.
 

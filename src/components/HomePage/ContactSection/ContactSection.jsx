@@ -1,5 +1,5 @@
 import React from 'react';
-import Map from './Map/Map';
+import Location from './Location/Location.jsx';
 import Horaire from './Horaire/Horaire';
 import ContactInfo from './ContactInfo/ContactInfo';
 
@@ -9,9 +9,11 @@ import './ContactSection.scss';
 const ContactSection = () => {
     return (
         <section className="contact">
-            <Horaire />
-            <Map />
-            <ContactInfo />
+            <div className="container-flex">
+                <Horaire />
+                <ContactInfo />
+            </div>
+            <Location />
         </section>
     );
 };

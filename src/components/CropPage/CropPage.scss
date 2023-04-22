@@ -1,1 +1,11 @@
 @use '../../styles/vars';
+
+.crop-page__page-title {
+  font-size: 3rem;
+  font-family: vars.$title-font;
+  text-align: center;
+  border-bottom: 10px solid #3b8c6e;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-radius: 50%;
+}

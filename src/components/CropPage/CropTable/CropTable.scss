@@ -1,18 +1,41 @@
 @use '../../../styles/vars';
 
 .crop-table {
+    margin-bottom: 1rem;
 
     & table {
         width: 100%;
     }
 
+    &__title {
+        font-size: 2rem;
+        font-family: vars.$title-font;
+        margin-bottom: 2rem;
+    }
+
     &__header {
         width: 100%;
-        border-bottom: 1px solid vars.$primary-color;
+        font-weight: 700;
+        line-height: 3rem;
     }
 
     &__row {
-        border-bottom: 1px solid vars.$primary-color;
         text-align: center;
+        line-height: 1.1rem;
+
+        &:hover {
+            background: rgb(9,92,68);
+            background: linear-gradient(90deg, rgba(9,92,68,0) 0%, rgba(9,92,68,1) 50%, rgba(9,92,68,0) 100%);
+        }
+
+        &-sector {
+            font-style: italic;
+            text-align: right;
+            padding-right: 1rem;
+        }
+
+        &-products {
+            display: flex;
+        }
     }
 }

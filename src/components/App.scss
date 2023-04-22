@@ -1,6 +1,6 @@
 @use '../styles/vars';
 
-/* Background color of all the app */
 .app {
-    background-color: vars.$background-light-color; 
+    background-color: vars.$background-light-color;
+    cursor: url(../assets/carrot-cursor-left.png), auto;
 }

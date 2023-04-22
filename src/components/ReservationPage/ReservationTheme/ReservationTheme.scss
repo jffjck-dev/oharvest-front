@@ -1,0 +1,173 @@
+@use "../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .theme__title {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .theme h3 {
+        padding: 1rem 1.6rem;
+        font-size: 1rem;
+    }
+
+    .theme__description {
+        margin: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .theme__activity {
+        margin: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .theme__title {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .theme h3 {
+        padding: 1rem 1.9rem;
+        font-size: 1.7rem;
+    }
+
+    .theme__description {
+        margin: 1.4rem;
+        font-size: 1.2rem;
+    }
+
+    .theme__activity{
+        margin: 1.4rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+    .theme__title {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    .theme h3 {
+        padding: 1rem 3rem;
+        font-size: 2.4rem;
+    }
+
+    .theme__description {
+        margin: 1.4rem;
+        font-size: 1.3rem;
+    }
+
+    .theme__activity {
+        margin: 1.4rem;
+        font-size: 1.3rem;
+    }
+    .theme__container-spring {
+        margin-bottom: 1.5rem;
+        transition: transform 1s ease;
+    }
+    .theme__container-spring:hover {
+        transform: scale(1.1);
+    }
+    .theme__container-summer {
+        margin-bottom: 1.5rem;
+        transition: transform 1s ease;
+    }
+    .theme__container-summer:hover {
+        transform: scale(1.1);
+    }
+    .theme__container-automn {
+        margin-bottom: 1.5rem;
+        transition: transform 1s ease;
+    }
+    .theme__container-automn:hover {
+        transform: scale(1.1);
+    }
+
+    .calendar {
+        margin-top: 5rem;
+    }
+    
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.theme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.theme__title {
+    text-align: center;
+    color: vars.$primary-color;   
+    margin-top: 1rem;
+}
+
+.theme__container-spring {
+    border: 1px solid vars.$spring-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme__spring {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 0.4rem;
+    background-color: vars.$spring-color;  
+    border-radius: 10px;
+}
+
+.theme__container-summer {
+    border: 1px solid vars.$summer-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.theme__summer {
+    text-align: center;
+    color: white;
+    margin-top: 0.4rem;
+    background-color: vars.$summer-color; 
+    border-radius: 10px;
+}
+
+.theme__container-automn {
+    border: 1px solid vars.$automn-color;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin-top: 0.7rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.theme__automn {
+    text-align: center;
+    color: white;
+    margin-top: 0.4rem;
+    background-color: vars.$automn-color;  
+    border-radius: 10px;
+}
+
+.theme__description {
+    text-align: center;
+}
+
+.theme__activity {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}

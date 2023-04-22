@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 
 import './Variety.scss';
 
-/**
- * Variety for each product
- */
+
+//Variety for each product
 const Variety = ({name}) => { //!feature !!!!!!!!!!!!!!!!!!!!
 
     return (

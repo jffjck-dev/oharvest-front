@@ -1,0 +1,22 @@
+@use '../../../styles/vars';
+
+.overlay {
+    position: absolute;
+    inset: 0; /* shortcut de top+bottom+left+right */
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem;
+    height: 251%;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 1rem;
+}
