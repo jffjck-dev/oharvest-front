@@ -1,15 +1,10 @@
 @use '../../../../styles/vars';
 
-.contact__map {
+.contact__location {
     border: vars.$primary-border;
     color: vars.$alternative-color;
 }
 
-.leaflet-map {
-    height: 350px;
-    margin-bottom: 1.5rem;
-    border-radius: 7px;
-}
 .popup__logo {
     height: 125px;
     width: 125px;

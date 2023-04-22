@@ -1,5 +1,5 @@
 import React from 'react';
-import Map from './Map/Map';
+import Location from './Location/Location.jsx';
 import Horaire from './Horaire/Horaire';
 import ContactInfo from './ContactInfo/ContactInfo';
 
@@ -13,7 +13,7 @@ const ContactSection = () => {
                 <Horaire />
                 <ContactInfo />
             </div>
-            <Map />
+            <Location />
         </section>
     );
 };
