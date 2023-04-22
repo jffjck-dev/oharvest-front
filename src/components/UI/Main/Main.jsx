@@ -4,7 +4,7 @@ import HomePage from '../../HomePage/HomePage';
 import ProductPage from '../../ProductPage/ProductPage';
 import ProductsListPage from '../../ProductsListPage/ProductsListPage';
 import ReservationPage from '../../ReservationPage/ReservationPage';
-import NotFound from '../../404/NotFound';
+import NotFound from '../../NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';

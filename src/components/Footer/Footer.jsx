@@ -33,15 +33,18 @@ const Footer = () => {
     };
 
     return (
-        <footer className='footer'>
-            <a className='footer__link' href='#' onClick={openAboutUsModal}>Qui sommes-nous ?</a>
-            <a className='footer__link' href='#'>Copyright © {now.getFullYear()}</a>
-            <a className='footer__link' href='#' onClick={openCGUModal}>CGU</a>
-            <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
-                {isAboutUsOn && <AboutUs />}
-                {isCGUOn && <CGU />}
-            </Modal>
-        </footer>
+        <>
+            <p aria-hidden style={{textAlign: 'center'}}>🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾</p>
+            <footer className='footer'>
+                <a className='footer__link' href='#' onClick={openAboutUsModal}>Qui sommes-nous ?</a>
+                <a className='footer__link' href='#'>Copyright © {now.getFullYear()}</a>
+                <a className='footer__link' href='#' onClick={openCGUModal}>CGU</a>
+                <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
+                    {isAboutUsOn && <AboutUs />}
+                    {isCGUOn && <CGU />}
+                </Modal>
+            </footer>
+        </>
     );
 };
 

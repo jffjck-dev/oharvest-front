@@ -6,15 +6,15 @@ import logo from '../../../../assets/logo_oharvest_transparent.png';
 import './Map.scss';
 
 const Map = () => {
-    const position = [49.27005386352539, 3.9190235137939453];
+    const shop = [48.752859, 7.414099];
 
     return (
-        <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="leaflet-map">
+        <MapContainer center={shop} zoom={13} scrollWheelZoom={false} className="leaflet-map">
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={position}>
+            <Marker position={shop}>
                 <Popup>
                     <img className="popup__logo" src={logo} />
                 </Popup>

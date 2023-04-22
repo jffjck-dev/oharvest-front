@@ -4,6 +4,7 @@ import ReservationHeader from './ReservationHeader/ReservationHeader';
 import ReservationModality from './ReservationModality/ReservationModality';
 import ReservationTheme from './ReservationTheme/ReservationTheme';
 import ReservationCalendar from './ReservationCalendar/ReservationCalendar';
+import Message from '../Message/Message.jsx';
 
 
 //Container ReservationPage (Header/Theme/Modality/Calendar)
@@ -12,6 +13,7 @@ const ReservationPage = () => {
     
     return (
         <>
+            <h2 className="crop-page__page-title">Modalité des visites scolaires</h2>
             <ReservationHeader />
             <ReservationModality />
             <ReservationTheme />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import HighlightBar from '../HighlightBar/HighlightBar';
+import Carousel from '../UI/Carousel/Carousel.jsx';
 import Message from '../Message/Message';
 import Loading from '../UI/Loading/Loading';
 
@@ -31,9 +31,10 @@ const ProductsListPage = () => {
 
     return (
         <>
+            <Message />
+            <h2 className="crop-page__page-title">Inventaire des produits</h2>
             {isLoading && <Loading />}
-            {!isLoading && <Message />}
-            {!isLoading && categories.map(category => (<HighlightBar key={category.id} category={category} products={products} />))}
+            {!isLoading && categories.map(category => (<Carousel key={category.id} category={category} products={products} />))}
         </>
     );
 };

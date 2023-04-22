@@ -1,53 +1,50 @@
 import React from 'react';
-
-import { MapContainer, TileLayer, Rectangle, Tooltip } from 'react-leaflet';
 import PropTypes from 'prop-types';
+import {MapContainer, TileLayer, LayersControl, Marker, Popup} from 'react-leaflet';
+import Plot from './Plot';
+import UserMarker from './UserMarker';
 
 import './CropPlan.scss';
+import logo from '../../../assets/logo_oharvest_transparent.png';
 
 const CropPlan = ({data}) => {
-    const position = [49.27005386352539, 3.9190235137939453];
+    const position = [48.5771821, 7.7488522];
+    const shop = [48.752859, 7.414099];
 
-    const options = { color: 'green'};
-
-    return (
-        <MapContainer center={position} zoom={23} scrollWheelZoom={false} className="leaflet-map">
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {data.map(plot => (
-                <Rectangle key={plot.plotId} bounds={plot.coordinate} pathOptions={options}>
-                    <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
-                        <ul>
-                            {plot.product.map(product => (<li key={product.id}>{product.name}</li>))}
-                        </ul>
-                    </Tooltip>
-                </Rectangle>
-            ))}
-        </MapContainer>
-    );
+    return <MapContainer center={position} zoom={15} scrollWheelZoom={false} className="leaflet-map">
+        <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <LayersControl position="topright">
+            {data.map(plot => <Plot key={plot.id} plot={plot} />)}
+            <UserMarker />
+            <Marker position={shop}>
+                <Popup><img className="popup__logo" src={logo} alt="logo O'Harvest" /></Popup>
+            </Marker>
+        </LayersControl>
+    </MapContainer>;
 };
-
 
 CropPlan.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.exact({
-            plotId: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
             coordinate: PropTypes.arrayOf(
                 PropTypes.arrayOf(
                     PropTypes.number.isRequired,
-                )
-            ),
-            product: PropTypes.arrayOf(
+                ).isRequired,
+            ).isRequired,
+            products: PropTypes.arrayOf(
                 PropTypes.exact({
                     id: PropTypes.number.isRequired,
                     name: PropTypes.string.isRequired,
                     isAvailable: PropTypes.bool.isRequired,
                     image: PropTypes.string.isRequired,
-                }),
+                }).isRequired,
             ),
-        }),
+        }).isRequired,
     ),
 };
 

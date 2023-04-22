@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import HighlightBarHome from '../HighlightBarHome/HighlightBarHome';
+import Carousel from '../UI/Carousel/Carousel.jsx';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import Loading from '../UI/Loading/Loading';
@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <>
             {isLoading && <Loading />}
-            {!isLoading && <HighlightBarHome products={products} />}
+            {!isLoading && <Carousel products={products} title="Produits disponibles" />}
             <Welcome />
             <ContactSection />
         </>
