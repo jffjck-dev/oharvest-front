@@ -1,40 +1,25 @@
 @use "../../styles/vars";
 
 /* ------------------------------------------------------ */
-/* Responsive CSS */
+/* MOBILE (max 425px) */
 /* ------------------------------------------------------ */
 
-/* Mobile responsive (320px-425px) */
-/* If width < or = 425 pixels */
-@media only screen and (max-width: 425px) {
-  .header {
-    height: 13rem;
-  }
+.header__emoji-line {
+  border-top: 1px solid black;
+  text-align: center;
+  overflow: hidden;
+  height: .7rem;
+  font-size: .7rem;
+  background: linear-gradient(vars.$alternative-color, black);
+  box-shadow: 0 0 1rem black;
+  text-shadow: 0 0 .3rem black;
 }
 
-/* Tablet responsive (425px-1024px) */
-/* If width > or = 425 pixels */
-@media only screen and (min-width: 425px) {
-  .header {
-    height: 30rem;
-  }
-}
-
-/* Desktop responsive (1024px-1440px) */
-/* If width > or = 1024 pixels */
-@media only screen and (min-width: 1024px) {
-    .header {
-        height: 55rem;
-        }
-    }
-
-/* ------------------------------------------------------ */
-/* Commun CSS */
-/* ------------------------------------------------------ */
 .header {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 10rem;
 }
 
 .header__img {
@@ -43,6 +28,16 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
+}
+
+/* ------------------------------------------------------ */
+/* DESKTOP (min 1024px)*/
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    height: 33rem;
+  }
 }
 
 /* ------------------------------------------------------ */

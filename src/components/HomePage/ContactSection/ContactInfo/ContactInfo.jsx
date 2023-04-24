@@ -7,13 +7,13 @@ const ContactInfo = () => {
             <h5 className="contact__info-title">CONTACTEZ-NOUS</h5>
             <ul className="contact__info-list">
                 <li className="contact__info-list-item">
-                    <i className="fa-solid fa-location-dot"></i> 22, rue de la moisson 54000 MUIZON
+                    <i className="fa-solid fa-location-dot"></i> 27, rue du Lièvre 01940 ACME
                 </li>
                 <li className="contact__info-list-item">
-                    <i className="fa-solid fa-envelope"></i> cueillette-oharvest@mail.com
+                    <i className="fa-solid fa-envelope"></i> accueil@oharvest.fr
                 </li>
                 <li className="contact__info-list-item">
-                    <i className="fa-solid fa-phone"></i> 00 00 00 00 00
+                    <i className="fa-solid fa-phone"></i> 08 91 650 605
                 </li>
             </ul>
         </div>

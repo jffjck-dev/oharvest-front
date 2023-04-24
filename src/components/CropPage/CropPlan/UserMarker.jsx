@@ -16,8 +16,8 @@ const UserMarker = () => {
 
     return position === null ? null : (
         <Marker position={position}>
-            <Tooltip>Vous êtes içi 🙋‍♂️</Tooltip>
-            <Popup>click on the map to update your position</Popup>
+            <Tooltip>Vous êtes ici 🙋‍♂️</Tooltip>
+            <Popup>Cliquez sur la carte pour mettre à jour votre position</Popup>
         </Marker>
     );
 };

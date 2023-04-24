@@ -6,7 +6,12 @@ import './ProductTag.scss';
 
 const ProductTag = ({id, name, image}) => {
     return (
-        <li className="product-tag" key={id}><Link to={`/products/${id}`}><img className="product-tag__img" src={`http://kevin-hesse-server.eddi.cloud/images/${image}`} alt={name}/>{name}</Link></li>
+        <li className="product-tag" key={id}>
+            <Link to={`/products/${id}`}>
+                <img className="product-tag__img" src={`http://kevin-hesse-server.eddi.cloud/images/${image}`} alt={name}/>
+                {name}
+            </Link>
+        </li>
     ); 
 };
 
