@@ -5,18 +5,18 @@ import './Particularity.scss';
 
 
 //Particularity and description of each product
-const Particularity = ({feature}) => {
+const Particularity = ({description}) => {
     return (
         <div className='particularity'>
             <h2 className='particularity__title' >Particularités et description</h2>
-            <p className='particularity__description' >{feature}</p>
+            <p className='particularity__description' >{description}</p>
         </div>
     );
 };
 
 // Props validation
 Particularity.propTypes = {
-    feature: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
 };
 
 export default Particularity;

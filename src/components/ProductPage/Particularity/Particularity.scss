@@ -15,6 +15,10 @@
         margin: 1rem;
         font-size: 0.8rem;
     }
+    .variety__title {
+        font-size: 1.3rem;
+        padding: 0.7rem;
+    }
 }
 
 /* Tablet responsive (425px-1024px) */
@@ -27,6 +31,10 @@
         margin: 1.4rem;
         font-size: 1.2rem;
     }
+    .variety__title {
+        font-size: 2rem;
+        padding: 2rem;
+    }
 }
 
 /* Desktop responsive (1024px-1440px) */
@@ -38,6 +46,10 @@
     .particularity__description {
         margin: 1.4rem;
         font-size: 1.3rem;
+    }
+    .variety__title {
+        font-size: 2.4rem;
+        padding: 2rem;
     }
 }
 
@@ -61,4 +73,10 @@
 
 .particularity__description {
     text-align: center;
+}
+
+.variety__title {
+    text-align: center;
+    color: vars.$primary-color;   
+    margin-top: 1rem;
 }

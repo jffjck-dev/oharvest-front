@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Tips.scss';
 
 //Tips component with event button
-const Tips = ({trick}) => {
+const Tips = ({tip}) => {
     const [showTips, setShowTips] = useState(false);
 
     /* Event on the button tips*/
@@ -18,7 +18,7 @@ const Tips = ({trick}) => {
                 Des astuces...?
             </button>
             <p className={`tips__text ${showTips ? 'visible' : 'hidden'}`}>
-                Voici quelques astuces pour vous aider...{trick}
+                Voici quelques astuces pour vous aider...{tip}
             </p>
         </div>
     );
@@ -26,7 +26,7 @@ const Tips = ({trick}) => {
 
 // Props validation
 Tips.propTypes = {
-    trick: PropTypes.string.isRequired,
+    tip: PropTypes.string.isRequired,
 };
 
 export default Tips;
