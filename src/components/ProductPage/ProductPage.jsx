@@ -48,7 +48,7 @@ const ProductPage = () => {
                 <Banner name={product.name} image={product.image} />
                 <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
                 <Particularity description={product.description} />
-                {(product.variety.length !== []) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
+                {(product.variety.length > 0) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
                 <Tips tip={product.tip}/>
             </>)}
         </>
