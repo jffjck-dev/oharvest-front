@@ -1,10 +1,10 @@
-@use '../../../styles/vars';
+@use "../../../styles/vars";
 
 /* ------------------------------------------------------ */
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 @media only screen and (max-width: 425px) {
-  .who {
+  .aboutus {
     border: 0.2rem solid vars.$alternative-color;
     border-radius: 1.5rem;
     display: flex;
@@ -13,37 +13,63 @@
     text-align: center;
     width: 90%;
     margin: auto;
+    padding-bottom: 2rem;
 
-    .who__title {
+    .aboutus__title {
       padding-top: 1rem;
       font-size: 1.4rem;
       color: vars.$alternative-color;
     }
 
-    p {
-      padding-bottom: 1rem;
+    .aboutus__subtitle-back,
+    .aboutus__subtitle-front {
+      padding-top: 2rem;
+      font-size: 1.2rem;
       color: vars.$alternative-color;
-      overflow: hidden;
-      padding: 1rem;
+      text-decoration: underline;
     }
   }
-  .who__img {
-    height: 240px;
-    width: auto;
+  .aboutus__img-div {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .aboutus__image {
+    height: 140px;
+    width: auto;
     margin: 20px;
   }
-  .btn {
-    background-color: vars.$primary-color;
-    color: vars.$background-light-color;
-    border-radius: 2rem;
+  .aboutus__dev {
+    position: relative;
+  }
+  .aboutus__dev-image-hover {
+    opacity: 1;
+    position: absolute;
+    top: 160px;
+    left: 100px;
+    background: #ffffff73;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 50%;
+    border: 1px solid vars.$alternative-color;
+  }
+  .aboutus__dev-text {
+    font-size: 0.7rem;
+    padding-top: 0.7rem;
+    color: vars.$alternative-color;
+    line-height: 0.8rem;
+  }
+
+  .aboutus__dev-photo {
+    width: 300px;
+    margin: 10px;
   }
 }
 
 /* Tablet responsive (425px-1024px) */
 
 @media only screen and (min-width: 425px) {
-  .who {
+  .aboutus {
     border: 0.2rem solid vars.$alternative-color;
     border-radius: 1.5rem;
     display: flex;
@@ -54,36 +80,100 @@
     margin: auto;
     height: auto;
 
-    h2 {
+    .aboutus__title {
       padding-top: 1rem;
       font-size: 2rem;
       color: vars.$alternative-color;
     }
-
-    p {
-      padding: 1rem;
-      color: vars.$alternative-color;
-      overflow: hidden;
-    }
   }
-  .who__img {
-    width: 65%;
+  .aboutus__subtitle-back,
+  .aboutus__subtitle-front {
+    padding-top: 2rem;
+    font-size: 1.2rem;
+    color: vars.$alternative-color;
+    text-decoration: underline;
+  }
+  .aboutus__img {
+    width: 20%;
     height: auto;
-    display: flex;
     margin: 1.5rem;
   }
-  .btn {
-    background-color: vars.$primary-color;
-    color: vars.$background-light-color;
-    border-radius: 2rem;
+  .aboutus__dev {
+    position: relative;
+  }
+  .aboutus__dev-image-hover {
+    opacity: 0;
+    position: absolute;
+    top: 100px;
+    right: -80px;
+    background: #ffffff73;
+    height: 5rem;
+    width: 10rem;
+    border-radius: 50%;
+    border: 1px solid vars.$alternative-color;
+  }
+  .aboutus__dev:hover .aboutus__dev-image-hover {
+    opacity: 1;
+  }
+
+  .aboutus__dev-photo {
+    width: 300px;
+    margin: 10px;
+  }
+  .aboutus__dev-text {
+    font-size: 1rem;
+    padding-top: 1.2rem;
+    color: vars.$alternative-color;
+    line-height: 1.3rem;
   }
 }
 
 /* Desktop responsive (1024px-1440px) */
 
 @media only screen and (min-width: 1024px) {
+  .aboutus {
+    padding-bottom: 4rem;
+  }
+  .aboutus__img-back {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .aboutus__subtitle-back {
+    width: 100%;
+    height: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: vars.$alternative-color;
+    text-decoration: underline;
+  }
 
-  .who__img {
-    width: 40%;
+  .aboutus__img-front {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .aboutus__subtitle-front {
+    width: 100%;
+    height: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: vars.$alternative-color;
+    text-decoration: underline;
+  }
+  .aboutus__dev-image-hover {
+    opacity: 0;
+    position: absolute;
+    top: 250px;
+    left: 80px;
+    background: #ffffff73;
+    height: 5rem;
+    width: 10rem;
+    border-radius: 50%;
   }
 }
