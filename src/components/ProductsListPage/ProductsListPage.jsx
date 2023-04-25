@@ -11,6 +11,7 @@ import './ProductsListPage.scss';
 const ProductsListPage = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [nbProductsPerCarousel, setNbProductsPerCarousel] = useState(4);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
@@ -41,13 +42,23 @@ const ProductsListPage = () => {
             });
     }, []);
 
+    const filterProducts = () => {
+        const onlyAvailableProducts = products.filter(product => product.isAvailable === true );
+        setProducts(onlyAvailableProducts);
+        setNbProductsPerCarousel(2);
+    };
+    
+
     return (
         <>
             <Message />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
+            {(!isLoading && !error) && <button className="products-list-page__button" onClick={filterProducts}>
+                se limiter aux produits de saison
+            </button>}
             {isLoading && <Loading />}
             {error && <Error />}
-            {(!isLoading && !error) && categories.map(category => (<Carousel key={category.id} category={category} products={products} />))}
+            {(!isLoading && !error) && categories.map(category => (<Carousel key={category.id} category={category} products={products} nbCardsToSHow={nbProductsPerCarousel}/>))}
         </>
     );
 };

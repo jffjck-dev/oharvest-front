@@ -1,5 +1,5 @@
 .content {
-
+    min-height: 63vh;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -7,5 +7,6 @@
         width: 90%;
         margin: 0 auto;
         padding: 1rem;
+        min-height: 40vh;
     }
 }
