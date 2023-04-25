@@ -1,17 +1,18 @@
 @use '../../styles/vars';
 
-.crop-page__page-title {
-  font-size: 3rem;
+.products-list__page-title {
+  font-size: 2rem;
   font-family: vars.$title-font;
   text-align: center;
   border-bottom: 10px solid #3b8c6e;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   padding-bottom: .5rem;
   border-radius: 50%;
 }
 
-.crop-table__empty-notif {
-  text-align: center;
-  font-family: vars.$title-font;
-  font-size: 1.4rem;
+@media only screen and (min-width: 1024px) {
+  .products-list__page-title {
+    font-size: 3rem;
+  }
 }

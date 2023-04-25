@@ -5,11 +5,33 @@
 /* Responsive CSS */
 /* ------------------------------------------------------ */
 
+.highlight__tag--available {
+  border-radius: 5px;
+  padding: .2rem;
+  font-size: .5rem;
+  background-color: lightgreen;
+  border: 1px solid darkgreen;
+  color: darkgreen;
+  box-shadow: 0 0 0.3rem black;
+}
+
+.highlight__tag--unavailable {
+  border-radius: 5px;
+  padding: .2rem;
+  font-size: .5rem;
+  background-color: lightcoral;
+  border: 1px solid darkred;
+  color: darkred;
+  box-shadow: 0 0 0.3rem black;
+}
+
 @media screen and (max-width: 425px) {
 
   .highlight {
     height: 12vh;
-    margin-bottom: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 2.7rem;
+    margin-left: .5rem;
   }
 
   .highlight__title {
@@ -20,8 +42,9 @@
 
   .highlight__card {
     height: 6vh;
-    margin: auto;
     border-radius: 50%;
+    box-shadow: 0 0 0.3rem black;
+    margin: .5rem;
   }
 }
 
@@ -56,5 +79,15 @@
 
   .highlight__card {
     height: 12vh;
+    box-shadow: 0 0 0.3rem black;
+    padding: 0;
+    margin-bottom: .5rem;
+  }
+
+  .highlight__tag--available,
+  .highlight__tag--unavailable  {
+    padding: .1rem;
+    font-size: .7rem;
+    margin-left: 1rem;
   }
 }

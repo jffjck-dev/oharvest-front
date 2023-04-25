@@ -28,7 +28,7 @@ const Carousel = ({products, category, title}) => {
             {
                 breakpoint: 425,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     slidesToScroll: 3,
                     initialSlide: 2,
                 },
@@ -49,18 +49,21 @@ const Carousel = ({products, category, title}) => {
             <div>
                 <div className='highlight'>
                     <h2 className='highlight__title'>{category.name}</h2>
-                    <Slider {...settings}>
+                    {(filteredProducts.length > 0) && <Slider {...settings}>
                         {
-                            filteredProducts.map((product) => (
+                            (filteredProducts.map((product) => (
                                 <div key={product.id} className="highlight__div">
                                     <div>
                                         <Link to={`/products/${product.id}`}>
+                                            <span className={ product.isAvailable ? 'highlight__tag--available' : 'highlight__tag--unavailable'}>{product.isAvailable ? 'disponible' : 'indisponible'}</span>
                                             <img className="highlight__card" src={`http://kevin-hesse-server.eddi.cloud/images/${product.image}`} alt={`${product.image}`} />
                                         </Link>
                                     </div>
                                 </div>
-                            ))}
-                    </Slider>
+                            )))
+                        }
+                    </Slider>}
+                    {filteredProducts.length === 0 && <p style={{textAlign: 'center'}}> Aucun produit répertorié </p>}
                 </div>
             </div>
         );

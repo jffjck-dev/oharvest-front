@@ -7,7 +7,7 @@ import './CropTable.scss';
 const CropTable = ({data}) => {
     return (
         <section className="crop-table">
-            <table>
+            {(data.length > 0) && (<table>
                 <caption className="crop-table__title">
                     Listes des produits disponibles par parcelle
                 </caption>
@@ -18,7 +18,7 @@ const CropTable = ({data}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(row => (
+                    {data && data.map(row => (
                         <tr key={row.id} className="crop-table__row">
                             <td className="crop-table__row-sector">
                                 {row.name}
@@ -33,7 +33,8 @@ const CropTable = ({data}) => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table>)}
+            {(data.length === 0) && <p className="crop-table__empty-notif">Aucun produit disponible à la cueillette 😢</p>}
         </section>
     );
 };

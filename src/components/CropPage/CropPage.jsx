@@ -3,12 +3,14 @@ import axios from 'axios';
 import CropPlan from './CropPlan/CropPlan';
 import CropTable from './CropTable/CropTable';
 import Loading from '../UI/Loading/Loading';
+import Error from '../UI/Error/Error';
 
 import './CropPage.scss';
 
 const CropPage = () => {
-    const [isLoading, setIsLoading] = useState(true);
     const [plots, setPlots] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     const url = 'http://kevin-hesse-server.eddi.cloud/api';
 
@@ -21,7 +23,11 @@ const CropPage = () => {
                     setPlots(newArray);
                     setIsLoading(false);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => {
+                    console.log(err);
+                    setError(true);
+                    setIsLoading(false);
+                });
         }, 3000);
     }, []);
 
@@ -29,7 +35,8 @@ const CropPage = () => {
         <section>
             <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
-            {!isLoading && 
+            {error && <Error />}
+            {(!isLoading && !error) &&
             <>
                 <CropPlan data={plots} />
                 <CropTable data={plots} />
