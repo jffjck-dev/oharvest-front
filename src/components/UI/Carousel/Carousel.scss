@@ -84,6 +84,10 @@
     box-shadow: 0 0 0.3rem black;
     padding: 0;
     margin-bottom: .5rem;
+
+    &:hover {
+      box-shadow: 0 0 0.5rem black;
+    }
   }
 
   .highlight__tag--available,
@@ -92,4 +96,6 @@
     font-size: .7rem;
     margin-left: 1rem;
   }
+
+
 }
