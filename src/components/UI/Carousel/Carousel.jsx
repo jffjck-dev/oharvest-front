@@ -75,7 +75,7 @@ const Carousel = ({products, category, title}) => {
                             products.map((product) => (
                                 <div key={product.id} className="highlight__div">
                                     <div>
-                                        <Link to={`/products/${product.id}`}>
+                                        <Link to={`/products/${product.id}`} title="cliquer pour vous diriger vers la fiche produit correspondant" aria-label="cliquer pour vous diriger vers la fiche produit correspondant">
                                             <img className="highlight__card" src={`http://kevin-hesse-server.eddi.cloud/images/${product.image}`} alt={`${product.image}`} />
                                         </Link>
                                     </div>
