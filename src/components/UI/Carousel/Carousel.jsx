@@ -91,13 +91,13 @@ const Carousel = ({products, category, title}) => {
 };
 
 Carousel.propTypes = {
-    products: PropTypes.arrayOf([
+    products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
         }).isRequired,
-    ]).isRequired,
+    ),
     category: PropTypes.exact({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
