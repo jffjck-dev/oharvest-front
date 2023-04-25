@@ -13,6 +13,7 @@
   border: 1px solid darkgreen;
   color: darkgreen;
   box-shadow: 0 0 0.3rem black;
+  margin-left: .2rem;
 }
 
 .highlight__tag--unavailable {
@@ -23,6 +24,7 @@
   border: 1px solid darkred;
   color: darkred;
   box-shadow: 0 0 0.3rem black;
+  margin-left: .2rem;
 }
 
 @media screen and (max-width: 425px) {
