@@ -36,6 +36,13 @@
 
         &-products {
             display: flex;
+            flex-direction: row
         }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    crop-table__row-products {
+        flex-direction: column;
     }
 }

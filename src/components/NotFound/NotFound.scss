@@ -23,11 +23,10 @@
   }
 
   .notfound__section {
-    height: 32rem;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .notfound__section-img {
@@ -45,6 +44,7 @@
   .notfound__return {
     display: flex;
     justify-content: space-around;
+    margin: .5rem;
   }
 
   .notfound__return-link {

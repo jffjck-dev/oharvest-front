@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import fr from 'date-fns/locale/fr';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from 'react-router-dom';
 
 import './ReservationCalendar.scss';
 
@@ -110,9 +111,11 @@ Utility function
                         </option>
                     </select>
                     {selectedTimeSlot && (
-                        <button className="calendar__button" onClick={handleReserve}>
-                        Réserver la date et le créneau sélectionnés
-                        </button>
+                        <Link to="#">
+                            <button className="calendar__button" onClick={handleReserve}>
+                                Réserver la date et le créneau sélectionnés
+                            </button>
+                        </Link>
                     )}
                 </>
             )}
