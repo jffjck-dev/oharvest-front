@@ -7,7 +7,7 @@
 /* Mobile responsive (320px-425px) */
 @media only screen and (max-width: 425px) {
     .theme__title {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 1rem;
     }
 
@@ -53,7 +53,7 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .theme__title {
-        font-size: 2rem;
+        font-size: 1.7rem;
         padding: 2rem;
     }
     .theme h3 {
@@ -93,7 +93,14 @@
     }
 
     .calendar {
-        margin-top: 5rem;
+        margin-top: 3rem;
+    }
+    .theme__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 60vw;
     }
     
 }
@@ -115,7 +122,7 @@
 }
 
 .theme__container-spring {
-    border: 1px solid vars.$spring-color;
+    border: 2px solid vars.$spring-color;
     border-radius: 10px;
     padding: 0.4rem;
     margin-top: 0.7rem;
@@ -126,12 +133,12 @@
     text-align: center;
     color: rgb(255, 255, 255);
     margin-top: 0.4rem;
-    background-color: vars.$spring-color;  
+    background: radial-gradient(vars.$spring-color, hsla(110, 52%, 45%, 0.300)); 
     border-radius: 10px;
 }
 
 .theme__container-summer {
-    border: 1px solid vars.$summer-color;
+    border: 2px solid vars.$summer-color;
     border-radius: 10px;
     padding: 0.4rem;
     margin-top: 0.7rem;
@@ -142,12 +149,12 @@
     text-align: center;
     color: white;
     margin-top: 0.4rem;
-    background-color: vars.$summer-color; 
+    background: radial-gradient(vars.$summer-color, hsl(29, 78%, 51%, 0.300));  
     border-radius: 10px;
 }
 
 .theme__container-automn {
-    border: 1px solid vars.$automn-color;
+    border: 2px solid vars.$automn-color;
     border-radius: 10px;
     padding: 0.4rem;
     margin-top: 0.7rem;
@@ -159,7 +166,7 @@
     text-align: center;
     color: white;
     margin-top: 0.4rem;
-    background-color: vars.$automn-color;  
+    background: radial-gradient(vars.$automn-color, hsl(27, 71%, 25%, 0.300));  
     border-radius: 10px;
 }
 
