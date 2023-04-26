@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import { Link } from 'react-router-dom';
 import fr from 'date-fns/locale/fr';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Link } from 'react-router-dom';
 
 import './ReservationCalendar.scss';
 
@@ -100,30 +100,24 @@ Utility function
                             onChange={handleTimeSlotChange}
                             className="calendar__select"
                         >
-                            <option value="">Choisissez un créneau horaire</option>
-                            <option
-                                value="morning"
-                                disabled={isTimeSlotReserved(selectedDate, 'morning')}
-                            >
-                        Matin
-                            </option>
-                            <option
-                                value="afternoon"
-                                disabled={isTimeSlotReserved(selectedDate, 'afternoon')}
-                            >
-                        Après-midi
-                            </option>
-                        </select>
-                        {selectedTimeSlot && (
-                            <Link to="/reservation/inscription">
-                                <button className="calendar__button" onClick={handleReserve}>
-                                Réserver la date et le créneau sélectionnés
-                                </button>
-                            </Link>
-                        )}
-                    </div>
-                )}
-            </div>
+                    Matin
+                        </option>
+                        <option
+                            value="afternoon"
+                            disabled={isTimeSlotReserved(selectedDate, 'afternoon')}
+                        >
+                    Après-midi
+                        </option>
+                    </select>
+                    {selectedTimeSlot && (
+                        <Link to="/reservation/inscription">
+                            <button className="calendar__button" onClick={handleReserve}>
+                            Réserver la date et le créneau sélectionnés
+                            </button>
+                        </Link>
+                    )}
+                </>
+            )}
         </div>
     );
 };

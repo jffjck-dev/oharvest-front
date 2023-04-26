@@ -1,5 +1,7 @@
 @use "../../styles/vars";
 
+// Mobile size
+
 .formpage__title {
   text-align: center;
   font-size: 1.5rem;
@@ -15,11 +17,11 @@
   display: flex;
   flex-direction: column;
 
-  label {
+  & label {
     margin: 15px 0 5px 0;
   }
 
-  input {
+  & input {
     height: 1.5rem;
     border-radius: 0.5rem;
   }
@@ -44,36 +46,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-input {
-  display: block;
-  width: 15rem;
+  & input {
+    display: block;
+    width: 15rem;
+  }
 }
 
 .formpage__textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-textarea {
+  & textarea {
     border-radius: 0.5rem;
+  }
 }
 
 .formpage__btn {
-    width: 40%;
-    margin: auto;
-    border-radius: 1rem;
-    height: 2rem;
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: vars.$primary-color;
-    color: vars.$background-color;
+  width: 40%;
+  margin: auto;
+  border-radius: 1rem;
+  height: 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: vars.$primary-color;
+  color: vars.$background-color;
 }
 
-/* Tablet responsive (425px-1024px) */
+/* Tablet responsive (680px-1024px) */
 /* If width > or = 425 pixels */
 
 @media only screen and (min-width: 680px) {
@@ -92,23 +94,18 @@ textarea {
     }
   }
 
-  input {
-    height: 1.5rem;
-    border-radius: 0.5rem;
-}
-
   .formpage__input-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    label {
+    & label {
       font-size: 1rem;
       vertical-align: middle;
       height: 1.8rem;
     }
 
-    input {
+    & input {
       width: 50%;
     }
   }
@@ -118,7 +115,7 @@ textarea {
     flex-direction: row;
     justify-content: space-between;
 
-    textarea {
+    & textarea {
       width: 50%;
     }
   }
