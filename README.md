@@ -1,9 +1,9 @@
 ![oharvest](./src/assets/logo_oharvest_transparent.png)
-# Projet O'HARVEST (Front)
+# O'HARVEST PROJECT (Front)
 ---
-## Création du projet 
+## Project Creation 
 ---
-#### Initialisation avec Vite
+#### Initialization with Vite
 ```
 # npm 7+, extra double-dash is needed:
 npm create vite@latest . -- --template react
@@ -12,7 +12,7 @@ npm create vite@latest . -- --template react
 yarn create vite . --template react
 ```
 
-#### Activer la config eslint
+#### Activate the eslint config 
 
 ```
 #yarn
@@ -22,7 +22,7 @@ yarn init @eslint/config
 npm init @eslint/config
 ```
 ---
-## Responsive
+## Responsive format
 ---
 
 #### Mobile widht: 320px - 425px
@@ -50,42 +50,52 @@ npm init @eslint/config
 ```
 
 ---
-## Travailler sur une nouvelle fonctionnalité
+## Work on a new feature
 ---
-On se place sur la branche `dev` :
+Be placed on `dev` branch:
 ```
 git checkout dev
 ```
 
-On crée une nouvelle branche pour développer la nouvelle fonctionnalité :
+Create a new branch to work on a new feature :
 ```
-git checkout -b feat/<nom-de-la-fonctionnalité>
+git checkout -b feat/feature-name>
 ```
 Pour les noms des branches:
 ❌ ~~CamelCase ou pascalCase~~
 ✅ **snake_case**
 
-Pour les commits, la convention est de commencer pour les:
-- `config:` pour tous ce qui concerne des fichiers de configuration
-- `doc:` pour tous ce qui concerne de la documentation
-- `feat:` pour l'ajout de fonctionnalités
+### ! Name branch !
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
+
+ ---
+## Commits name:
+- `config:` When configuration is changed
+- `feat:` When adding new feature or new styles
+- `fix:` When bug is resolved
+- `doc:` When documentation is update
+- `refacto:` When refactoring
 - `style:` pour tous ce qui concerne le style
-- `fix:` pour résoudre un bug
-- `refacto:` pour le refactoring
 - `merge:` pour les merges et résolution de conflit
 - `prod:` pour les mises en production (merge de dev dans main)
 - `hotfix:` pour résoudre un bug sur main
 
-Puis d'expliquer en quelques mots le travail réalisé (mentionner les composants/fichiers sur lesquel vous avez travailler)
+Then explain in a few words the work done (mention the components/files on which you worked).
+ ---
 
-Une fois le développement terminé et commité, on fait récupère les eventuelles modif:
+Once the development is finished and committed, we recover any modifications:
+
 ```
-git pull origin feat/<nom-de-la-fonctionnalité>
+git pull origin feat/<name-feature>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
-On résoud les conflits et commit.
+We resolve conflicts.
 
-Une fois les conflits résolus, on fait une demande de pull request sur **GitHub**, de la branche `feat/<nom-de-la-fonctionnalité>` dans la branche `dev`.
+Once the conflicts are resolved, we make a pull request on **GitHub**, from the `feat/<feature-name>` branch in the `dev` branch.
 
-Une fois que les fonctionnalités on été rassemblés dans la branche `dev` et les bugs corrigés, 
-on fait une demande de pull request sur **GitHub**, de la branche `dev` dans la branche `prod`.
+Once the features have been collected in the `dev` branch and the bugs fixed,
+we make a pull request on **GitHub**, from the `dev` branch in the `prod` branch.

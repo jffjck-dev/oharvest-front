@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import './CalendarHarvest.scss';
 
-//Calendar harvest product per month
+/**
+ * Calendar harvest product per month
+ */
 const CalendarHarvest = ({startingDate, endingDate}) => {
-    const startingMonth = new Date(startingDate).getMonth(); //0
-    const endingMonth = new Date(endingDate).getMonth(); //5
 
     const calendar = [];
 
-    for (let index = 0; index < 12; index++) {
-        if(index >= startingMonth && index <= endingMonth){
+    for (let index = 1; index <= 12; index++) {
+        if(index >= startingDate && index <= endingDate){
             calendar.push({id: index, status: 'available'});
         } else {
             calendar.push({id: index, status: 'unavailable'});
@@ -49,8 +49,8 @@ const CalendarHarvest = ({startingDate, endingDate}) => {
 
 // Props validation
 CalendarHarvest.propTypes = {
-    startingDate: PropTypes.string.isRequired,
-    endingDate: PropTypes.string.isRequired,
+    startingDate: PropTypes.number.isRequired,
+    endingDate: PropTypes.number.isRequired,
 };
 
 export default CalendarHarvest;

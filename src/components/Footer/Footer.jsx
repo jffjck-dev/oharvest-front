@@ -34,11 +34,13 @@ const Footer = () => {
 
     return (
         <>
-            <p aria-hidden style={{textAlign: 'center'}}>🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾</p>
-            <footer className='footer'>
-                <a className='footer__link' href='#' onClick={openAboutUsModal}>Qui sommes-nous ?</a>
-                <a className='footer__link' href='#'>Copyright © {now.getFullYear()}</a>
-                <a className='footer__link' href='#' onClick={openCGUModal}>CGU</a>
+            <p className="footer__emoji-line" aria-hidden>🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾🌾</p>
+            <footer className="footer">
+                <ul className="footer__list">
+                    <li className="footer__list-item"><button type="button" title="découvrez qui nous sommes en clickant" aria-label="cliquez pour découvrir qui nous sommes" onClick={openAboutUsModal}>Qui sommes-nous ?</button></li>
+                    <li className="footer__list-item">© {now.getFullYear()} • made with 🧡</li>
+                    <li className="footer__list-item"><button style={{border: 'none', background: 'none'}} type="button" title="découvrez les CGU en cliquant" aria-label="cliquez pour lire nos CGU" onClick={openCGUModal}>CGU</button></li>
+                </ul>
                 <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
                     {isAboutUsOn && <AboutUs />}
                     {isCGUOn && <CGU />}

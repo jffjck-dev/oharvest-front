@@ -10,7 +10,7 @@ const Message = () => {
 
     useEffect(() => {
         const currentTime = new Date();
-        (currentTime.getHours() > 9 && currentTime.getHours() < 18) && setIsHarvestOpen(true);
+        (currentTime.getHours() >= 9 && currentTime.getHours() < 18) && setIsHarvestOpen(true);
     }, []);
 
     return (

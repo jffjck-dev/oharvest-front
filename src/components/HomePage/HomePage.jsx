@@ -4,11 +4,14 @@ import Carousel from '../UI/Carousel/Carousel.jsx';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import Loading from '../UI/Loading/Loading';
+import Message from '../Message/Message';
+import Error from '../UI/Error/Error';
 
 const Home = () => {
 
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     let url = 'http://kevin-hesse-server.eddi.cloud/api';
 
@@ -20,14 +23,20 @@ const Home = () => {
                     setProducts(response.data);
                     setIsLoading(false);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => {
+                    console.log(err);
+                    setIsLoading(false);
+                    setError(true);
+                });
         }, 3000);
     }, []);
 
     return (
         <>
+            <Message />
             {isLoading && <Loading />}
-            {!isLoading && <Carousel products={products} title="Produits disponibles" />}
+            {error && <Error />}
+            {(!isLoading && !error) && <Carousel products={products} title="Produits disponibles" />}
             <Welcome />
             <ContactSection />
         </>

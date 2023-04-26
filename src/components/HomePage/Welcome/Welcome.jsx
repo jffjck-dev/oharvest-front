@@ -1,5 +1,6 @@
 import React from 'react';
 import './Welcome.scss';
+import farmview from '../../../assets/farm.png';
 
 /**
  * Welcome section with an image and the title inside
@@ -7,10 +8,8 @@ import './Welcome.scss';
 const Welcome = () => {
     return (
         <section className='welcome'>
-            <img className='welcome__img' src='https://cdn.pixabay.com/photo/2020/04/06/11/22/seedling-5009286_960_720.jpg' alt='legumes'></img>
-            
-            <h2 className='welcome__title'>BIENVENUE À LA CUEILLETTE O'HARVEST</h2>
-
+            <img className='welcome__img' src={farmview} alt='legumes'></img>
+            <h2 className='welcome__title'>BIENVENUE À LA CUEILLETTE</h2>
             <div className='welcome__description'>
                 <p>Lorem Elsass ipsum munster eget gewurztraminer ac pellentesque Yo dû.
                 tristique geht's wie kougelhopf ac mamsell id, leo messti de Bischheim gal barapli risus, réchime

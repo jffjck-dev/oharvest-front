@@ -1,52 +1,23 @@
 @use '../../../styles/vars';
 
 /* ------------------------------------------------------ */
-/* Responsive CSS */
+/* Mobile (max 526px) */
 /* ------------------------------------------------------ */
 
-/* Mobile responsive (320px-425px) */
-/* If width < or = 425 pixels */
-@media only screen and (max-width: 425px) {
-    .welcome__img {
-        width: 14rem;
-    }
-}
-
-/* Tablet responsive (425px-1024px) */
-/* If width > or = 425 pixels */
-@media only screen and (min-width: 425px) {
-    .welcome__img {
-        width: 30rem;
-    }
-}
-
-/* Desktop responsive (1024px-1440px) */
-/* If width > or = 1024 pixels */
-@media only screen and (min-width: 1024px) {
-    .welcome__img {
-        width: 40rem;
-    }
-}
-
-/* ------------------------------------------------------ */
-/* Commun CSS */
-/* ------------------------------------------------------ */
 .welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .welcome__img {
-    height: auto;
-    border-radius: 10px;
+    width: 100vw;
 }
 
 .welcome__title {
-    padding: 0.4rem;
-    font-size: 2.2rem;
+    text-align: center;
+    font-size: 2rem;
     color: vars.$primary-color;
-    border-radius: 10px;
-    padding: 1rem;
     margin-top: 1rem;
 
     border-bottom: 10px solid #3b8c6e;
@@ -58,4 +29,20 @@
 .welcome__description {
     margin: 1rem;
     text-align: center;
+}
+
+/* ------------------------------------------------------ */
+/* DESKTOP (min 1024px) */
+/* ------------------------------------------------------ */
+
+@media only screen and (min-width: 1024px) {
+    .welcome__img {
+        width: 100%;
+    }
+
+    .welcome__title {
+        width: 100%;
+        font-size: 5rem;
+        padding-bottom: 3.2rem;
+    }
 }

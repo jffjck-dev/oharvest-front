@@ -1,0 +1,36 @@
+@use '../../styles/vars';
+
+.products-list__page-title {
+  font-size: 2rem;
+  font-family: vars.$title-font;
+  text-align: center;
+  border-bottom: 10px solid #3b8c6e;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-radius: 50%;
+}
+
+.products-list-page__button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: vars.$secundary-color;
+  color: white;
+  padding: .5rem;
+  border: vars.$primary-border;
+  box-shadow: 0 0 .3rem black;
+  transition: .3s;
+
+  &:hover {
+    box-shadow: 0 0 .3rem darkorange;
+    color: orange;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .products-list__page-title {
+    font-size: 3rem;
+  }
+}

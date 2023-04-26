@@ -5,21 +5,20 @@ import './Variety.scss';
 
 
 //Variety for each product
-const Variety = ({name}) => { //!feature !!!!!!!!!!!!!!!!!!!!
+const Variety = ({nameVariety, descVariety}) => {
 
     return (
         <div className='variety'>
-            <h2 className='variety__title' >Nos variétés</h2>
-            <h3 className='variety__name'>{name}</h3>
-            {/* <p className='variety__description'>{feature}</p> */}
+            <h3 className='variety__name'>{nameVariety}</h3>
+            <p className='variety__description'>{descVariety}</p>
         </div>
     );
 };
 
 // Props validation
 Variety.propTypes = {
-    name: PropTypes.string,
-    /* feature: PropTypes.string.isRequired, */ //! props !!!!!!!!!!!!!!!!!!
+    nameVariety: PropTypes.string,
+    descVariety: PropTypes.string,
 };
 
 export default Variety;
