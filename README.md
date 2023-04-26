@@ -89,6 +89,9 @@ Once the development is finished and committed, we recover any modifications:
 ```
 git pull origin feat/<name-feature>
 ```
+Pour les noms des branches:
+❌ ~~CamelCase ou pascalCase~~
+✅ **snake_case**
 
 We resolve conflicts.
 
