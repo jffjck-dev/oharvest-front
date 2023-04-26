@@ -109,7 +109,6 @@ Utility function
      */
     const isTimeSlotReserved = (date, timeSlot) => {
         const selectedDate = reservedSlots.find((reserved) => reserved.date.toDateString() === date.toDateString());
-
         return (
             selectedDate && selectedDate.timeSlot === timeSlot
         );
