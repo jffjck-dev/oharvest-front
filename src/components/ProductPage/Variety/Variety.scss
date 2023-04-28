@@ -8,12 +8,12 @@
 @media only screen and (max-width: 425px) {
     .variety__name {
         padding: 1rem 1.6rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .variety__description {
         margin: 1rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -26,7 +26,7 @@
 
     .variety__description {
         margin: 1.4rem;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -34,12 +34,12 @@
 @media only screen and (min-width: 1024px) {
     .variety__name {
         padding: 1rem 3rem;
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .variety__description {
         margin: 1.4rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -57,7 +57,8 @@
     text-align: center;
     color: white;
     margin-top: 1rem;
-    background-color: vars.$alternative-color;  
+    background: radial-gradient(vars.$secundary-color, vars.$primary-color);
+
     border-radius: 10px;
     text-transform: capitalize;
 }

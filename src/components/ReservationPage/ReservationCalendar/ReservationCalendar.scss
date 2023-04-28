@@ -7,19 +7,19 @@
 /* Mobile responsive (320px-425px) */
 @media only screen and (max-width: 425px) {
     .calendar__title {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 1rem;
     }
 
     .calendar__description {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }
 
 /* Tablet responsive (425px-1024px) */
 @media only screen and (min-width: 425px) {
     .calendar__title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;;
         padding: 1.5rem;
     }
 
@@ -47,7 +47,7 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .calendar__title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         padding: 2rem;
     }
     .calendar__description {
@@ -67,6 +67,21 @@
     .react-datepicker__day--outside-month {
         width:5rem; //Day on number
     }
+    .calendar__container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container_reservation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container__desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 /* ------------------------------------------------------ */
@@ -80,10 +95,11 @@
 
 .calendar__title {
     text-align: center;
-    color: vars.$primary-color;
-    background-color: vars.$secundary-color;  
-    border-radius: 10px;
-    margin-top: 1rem;
+    border-bottom: 10px solid vars.$alternative-color;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem;
+    border-radius: 50%;
+    margin-top: 2rem;
 }
 
 .calendar__description {
@@ -117,6 +133,9 @@
 /* ------------------------------------------------------ */
 //Calendar general
 .react-datepicker {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background-color: white;

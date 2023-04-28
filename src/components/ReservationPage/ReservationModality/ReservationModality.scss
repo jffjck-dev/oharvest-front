@@ -7,20 +7,21 @@
 /* Mobile responsive (320px-425px) */
 @media only screen and (max-width: 425px) {
     .modality__title {
-        font-size: 1rem;
+        font-size: 1.6rem;
         padding: 1rem;
+        margin-top: 1.4rem;
     }
 
     .modality__description {
         margin: 1rem;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
 
 /* Tablet responsive (425px-1024px) */
 @media only screen and (min-width: 425px) {
     .modality__title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         padding: 1.5rem;
     }
 
@@ -33,7 +34,7 @@
 /* Desktop responsive (1024px-1440px) */
 @media only screen and (min-width: 1024px) {
     .modality__title {
-        font-size: 2rem;
+        font-size: 2.2rem;
         padding: 2rem;
     }
 
@@ -55,10 +56,10 @@
 
 .modality__title {
     text-align: center;
-    color: vars.$primary-color;
-    background-color: vars.$secundary-color;  
-    border-radius: 10px;
-    margin-top: 1rem;
+    border-bottom: 10px solid vars.$alternative-color;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem;
+    border-radius: 50%;
 }
 
 .modality__description {
