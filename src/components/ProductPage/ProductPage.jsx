@@ -11,7 +11,7 @@ import Tips from './Tips/Tips';
 import Loading from '../UI/Loading/Loading';
 
 import './ProductPage.scss';
-import Message from '../Message/Message.jsx';
+import Notification from '../Notification/Notification.jsx';
 
 /* 
 |* Container component for the Product page(Banner/CalendarHArvest/Particularity/Variety/Tips)
@@ -44,7 +44,7 @@ const ProductPage = () => {
         <>
             {isLoading && <Loading /> }
             {!isLoading && (<>
-                <Message />
+                <Notification />
                 <h2 className="crop-page__page-title">Fiche Produit</h2>
                 <Banner name={product.name} image={product.image} />
                 <Availablity tag={product.isAvailable}/>

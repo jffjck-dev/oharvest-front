@@ -4,7 +4,7 @@ import Carousel from '../UI/Carousel/Carousel.jsx';
 import Welcome from './Welcome/Welcome';
 import ContactSection from './ContactSection/ContactSection';
 import Loading from '../UI/Loading/Loading';
-import Message from '../Message/Message';
+import Notification from '../Notification/Notification.jsx';
 import Error from '../UI/Error/Error';
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
 
     return (
         <>
-            <Message />
+            <Notification />
             {isLoading && <Loading />}
             {error && <Error />}
             {(!isLoading && !error) && <Carousel products={products} title="Produits disponibles" />}

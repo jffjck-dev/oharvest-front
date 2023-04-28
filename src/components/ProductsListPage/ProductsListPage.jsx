@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Carousel from '../UI/Carousel/Carousel.jsx';
-import Message from '../Message/Message';
+import Notification from '../Notification/Notification.jsx';
 import Loading from '../UI/Loading/Loading';
 import Error from '../UI/Error/Error';
 
@@ -51,7 +51,7 @@ const ProductsListPage = () => {
 
     return (
         <>
-            <Message />
+            <Notification />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
             {(!isLoading && !error) && <button className="products-list-page__button" onClick={filterProducts}>
                 se limiter aux produits de saison

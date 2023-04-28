@@ -6,6 +6,7 @@ import Loading from '../UI/Loading/Loading';
 import Error from '../UI/Error/Error';
 
 import './CropPage.scss';
+import Notification from '../Notification/Notification.jsx';
 
 const CropPage = () => {
     const [plots, setPlots] = useState([]);
@@ -33,6 +34,7 @@ const CropPage = () => {
 
     return (
         <section>
+            <Notification />
             <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
             {error && <Error />}

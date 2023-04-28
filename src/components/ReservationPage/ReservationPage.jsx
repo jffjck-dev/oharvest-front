@@ -4,7 +4,6 @@ import ReservationHeader from './ReservationHeader/ReservationHeader';
 import ReservationModality from './ReservationModality/ReservationModality';
 import ReservationTheme from './ReservationTheme/ReservationTheme';
 import ReservationCalendar from './ReservationCalendar/ReservationCalendar';
-import Message from '../Message/Message.jsx';
 
 
 //Container ReservationPage (Header/Theme/Modality/Calendar)
