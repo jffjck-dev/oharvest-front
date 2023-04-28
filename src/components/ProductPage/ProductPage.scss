@@ -1,1 +1,18 @@
 @use "../../styles/vars";
+.products-page__button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: vars.$secundary-color;
+  color: white;
+  padding: .5rem;
+  border: vars.$primary-border;
+  box-shadow: 0 0 .3rem black;
+  transition: .3s;
+
+  &:hover {
+    box-shadow: 0 0 .3rem darkorange;
+    color: orange;
+  }
+}
