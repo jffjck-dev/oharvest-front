@@ -1,32 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const FormPage = () => {
+    const [inscriptionDone, setInscriptionDone] = useState(false);
+    const [error, setError] = useState(false);
+    const [searchParams] = useSearchParams();
+    const naviguate = useNavigate();
+
+    const timeslot = searchParams.get('slot');
+    const date = new Date(searchParams.get('date'));
+    const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
+    const url = 'http://kevin-hesse-server.eddi.cloud/api';
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = (data, event) => {
+        event.preventDefault();
+        axios.post(`${url}/bookings`, {
+            ...data,
+            studentNumber: Number(data.studentNumber),
+            guideNumber: Number(data.guideNumber),
+            groupNumber: Number(data.groupNumber),
+            slot: timeslot,
+            visitAt,
+        })
+            .then(function (response) {
+                console.log(response.data);
+                setError(false);
+                setInscriptionDone(true);
+                setTimeout(() => {
+                    naviguate('/');
+                }, 5000);
+            })
+            .catch(function (error) {
+                console.log(error);
+                setError(true);
+            });
     };
 
     return (
         <div>
             <h2 className="formpage__title">
-        Formulaire de réservation pour la visite
+                Formulaire de réservation pour la visite
             </h2>
             <form action="" className="formpage" onSubmit={handleSubmit(onSubmit)}>
                 <div className="formpage__resa-div">
                     <h3 className="formpage__resa">Heure et jour de votre reservation</h3>
-                    <p>Date :</p>
-                    <p>Heure :</p>
+                    <p>Date : {date.toLocaleDateString()}</p>
+                    <p>Créneau : {timeslot === 'morning' ? 'Matin' : 'Après-midi'}</p>
                 </div>
 
                 <div className="formpage__input-group">
-                    <label htmlFor="name">Nom de l'Etablissement</label>
+                    <label htmlFor="name">Nom de l&apos;Etablissement</label>
                     <input
                         type="text"
                         name="name"
@@ -44,9 +76,9 @@ const FormPage = () => {
                     <label htmlFor="adress">Adresse postale</label>
                     <input
                         type="text"
-                        name="adress"
-                        id="adress"
-                        {...register('adress', {
+                        name="address"
+                        id="address"
+                        {...register('address', {
                             pattern: {
                                 value: /^[A-Za-z 0-9]+$/i,
                                 message: 'Format non valide',
@@ -59,11 +91,11 @@ const FormPage = () => {
                     <label htmlFor="code">Code postal</label>
                     <input
                         type="number"
-                        name="code"
-                        id="code"
-                        {...register('code', {
+                        name="zipcode"
+                        id="zipcode"
+                        {...register('zipcode', {
                             pattern: {
-                                value: /^[0-9]+$/,
+                                value: /^(0[1-9][0-9]{3}|[1-8][0-9]{4}|9[0-6][0-9]{3}|97[1-8][0-9]{2}|98[46-9][0-9]{2})$/,
                                 message: 'Format non valide',
                             },
                             maxLength: {
@@ -96,8 +128,8 @@ const FormPage = () => {
                         name="phone"
                         id="phone"
                         {...register('phone', {
-                            maxLength: {
-                                value: 10,
+                            pattern: {
+                                value: /^(?:(?:\+|00)33[\s.]{0,3}(?:\(0\)[\s.]{0,3})?|0)[1-9](?:(?:[\s.]?\d{2}){4}|\d{2}(?:[\s.]?\d{3}){2})$/,
                                 message: 'Format non valide',
                             },
                         })}
@@ -108,11 +140,11 @@ const FormPage = () => {
                     <label htmlFor="mail">Adresse Email responsable visite</label>
                     <input
                         type="email"
-                        name="email"
-                        id="email"
-                        {...register('email', {
+                        name="mail"
+                        id="mail"
+                        {...register('mail', {
                             pattern: {
-                                value: /\S+@\S+\.\S+/,
+                                value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                                 message: 'Format d\'email non valide'
                             }
                         })}
@@ -120,12 +152,12 @@ const FormPage = () => {
                     {errors.email && <span>{errors.email.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="teacher">Nom de l'enseignant/e </label>
+                    <label htmlFor="contact">Nom de l&apos;enseignant/e </label>
                     <input
                         type="text"
-                        name="teacher"
-                        id="teacher"
-                        {...register('teacher', {
+                        name="contact"
+                        id="contact"
+                        {...register('contact', {
                             pattern: {
                                 value: /^[A-Za-z]+$/i,
                                 message: 'Format non valide',
@@ -135,13 +167,13 @@ const FormPage = () => {
                     {errors.teacher && <span>{errors.teacher.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="student">Nombre d'élèves</label>
+                    <label htmlFor="studentNumber">Nombre d&apos;élèves</label>
                     <input
                         type="number"
-                        name="student"
-                        id="student"
+                        name="studentNumber"
+                        id="studentNumber"
                         inputMode="decimal"
-                        {...register('student', {
+                        {...register('studentNumber', {
                             pattern: {
                                 value: /^([1-9]|[1-4]\d|50)$/,
                                 message: 'Format non valide',
@@ -155,13 +187,13 @@ const FormPage = () => {
                     {errors.student && <span>{errors.student.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="guide">Nombre d'accompagnateurs</label>
+                    <label htmlFor="guideNumber">Nombre d&apos;accompagnateurs</label>
                     <input
                         type="text"
-                        name="guide"
-                        id="guide"
+                        name="guideNumber"
+                        id="guideNumber"
                         inputMode="decimal"
-                        {...register('guide', {
+                        {...register('guideNumber', {
                             pattern: {
                                 value: /^[0-9]+$/,
                                 message: 'Format non valide',
@@ -178,10 +210,10 @@ const FormPage = () => {
                     <label htmlFor="group">Nombre de groupes</label>
                     <input
                         type="number"
-                        name="group"
-                        id="group"
+                        name="groupNumber"
+                        id="groupNumber"
                         inputMode="decimal"
-                        {...register('group', {
+                        {...register('groupNumber', {
                             pattern: {
                                 value: /^[0-9]+$/,
                                 message: 'Format non valide',
@@ -212,23 +244,8 @@ const FormPage = () => {
                     ></textarea>
                     {errors.transport && <span>{errors.transport.message}</span>}
                 </div>
-                <div className="formpage__textarea">
-                    <label htmlFor="remarque">Remarques</label>
-                    <textarea
-                        name="remarque"
-                        placeholder="Pour toute information complémentaire"
-                        id="remarque"
-                        cols="30"
-                        rows="10"
-                        {...register('remarque', {
-                            pattern: {
-                                value: /^[A-Za-z- 0-9]+$/i,
-                                message: 'Erreur dans la saisie',
-                            }
-                        })}
-                    ></textarea>
-                    {errors.remarque && <span>{errors.remarque.message}</span>}
-                </div>
+                {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d&apos;accueil</p>}
+                {error && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}> ⚠️ Erreur API</p>}
                 <button className="formpage__btn">Réserver</button>
             </form>
         </div>
