@@ -15,7 +15,7 @@ import './Main.scss';
  * @returns {JSX.Element}
  */
 const Main = () => {
-    const APIurl = 'http://kevin-hesse-server.eddi.cloud/api';
+    const APIurl = import.meta.env.VITE_HARVEST_API_URL;
 
     return (
         <main className="content">

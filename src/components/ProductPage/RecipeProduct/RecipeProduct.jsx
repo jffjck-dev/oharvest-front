@@ -12,7 +12,8 @@ import Error from '../../UI/Error/Error.jsx';
  * @returns {JSX.Element}
  */
 const RecipeProduct = ({name}) => {
-    const { data: recipes, hasError, isLoading } = useFetch('http://antoineperal-server.eddi.cloud/recipe');
+    const foodAPIurl= import.meta.env.VITE_FOOD_API_URL;
+    const { data: recipes, hasError, isLoading } = useFetch(foodAPIurl);
 
     const filteredRecipes = recipes?.filter(recipe =>
         recipe.ingredient.some(ingredient => ingredient.label === name)
