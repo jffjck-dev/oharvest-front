@@ -12,15 +12,16 @@ const Notification = () => {
     const [weatherReport, setWeatherReport] = useState({});
 
     const position = {lat: 48.5771821, lon: 7.7488522};
-    const apiKey = '879e4eae86145d7fae32a2765b8e33a0';
-    const WeatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.lon}&appid=${apiKey}`;
+    const apiKey = import.meta.env.VITE_WEATHER_API_TOKEN;
+    const url = import.meta.env.VITE_WEATHER_API_URL;
+    const weatherAPIUrl = `${url}?lat=${position.lat}&lon=${position.lon}&appid=${apiKey}`;
 
     useEffect(() => {
         const currentTime = new Date();
         (currentTime.getHours() >= 9 && currentTime.getHours() < 18) && setIsHarvestOpen(true);
-
-        axios.get(WeatherAPIUrl)
+        axios.get(weatherAPIUrl)
             .then((response) => {
+                console.log(response.data);
                 setWeatherReport(response.data.weather[0]);
             })
             .catch((error) => console.log(error));
