@@ -28,3 +28,7 @@ TODO.txt
 *.njsproj
 *.sln
 *.sw?
+
+# custom
+
+.env.local
