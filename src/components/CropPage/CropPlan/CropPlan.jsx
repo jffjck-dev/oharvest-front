@@ -8,13 +8,18 @@ import UserMarker from './UserMarker';
 import './CropPlan.scss';
 import logo from '../../../assets/logo_oharvest_transparent.png';
 
-const CropPlan = ({data}) => {
+/**
+ * Map element localizing plots and products
+ * @param plots {array<Object>} plots data fetched from the API
+ * @returns {JSX.Element}
+ */
+const CropPlan = ({plots}) => {
     const position = [48.5771821, 7.7488522];
     const shop = [48.752859, 7.414099];
 
     return <Map position={position} zoom={15}>
         <LayersControl position="topright">
-            {data.map(plot => <Plot key={plot.id} plot={plot} />)}
+            {plots && plots.map(plot => <Plot key={plot.id} plot={plot} />)}
             <UserMarker />
             <Marker position={shop}>
                 <Popup><img className="popup__logo" src={logo} alt="logo O'Harvest" /></Popup>
@@ -24,7 +29,7 @@ const CropPlan = ({data}) => {
 };
 
 CropPlan.propTypes = {
-    data: PropTypes.arrayOf(
+    plots: PropTypes.arrayOf(
         PropTypes.exact({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,

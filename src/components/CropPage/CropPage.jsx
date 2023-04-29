@@ -1,50 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {useFetch} from '../../hooks/useFetch.js';
+import Notification from '../Notification/Notification.jsx';
 import CropPlan from './CropPlan/CropPlan';
 import CropTable from './CropTable/CropTable';
 import Loading from '../UI/Loading/Loading';
 import Error from '../UI/Error/Error';
 
 import './CropPage.scss';
-import Notification from '../Notification/Notification.jsx';
 
-const CropPage = () => {
-    const [plots, setPlots] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(false);
-
-    const url = 'http://kevin-hesse-server.eddi.cloud/api';
-
-    useEffect(() => {
-        setTimeout(() => {
-            axios
-                .get(url + '/plots/products')
-                .then((response) => {
-                    const newArray = response.data.filter(plot => plot.products.length > 0);
-                    setPlots(newArray);
-                    setIsLoading(false);
-                })
-                .catch((err) => {
-                    console.log(err);
-                    setError(true);
-                    setIsLoading(false);
-                });
-        }, 3000);
-    }, []);
+/**
+ * Page element displaying harvest plot geolocalized map and a table listing products per plot
+ * @param url API URL to fetch plots data
+ * @returns {JSX.Element}
+ */
+const CropPage = ({url}) => {
+    const {data, isLoading, hasError} = useFetch(url + '/plots/products');
+    console.log(data);
 
     return (
         <section>
             <Notification />
             <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
-            {error && <Error />}
-            {(!isLoading && !error) &&
+            {hasError && <Error />}
+            {(!isLoading && !hasError) && data &&
             <>
-                <CropPlan data={plots} />
-                <CropTable data={plots} />
+                <CropPlan plots={data} />
+                <CropTable plots={data} />
             </>}
         </section>
     );
 };
 
+CropPage.propTypes = {
+    url: PropTypes.string.isRequired,
+};
 export default CropPage;

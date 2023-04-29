@@ -7,6 +7,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.scss';
 
+/**
+ * UI element based on Slick Carousel library used to display products list per categories or only available products
+ * @param products {array<object>} products to display
+ * @param category {array<object>} product categories
+ * @param title {string} naming carousel if not using categories
+ * @param nbCardsToSHow {number} number of product to display per carousel
+ * @returns {JSX.Element}
+ */
 const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
     const settings = {
         dots: true,
@@ -94,6 +102,7 @@ Carousel.propTypes = {
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
+            isAvailable: PropTypes.bool.isRequired,
         }).isRequired,
     ),
     category: PropTypes.exact({

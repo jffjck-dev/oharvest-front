@@ -10,14 +10,20 @@ import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';
 
+/**
+ * Main section of a page. Content displayed depends on path parameter (base on React Router)
+ * @returns {JSX.Element}
+ */
 const Main = () => {
+    const APIurl = 'http://kevin-hesse-server.eddi.cloud/api';
+
     return (
         <main className="content">
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/map" element={<CropPage />} />
-                <Route path="/products/:id" element={<ProductPage />} />
-                <Route path="/products" element={<ProductsListPage />} />
+                <Route path="/" element={<HomePage url={APIurl} />} />
+                <Route path="/map" element={<CropPage url={APIurl} />} />
+                <Route path="/products" element={<ProductsListPage url={APIurl} />} />
+                <Route path="/products/:id" element={<ProductPage url={APIurl} />} />
                 <Route path="/reservation/inscription" element={<FormPage />} />
                 <Route path="/reservation" element={<ReservationPage />} />
                 <Route path='*' element={<NotFound />} />

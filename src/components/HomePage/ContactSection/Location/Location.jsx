@@ -5,6 +5,10 @@ import Map from '../../../UI/Map/Map';
 import logo from '../../../../assets/logo_oharvest_transparent.png';
 import './Location.scss';
 
+/**
+ * Map element that geolocalized the harvest
+ * @returns {JSX.Element}
+ */
 const Location = () => {
     const shop = [48.752859, 7.414099];
 

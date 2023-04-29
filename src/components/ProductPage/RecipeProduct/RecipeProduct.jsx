@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import PropTypes from 'prop-types';
+import {useFetch} from '../../../hooks/useFetch.js';
 
 import './RecipeProduct.scss';
 import Loading from '../../UI/Loading/Loading.jsx';
@@ -12,29 +12,9 @@ import Error from '../../UI/Error/Error.jsx';
  * @returns {JSX.Element}
  */
 const RecipeProduct = ({name}) => {
-    const [recipes, setRecipes] = useState([]);
-    const [error, setError] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
+    const { data: recipes, hasError, isLoading } = useFetch('http://antoineperal-server.eddi.cloud/recipe');
 
-    useEffect(() => {
-        setTimeout(() => {
-            const fetchData = async () => {
-                try {
-                    const response = await axios.get('http://antoineperal-server.eddi.cloud/recipe');
-                    setRecipes(response.data);
-                    setIsLoading(false);
-                } catch (error) {
-                    console.error('Erreur lors de la récupération des recettes : ' , error);
-                    setError(true);
-                    setIsLoading(false);
-                }
-            };
-            fetchData();
-        }, 3000);
-
-    }, []);
-
-    const filteredRecipes = recipes.filter(recipe =>
+    const filteredRecipes = recipes?.filter(recipe =>
         recipe.ingredient.some(ingredient => ingredient.label === name)
     );
 
@@ -42,8 +22,8 @@ const RecipeProduct = ({name}) => {
         <section className='recipe'>
             <h3 className='recipe__title'>Liste des recettes</h3>
             {isLoading && <Loading />}
-            {error && <Error />}
-            {(!error && !isLoading) && <ul className="recipe__list">
+            {hasError && <Error />}
+            {(!hasError && !isLoading) && filteredRecipes && <ul className="recipe__list">
                 {filteredRecipes.length > 0 ? (
                     filteredRecipes.map((recipe, index) => (
                         <li className="recipe__list-card" key={index}>

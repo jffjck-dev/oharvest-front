@@ -1,9 +1,11 @@
 import React from 'react';
+
 import './Welcome.scss';
 import farmview from '../../../assets/farm.png';
 
 /**
  * Welcome section with an image and the title inside
+ * @returns {JSX.Element}
  */
 const Welcome = () => {
     return (

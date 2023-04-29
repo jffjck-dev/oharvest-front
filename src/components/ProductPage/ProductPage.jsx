@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {useFetch} from '../../hooks/useFetch.js';
 import {Link, useParams} from 'react-router-dom';
 import Banner from './Banner/Banner';
 import Availablity from './Availablity/Availablity';
@@ -14,54 +15,40 @@ import Notification from '../Notification/Notification.jsx';
 import './ProductPage.scss';
 
 /**
- * Container component for the Product page(Banner/CalendarHarvest/Particularity/Variety/Tips)
+ * Page displaying product image, harvesting calendar, varieties, recipes, tips and tricks
+ * @param url API URL
  * @returns {JSX.Element}
  */
-const ProductPage = () => {
-    const [product, setProduct] = useState({});
-    const [isLoading, setisLoading] = useState(true);
+const ProductPage = ({url}) => {
     const { id } = useParams();
-    const url = 'http://kevin-hesse-server.eddi.cloud/api';
+    const {data, isLoading, hasError} = useFetch(url + `/products/${id}`);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try { 
-                const response = await axios.get(url + `/products/${id}`, { 
-                    headers: {
-                        'accept': 'application/json',
-                    },
-                });
-                setProduct(response.data);
-                setisLoading(false);
-            } catch (error) {
-                console.error('Erreur lors de la récupération des données:', error);
-            }
-        };
-        fetchData();
-    }, [id]);
-    
     return (
         <>
             {isLoading && <Loading /> }
-            {!isLoading && (<>
+            {(!isLoading && !hasError) && data && (<>
                 <Link to={'/products'}><button className="products-page__button" title="revenir à l'inventaire des produits" aria-label="revenir à l'inventaire des produits">précédent</button></Link>
                 <Notification />
                 <h2 className="crop-page__page-title">Fiche Produit</h2>
-                <Banner name={product.name} image={product.image} />
-                <Availablity tag={product.isAvailable}/>
-                <CalendarHarvest startingDate={product.harvestBeginAt} endingDate={product.harvestEndAt} />
-                {(product.category && product.category.name !== 'Fleur') && (
-                    <RecipeProduct name={product.name}/>
+                <Banner name={data.name} image={data.image} />
+                <Availablity tag={data.isAvailable}/>
+                <CalendarHarvest startingDate={data.harvestBeginAt} endingDate={data.harvestEndAt} />
+                {(data.category && data.category.name !== 'Fleur') && (
+                    <RecipeProduct name={data.name}/>
                 )}
-                <Particularity description={product.description}/>
+                <Particularity description={data.description}/>
                 <h3 className="crop-page__page-title">Liste des variétés</h3>
-                {product.variety.length === 0 && <p className="recipe__not-exist">Il n&apos;y a pas encore de variétés répertoriées !</p>}
-                {(product.variety.length > 0) && product.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
-                <Tips tip={product.tip}/>
+                {data.variety.length === 0 && <p className="recipe__not-exist">Il n&apos;y a pas encore de variétés répertoriées !</p>}
+                {(data.variety.length > 0) && data.variety.map(item => <Variety key={item.id} nameVariety={item.name} descVariety={item.description} />)}
+                <Tips tip={data.tip}/>
                 <Link to={'/products'}><button className="products-page__button" title="revenir à l'inventaire des produits" aria-label="revenir à l'inventaire des produits">précédent</button></Link>
             </>)}
         </>
     );
+};
+
+ProductPage.propTypes = {
+    url: PropTypes.string.isRequired,
 };
 
 export default ProductPage;
