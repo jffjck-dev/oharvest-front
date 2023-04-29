@@ -1,16 +1,19 @@
 import React from 'react';
 import Location from './Location/Location.jsx';
-import Horaire from './Horaire/Horaire';
+import OpeningHours from './OpeningHours/OpeningHours.jsx';
 import ContactInfo from './ContactInfo/ContactInfo';
 
 import './ContactSection.scss';
 
-/* Contient la googleMap, les horaires, ainsi que les contacts */
+/**
+ * Element holding location map, opening hours and contact infos
+ * @returns {JSX.Element}
+ */
 const ContactSection = () => {
     return (
         <section className="contact">
             <div className="container-flex">
-                <Horaire />
+                <OpeningHours />
                 <ContactInfo />
             </div>
             <Location />

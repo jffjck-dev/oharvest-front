@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 import './CalendarHarvest.scss';
 
 /**
- * Calendar harvest product per month
+ * Harvesting calendar of a product
+ * @param startingDate {number} starting month index
+ * @param endingDate {number} ending month index
+ * @returns {JSX.Element}
  */
 const CalendarHarvest = ({startingDate, endingDate}) => {
-
     const calendar = [];
 
     for (let index = 1; index <= 12; index++) {
@@ -47,7 +49,6 @@ const CalendarHarvest = ({startingDate, endingDate}) => {
     );
 };
 
-// Props validation
 CalendarHarvest.propTypes = {
     startingDate: PropTypes.number.isRequired,
     endingDate: PropTypes.number.isRequired,

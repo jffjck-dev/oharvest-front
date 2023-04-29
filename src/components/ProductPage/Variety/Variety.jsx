@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 
 import './Variety.scss';
 
-
-//Variety for each product
+/**
+ * Section element about one product variety
+ * @param nameVariety {string} name of the product variety
+ * @param descVariety {string} description of the product variety
+ * @returns {JSX.Element}
+ */
 const Variety = ({nameVariety, descVariety}) => {
 
     return (
@@ -15,7 +19,6 @@ const Variety = ({nameVariety, descVariety}) => {
     );
 };
 
-// Props validation
 Variety.propTypes = {
     nameVariety: PropTypes.string,
     descVariety: PropTypes.string,

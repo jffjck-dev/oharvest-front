@@ -4,10 +4,15 @@ import ProductTag from '../ProductTag/ProductTag';
 
 import './CropTable.scss';
 
-const CropTable = ({data}) => {
+/**
+ * Table element listing products per plot
+ * @param plots {array<object>} plots data fetched from the API
+ * @returns {JSX.Element}
+ */
+const CropTable = ({plots}) => {
     return (
         <section className="crop-table">
-            {(data.length > 0) && (<table>
+            {(plots.length > 0) && (<table>
                 <caption className="crop-table__title">
                     Listes des produits disponibles par parcelle
                 </caption>
@@ -18,7 +23,7 @@ const CropTable = ({data}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data && data.map(row => (
+                    {plots && plots.map(row => (
                         <tr key={row.id} className="crop-table__row">
                             <td className="crop-table__row-sector">
                                 {row.name}
@@ -34,13 +39,13 @@ const CropTable = ({data}) => {
                     ))}
                 </tbody>
             </table>)}
-            {(data.length === 0) && <p className="crop-table__empty-notif">Aucun produit disponible à la cueillette 😢</p>}
+            {(plots.length === 0) && <p className="crop-table__empty-notif">Aucun produit disponible à la cueillette 😢</p>}
         </section>
     );
 };
 
 CropTable.propTypes = {
-    data: PropTypes.arrayOf(
+    plots: PropTypes.arrayOf(
         PropTypes.exact({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,

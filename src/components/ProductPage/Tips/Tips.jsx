@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import './Tips.scss';
 
-//Tips component with event button
+/**
+ * Tips component with event button.
+ * @param tip {string} some tips about the product.
+ * @returns {JSX.Element}
+ */
 const Tips = ({tip}) => {
     const [showTips, setShowTips] = useState(false);
 
@@ -13,14 +17,14 @@ const Tips = ({tip}) => {
     }
 
     return (
-        <div className='tips' >
+        <section className='tips' >
             <button className="tips__button" onClick={handleButtonClick}>
                 Des astuces...?
             </button>
             <p className={`tips__text ${showTips ? 'visible' : 'hidden'}`}>
                 Voici quelques astuces pour vous aider...{tip}
             </p>
-        </div>
+        </section>
     );
 };
 

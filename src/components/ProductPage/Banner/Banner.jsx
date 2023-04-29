@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 
 import './Banner.scss';
 
-
-//Products image and title inside it
+/**
+ * Products image and title inside it
+ * @param image {string} product image URN
+ * @param name {string} product name
+ * @returns {JSX.Element}
+ */
 const Banner = ({image, name}) => {
     return (
         <div className="banner">
@@ -18,7 +22,6 @@ const Banner = ({image, name}) => {
     );
 };
 
-// Props validation
 Banner.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

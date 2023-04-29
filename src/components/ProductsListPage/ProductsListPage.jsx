@@ -1,66 +1,52 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { useFetch } from '../../hooks/useFetch.js';
 import Carousel from '../UI/Carousel/Carousel.jsx';
-import Message from '../Message/Message';
+import Notification from '../Notification/Notification.jsx';
 import Loading from '../UI/Loading/Loading';
 import Error from '../UI/Error/Error';
 
 import './ProductsListPage.scss';
+import PropTypes from 'prop-types';
 
-const ProductsListPage = () => {
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
+/**
+ * Page listing all products (possibility to filter according to their availability)
+ * @param url {string} API url used to fetch data
+ * @returns {JSX.Element}
+ */
+const ProductsListPage = ({url}) => {
     const [nbProductsPerCarousel, setNbProductsPerCarousel] = useState(4);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [isFilterOn, setIsFilterOn] = useState(false);
 
-    let url = 'http://kevin-hesse-server.eddi.cloud/api';
-
-    useEffect(() => {
-        axios
-            .get(url + '/products')
-            .then((response) => {
-                setProducts(response.data);
-            })
-            .catch((err) => {
-                console.log(err);
-                setError(true);
-                setIsLoading(false);
-            });
-
-        axios
-            .get(url + '/categories')
-            .then((response) => {
-                setCategories(response.data);
-                setIsLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-                setError(true);
-                setIsLoading(false);
-            });
-    }, []);
+    const { data: products, isLoading, hasError } = useFetch(url + '/products');
+    const { data: onlyAvailableProducts} = useFetch(url + '/products/available');
+    const { data: categories} = useFetch(url + '/categories');
 
     const filterProducts = () => {
-        const onlyAvailableProducts = products.filter(product => product.isAvailable === true );
-        setProducts(onlyAvailableProducts);
-        setNbProductsPerCarousel(2);
+        if (!isFilterOn) {
+            setIsFilterOn(true);
+            setNbProductsPerCarousel(2);
+        } else {
+            setIsFilterOn(false);
+            setNbProductsPerCarousel(4);
+        }
     };
-    
 
     return (
         <>
-            <Message />
+            <Notification />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
-            {(!isLoading && !error) && <button className="products-list-page__button" onClick={filterProducts}>
+            {(!isLoading && !hasError) && onlyAvailableProducts && <button className="products-list-page__button" onClick={filterProducts}>
                 se limiter aux produits de saison
             </button>}
             {isLoading && <Loading />}
-            {error && <Error />}
-            {(!isLoading && !error) && categories.map(category => (<Carousel key={category.id} category={category} products={products} nbCardsToSHow={nbProductsPerCarousel}/>))}
+            {hasError && <Error />}
+            {(!isLoading && !hasError) && categories && categories.map(category => (<Carousel key={category.id} category={category} products={isFilterOn ? onlyAvailableProducts : products} nbCardsToSHow={nbProductsPerCarousel}/>))}
         </>
     );
+};
+
+ProductsListPage.propTypes = {
+    url: PropTypes.string.isRequired,
 };
 
 export default ProductsListPage;

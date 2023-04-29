@@ -1,8 +1,12 @@
 import React from 'react';
 
-import './Horaire.scss';
+import './OpeningHours.scss';
 
-const Horaire = () => {
+/**
+ * Element displaying opening hours
+ * @returns {JSX.Element}
+ */
+const OpeningHours = () => {
     return (
         <div className="contact__horaire">
             <h5 className="contact__title"><i className="fa-solid fa-clock"></i>NOS HORAIRES</h5>
@@ -50,4 +54,4 @@ const Horaire = () => {
     );
 };
 
-export default Horaire;
+export default OpeningHours;
