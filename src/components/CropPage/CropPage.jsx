@@ -15,8 +15,9 @@ import './CropPage.scss';
  * @returns {JSX.Element}
  */
 const CropPage = ({url}) => {
-    const {data, isLoading, hasError} = useFetch(url + '/plots/products');
-    console.log(data);
+    const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products');
+
+    const noEmptyPlots = plots?.filter(plot => plot.products.length > 0);
 
     return (
         <section>
@@ -24,10 +25,10 @@ const CropPage = ({url}) => {
             <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
             {hasError && <Error />}
-            {(!isLoading && !hasError) && data &&
+            {(!isLoading && !hasError) && noEmptyPlots &&
             <>
-                <CropPlan plots={data} />
-                <CropTable plots={data} />
+                <CropPlan plots={noEmptyPlots} />
+                <CropTable plots={noEmptyPlots} />
             </>}
         </section>
     );
