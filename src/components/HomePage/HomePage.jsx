@@ -16,7 +16,7 @@ import Error from '../UI/Error/Error';
  */
 const Home = ({url, config}) => {
     const {data, isLoading, hasError} = useFetch(url + '/products/available', config);
-
+    console.log(data);
     return (
         <>
             {<Notification/>}
