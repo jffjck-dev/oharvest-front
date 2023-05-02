@@ -11,15 +11,16 @@ import PropTypes from 'prop-types';
 /**
  * Page listing all products (possibility to filter according to their availability)
  * @param url {string} API url used to fetch data
+ * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const ProductsListPage = ({url}) => {
+const ProductsListPage = ({url, config}) => {
     const [nbProductsPerCarousel, setNbProductsPerCarousel] = useState(4);
     const [isFilterOn, setIsFilterOn] = useState(false);
 
-    const { data: products, isLoading, hasError } = useFetch(url + '/products');
-    const { data: onlyAvailableProducts} = useFetch(url + '/products/available');
-    const { data: categories} = useFetch(url + '/categories');
+    const { data: products, isLoading, hasError } = useFetch(url + '/products', config);
+    const { data: onlyAvailableProducts} = useFetch(url + '/products/available', config);
+    const { data: categories} = useFetch(url + '/categories', config);
 
     const filterProducts = () => {
         if (!isFilterOn) {
@@ -47,6 +48,7 @@ const ProductsListPage = ({url}) => {
 
 ProductsListPage.propTypes = {
     url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
 };
 
 export default ProductsListPage;

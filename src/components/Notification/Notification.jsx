@@ -21,7 +21,6 @@ const Notification = () => {
         (currentTime.getHours() >= 9 && currentTime.getHours() < 18) && setIsHarvestOpen(true);
         axios.get(weatherAPIUrl)
             .then((response) => {
-                console.log(response.data);
                 setWeatherReport(response.data.weather[0]);
             })
             .catch((error) => console.log(error));

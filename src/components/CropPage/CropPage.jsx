@@ -11,11 +11,12 @@ import './CropPage.scss';
 
 /**
  * Page element displaying harvest plot geolocalized map and a table listing products per plot
- * @param url API URL to fetch plots data
+ * @param url {string} API URL to fetch plots data
+ * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const CropPage = ({url}) => {
-    const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products');
+const CropPage = ({url, config}) => {
+    const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products', config);
 
     const noEmptyPlots = plots?.filter(plot => plot.products.length > 0);
 
@@ -36,5 +37,6 @@ const CropPage = ({url}) => {
 
 CropPage.propTypes = {
     url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
 };
 export default CropPage;

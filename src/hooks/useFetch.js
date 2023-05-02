@@ -3,10 +3,11 @@ import axios from 'axios';
 
 /**
  * Custom Hook for fetching API data
- * @param url {string}
+ * @param url {string} API url
+ * @param config {object} config headers
  * @returns {{isLoading: boolean, data: array<object>, error: object}}
  */
-export const useFetch = (url) => {
+export const useFetch = (url, config= {}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [hasError, setHasError] = useState(false);
     const [data, setData] = useState(null);
@@ -14,7 +15,7 @@ export const useFetch = (url) => {
     useEffect(() => {
         setIsLoading(true);
         setTimeout(()=> {
-            axios.get(url)
+            axios.get(url, config)
                 .then((response) => {
                     setData(response.data);
                 })
