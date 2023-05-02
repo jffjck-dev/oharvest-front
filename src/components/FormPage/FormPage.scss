@@ -53,16 +53,6 @@
   }
 }
 
-.formpage__textarea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  & textarea {
-    border-radius: 0.5rem;
-  }
-}
-
 .formpage__btn {
   width: 40%;
   margin: auto;
@@ -73,6 +63,12 @@
   margin-bottom: 1rem;
   background-color: vars.$primary-color;
   color: vars.$background-color;
+}
+
+.error-message {
+  color: vars.$color-error;
+  text-align: center;
+  font-style: italic;
 }
 
 /* Tablet responsive (680px-1024px) */
@@ -106,17 +102,11 @@
     }
 
     & input {
+      text-align: center;
       width: 50%;
     }
   }
-
-  .formpage__textarea {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    & textarea {
-      width: 50%;
-    }
+  .error-message {
+    text-align: end;
   }
 }

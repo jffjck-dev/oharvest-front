@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
@@ -9,20 +10,22 @@ import axios from 'axios';
 
 import './ReservationCalendar.scss';
 
-/* ---------------------------------------
-Hook
---------------------------------------- */
-const ReservationCalendar = () => {
+/**
+ * Calendar Element for selecting day and moment for school trip
+ * @param url API url
+ * @param config config headers authorization
+ * @returns {JSX.Element}
+ */
+const ReservationCalendar = ({url, config}) => {
     const [selectedDate, setSelectedDate] = useState(); // stock the date choosen by user
     const [selectedTimeSlot, setSelectedTimeSlot] = useState(); // stock the time slot choosen by user
     const [reservedSlots, setReservedSlots] = useState([]); // stock time slot already booked
     const [excludeDays, setExcludeDays] = useState([]); // days to disable on the calendar
 
     useEffect(() => {
-        const url = 'http://kevin-hesse-server.eddi.cloud/api';
-        axios.get(url + '/bookings')
-            .then((response) => {     
-                
+        axios.get(url + '/bookings', config)
+            .then((response) => {
+
                 /**
                  * array used to push days to disable in the calendar
                  */
@@ -47,7 +50,6 @@ const ReservationCalendar = () => {
                  * formating attributes name
                  */
                 const bookingDates = formatData.map((item) => ({ date: new Date(item.visitAt), timeSlot: item.slot }));
-            
                 setReservedSlots(bookingDates);
                 
                 /**
@@ -169,6 +171,11 @@ Utility function
             </div>
         </div>
     );
+};
+
+ReservationCalendar.propTypes = {
+    url : PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired
 };
 
 export default ReservationCalendar;

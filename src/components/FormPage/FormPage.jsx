@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const FormPage = () => {
+/**
+ * Page element with forms for scholar reservation
+ * @param url {string} API URL
+ * @param config {object} headers authorization config
+ * @returns {JSX.Element}
+ */
+const FormPage = ({url, config}) => {
     const [inscriptionDone, setInscriptionDone] = useState(false);
     const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
@@ -13,7 +20,6 @@ const FormPage = () => {
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
     const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
-    const url = 'http://kevin-hesse-server.eddi.cloud/api';
 
     const {
         register,
@@ -30,16 +36,15 @@ const FormPage = () => {
             groupNumber: Number(data.groupNumber),
             slot: timeslot,
             visitAt,
-        })
-            .then(function (response) {
-                console.log(response.data);
+        }, config)
+            .then( () => {
                 setError(false);
                 setInscriptionDone(true);
                 setTimeout(() => {
                     naviguate('/');
                 }, 5000);
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log(error);
                 setError(true);
             });
@@ -70,10 +75,10 @@ const FormPage = () => {
                             },
                         })}
                     />
-                    {errors.name && <span>{errors.name.message}</span>}
                 </div>
+                {errors.name && <span className="error-message">{errors.name.message}</span>}
                 <div className="formpage__input-group">
-                    <label htmlFor="adress">Adresse postale</label>
+                    <label htmlFor="address">Adresse postale</label>
                     <input
                         type="text"
                         name="address"
@@ -85,8 +90,8 @@ const FormPage = () => {
                             },
                         })}
                     />
-                    {errors.adress && <span>{errors.adress.message}</span>}
                 </div>
+                {errors.address && <span className="error-message">{errors.address.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="code">Code postal</label>
                     <input
@@ -104,8 +109,8 @@ const FormPage = () => {
                             },
                         })}
                     />
-                    {errors.code && <span>{errors.code.message}</span>}
                 </div>
+                {errors.zipcode && <span className="error-message">{errors.zipcode.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="city">Ville</label>
                     <input
@@ -119,8 +124,8 @@ const FormPage = () => {
                             },
                         })}
                     />
-                    {errors.city && <span>{errors.city.message}</span>}
                 </div>
+                {errors.city && <span className="error-message">{errors.city.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="phone">Téléphone du Responsable</label>
                     <input
@@ -134,8 +139,8 @@ const FormPage = () => {
                             },
                         })}
                     />
-                    {errors.phone && <span>{errors.phone.message}</span>}
                 </div>
+                {errors.phone && <span className="error-message">{errors.phone.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="mail">Adresse Email responsable visite</label>
                     <input
@@ -149,8 +154,8 @@ const FormPage = () => {
                             }
                         })}
                     />
-                    {errors.email && <span>{errors.email.message}</span>}
                 </div>
+                {errors.mail && <span className="error-message">{errors.mail.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="contact">Nom de l&apos;enseignant/e </label>
                     <input
@@ -164,8 +169,8 @@ const FormPage = () => {
                             }
                         })}
                     />
-                    {errors.teacher && <span>{errors.teacher.message}</span>}
                 </div>
+                {errors.contact && <span className="error-message">{errors.contact.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="studentNumber">Nombre d&apos;élèves</label>
                     <input
@@ -184,8 +189,8 @@ const FormPage = () => {
                             }
                         })}
                     />
-                    {errors.student && <span>{errors.student.message}</span>}
                 </div>
+                {errors.studentNumber && <span className="error-message">{errors.studentNumber.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="guideNumber">Nombre d&apos;accompagnateurs</label>
                     <input
@@ -204,8 +209,8 @@ const FormPage = () => {
                             }
                         })}
                     />
-                    {errors.guide && <span>{errors.guide.message}</span>}
                 </div>
+                {errors.guideNumber && <span className="error-message">{errors.guideNumber.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="group">Nombre de groupes</label>
                     <input
@@ -224,26 +229,24 @@ const FormPage = () => {
                             }
                         })}
                     />
-                    {errors.group && <span>{errors.group.message}</span>}
                 </div>
-                <div className="formpage__textarea">
-                    <label htmlFor="transport">Transport</label>
-                    <textarea
+                {errors.groupNumber && <span className="error-message">{errors.groupNumber.message}</span>}
+                <div className="formpage__input-group">
+                    <label htmlFor="transport">Mode de transport</label>
+                    <input
+                        type="text"
                         name="transport"
-                        placeholder="Indiqué le mode de transport"
                         id="transport"
                         className="formpage__transport"
-                        cols="30"
-                        rows="10"
                         {...register('transport', {
                             pattern: {
                                 value: /^[A-Za-z- 0-9]+$/i,
                                 message: 'Erreur dans la saisie',
                             }
                         })}
-                    ></textarea>
-                    {errors.transport && <span>{errors.transport.message}</span>}
+                    ></input>
                 </div>
+                {errors.transport && <span className="error-message">{errors.transport.message}</span>}
                 {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d&apos;accueil</p>}
                 {error && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}> ⚠️ Erreur API</p>}
                 <button className="formpage__btn">Réserver</button>
@@ -252,4 +255,8 @@ const FormPage = () => {
     );
 };
 
+FormPage.propTypes = {
+    url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
+};
 export default FormPage;

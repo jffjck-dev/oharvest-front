@@ -16,12 +16,13 @@ import './ProductPage.scss';
 
 /**
  * Page displaying product image, harvesting calendar, varieties, recipes, tips and tricks
- * @param url API URL
+ * @param url {string} API URL
+ * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const ProductPage = ({url}) => {
+const ProductPage = ({url, config}) => {
     const { id } = useParams();
-    const {data, isLoading, hasError} = useFetch(url + `/products/${id}`);
+    const {data, isLoading, hasError} = useFetch(url + `/products/${id}`, config);
 
     return (
         <>
@@ -49,6 +50,7 @@ const ProductPage = ({url}) => {
 
 ProductPage.propTypes = {
     url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
 };
 
 export default ProductPage;

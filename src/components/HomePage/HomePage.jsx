@@ -8,18 +8,18 @@ import Loading from '../UI/Loading/Loading';
 import Notification from '../Notification/Notification.jsx';
 import Error from '../UI/Error/Error';
 
-
 /**
  * Page element when landing on the website
  * @param url {string} API URL to fetch data
+ * @param config {object} config headers authorization
  * @returns {JSX.Element}
  */
-const Home = ({url}) => {
-    const {data, isLoading, hasError} = useFetch(url + '/products/available');
+const Home = ({url, config}) => {
+    const {data, isLoading, hasError} = useFetch(url + '/products/available', config);
 
     return (
         <>
-            <Notification />
+            {<Notification/>}
             {isLoading && <Loading />}
             {hasError && <Error />}
             {data && <Carousel products={data} title="Produits disponibles" />}
@@ -31,6 +31,7 @@ const Home = ({url}) => {
 
 Home.propTypes = {
     url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
 };
 
 export default Home;
