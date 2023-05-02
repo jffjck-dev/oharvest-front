@@ -10,7 +10,7 @@ import farmview from '../../../assets/farm.png';
 const Welcome = () => {
     return (
         <section className='welcome'>
-            <img className='welcome__img' src={farmview} alt='legumes'></img>
+            <img className='welcome__img' src={farmview} alt='farm landscape'></img>
             <h2 className='welcome__title'>BIENVENUE À LA CUEILLETTE</h2>
             <div className='welcome__description'>
                 <p>Lorem Elsass ipsum munster eget gewurztraminer ac pellentesque Yo dû.
