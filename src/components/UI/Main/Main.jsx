@@ -28,8 +28,8 @@ const Main = () => {
                 <Route path="/map" element={<CropPage url={APIurl} config={config} />} />
                 <Route path="/products" element={<ProductsListPage url={APIurl} config={config} />} />
                 <Route path="/products/:id" element={<ProductPage url={APIurl} config={config} />} />
-                <Route path="/reservation/inscription" element={<FormPage />} />
                 <Route path="/reservation" element={<ReservationPage />} />
+                <Route path="/reservation/inscription" element={<FormPage url={APIurl} config={config} />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
         </main>

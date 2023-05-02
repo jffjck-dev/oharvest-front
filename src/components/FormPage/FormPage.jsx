@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import Proptypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-const FormPage = () => {
+/**
+ * Page element with forms for scholar reservation
+ * @param url {string} API URL
+ * @param config {object} headers authorization config
+ * @returns {JSX.Element}
+ */
+const FormPage = ({url, config}) => {
     const [inscriptionDone, setInscriptionDone] = useState(false);
     const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
@@ -13,7 +21,6 @@ const FormPage = () => {
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
     const visitAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getUTCDate()}`;
-    const url = 'http://kevin-hesse-server.eddi.cloud/api';
 
     const {
         register,
@@ -30,7 +37,7 @@ const FormPage = () => {
             groupNumber: Number(data.groupNumber),
             slot: timeslot,
             visitAt,
-        })
+        }, config)
             .then(function (response) {
                 console.log(response.data);
                 setError(false);
@@ -252,4 +259,8 @@ const FormPage = () => {
     );
 };
 
+FormPage.propTypes = {
+    url: PropTypes.string.isRequired,
+    config: PropTypes.object.isRequired,
+};
 export default FormPage;
