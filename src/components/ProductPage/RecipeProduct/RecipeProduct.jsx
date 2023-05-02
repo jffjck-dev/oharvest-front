@@ -12,7 +12,7 @@ import Error from '../../UI/Error/Error.jsx';
  * @returns {JSX.Element}
  */
 const RecipeProduct = ({name}) => {
-    const foodAPIurl= import.meta.env.VITE_FOOD_API_URL;
+    const foodAPIurl= import.meta.env.VITE_FOOD_API_URL + '/recipe';
     const { data: recipes, hasError, isLoading } = useFetch(foodAPIurl);
 
     const filteredRecipes = recipes?.filter(recipe =>
