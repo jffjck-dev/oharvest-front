@@ -8,7 +8,6 @@ import Loading from '../UI/Loading/Loading';
 import Notification from '../Notification/Notification.jsx';
 import Error from '../UI/Error/Error';
 
-
 /**
  * Page element when landing on the website
  * @param url {string} API URL to fetch data

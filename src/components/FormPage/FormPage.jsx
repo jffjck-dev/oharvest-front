@@ -39,7 +39,6 @@ const FormPage = ({url, config}) => {
             visitAt,
         }, config)
             .then(function (response) {
-                console.log(response.data);
                 setError(false);
                 setInscriptionDone(true);
                 setTimeout(() => {
@@ -80,7 +79,7 @@ const FormPage = ({url, config}) => {
                     {errors.name && <span>{errors.name.message}</span>}
                 </div>
                 <div className="formpage__input-group">
-                    <label htmlFor="adress">Adresse postale</label>
+                    <label htmlFor="address">Adresse postale</label>
                     <input
                         type="text"
                         name="address"
@@ -92,7 +91,7 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.adress && <span>{errors.adress.message}</span>}
+                    {errors.address && <span>{errors.address.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="code">Code postal</label>
@@ -111,7 +110,7 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.code && <span>{errors.code.message}</span>}
+                    {errors.zipcode && <span>{errors.zipcode.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="city">Ville</label>
@@ -156,7 +155,7 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.email && <span>{errors.email.message}</span>}
+                    {errors.mail && <span>{errors.mail.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="contact">Nom de l&apos;enseignant/e </label>
@@ -171,7 +170,7 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.teacher && <span>{errors.teacher.message}</span>}
+                    {errors.contact && <span>{errors.contact.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="studentNumber">Nombre d&apos;élèves</label>
@@ -191,7 +190,7 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.student && <span>{errors.student.message}</span>}
+                    {errors.studentNumber && <span>{errors.studentNumber.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="guideNumber">Nombre d&apos;accompagnateurs</label>
@@ -211,7 +210,7 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.guide && <span>{errors.guide.message}</span>}
+                    {errors.guideNumber && <span>{errors.guideNumber.message}</span>}
                 </div>
                 <div className="formpage__input-group">
                     <label htmlFor="group">Nombre de groupes</label>
@@ -231,7 +230,7 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.group && <span>{errors.group.message}</span>}
+                    {errors.groupNumber && <span>{errors.groupNumber.message}</span>}
                 </div>
                 <div className="formpage__textarea">
                     <label htmlFor="transport">Transport</label>
