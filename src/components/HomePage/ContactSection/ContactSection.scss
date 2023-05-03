@@ -1,18 +1,35 @@
 @use '../../../styles/vars';
 
-.contact {
-    color: vars.$alternative-color;
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+    .container-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
-.container-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+    .container-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     .container-flex {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}   
+        display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+}
