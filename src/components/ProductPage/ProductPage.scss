@@ -50,13 +50,45 @@
   border-radius: 5px;
   background-color: vars.$secundary-color;
   color: white;
-  padding: .5rem;
+  padding: 0.5rem;
   border: vars.$primary-border;
-  box-shadow: 0 0 .3rem black;
-  transition: .3s;
+  box-shadow: 0 0 0.3rem black;
+  transition: 0.3s;
 
   &:hover {
-    box-shadow: 0 0 .3rem darkorange;
+    box-shadow: 0 0 0.3rem darkorange;
     color: orange;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .card__recipe-absent {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+	margin: auto;
+	display: flex;
+	width: 80%;
+	text-align: center;
+  }
+  .recipe__not-exists {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .card__recipe-absent {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    width: 25rem;
+    margin: auto;
+  }
+
+  .recipe__not-exists {
+    margin: auto;
   }
 }
