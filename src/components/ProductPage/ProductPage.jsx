@@ -29,18 +29,17 @@ const ProductPage = ({url, config}) => {
             {isLoading && <Loading />}
             {(!isLoading && !hasError) && data && (
                 <>
-                    <div className="button-container">
-                        <Link to={'/products'}>
+                    
+                    <Notification />
+                    <Link to={'/products'}>
+                        <div className="button-container">
                             <button
                                 className="products-page__button"
                                 title="revenir à l'inventaire des produits"
-                                aria-label="revenir à l'inventaire des produits"
-                            >
-                                précédent
+                                aria-label="revenir à l'inventaire des produits">précédent
                             </button>
-                        </Link>
-                    </div>
-                    <Notification />
+                        </div>
+                    </Link>
                     <h2 className="crop-page__page-title">Fiche Produit</h2>
                     <Banner name={data.name} image={data.image} />
                     <Availablity tag={data.isAvailable} />
