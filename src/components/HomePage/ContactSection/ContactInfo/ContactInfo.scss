@@ -1,36 +1,50 @@
 @use '../../../../styles/vars';
 
 .contact__info {
-    color: vars.$primary-color;
-    background-color: vars.$secundary-color;
-    padding: 1rem;
-    padding-right: 2rem;
+    position: relative;
+    background-color: vars.$background-color;
+    padding: 1.25rem;
+    margin: 1.25rem;
+    width: 18.75rem;
+    border-radius: 10px;
+    overflow: hidden;
     box-shadow: inset 0 0 .3rem black;
-
-    &-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    &-list {
-        margin-left: 0.5rem;
-        padding-left: 2rem;
-        padding-top: 1rem;
-
-        &-item {
-            margin-bottom: 1rem;
-
-            & .fa-solid {
-                color: orange;
-            }
-        }
-    }
+    text-align: center;
 }
 
-@media only screen and (min-width: 1024px) {
-    .contact__info {
-        width: 33%;
-        margin-bottom: 1.5rem;
-        border-radius: 10px;
-    }
+.contact__info-title {
+    text-align: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+    color: vars.$primary-color;
+}
+
+.contact__info-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__info-list-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem;
+    color: vars.$primary-color;
+}
+
+.contact__info-list-item a {
+    display: flex;
+    flex-direction: column;
+    color: vars.$primary-color;
+}
+
+.contact__info-list-item-title {
+    font-weight: bold;
+    color: vars.$primary-color;
+}
+
+.fa-solid {
+    margin-right: 0.625rem;
+    color: vars.$summer-color;
 }
