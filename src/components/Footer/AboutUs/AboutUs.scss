@@ -3,177 +3,142 @@
 /* ------------------------------------------------------ */
 /* Responsive CSS */
 /* ------------------------------------------------------ */
+
+/* Mobile responsive (max-width: 425px) */
 @media only screen and (max-width: 425px) {
-  .aboutus {
-    border: 0.2rem solid vars.$alternative-color;
-    border-radius: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    margin: auto;
-    padding-bottom: 2rem;
-
-    .aboutus__title {
-      padding-top: 1rem;
-      font-size: 1.4rem;
-      color: vars.$alternative-color;
-    }
-
-    .aboutus__subtitle-back,
-    .aboutus__subtitle-front {
-      padding-top: 2rem;
-      font-size: 1.2rem;
-      color: vars.$alternative-color;
-      text-decoration: underline;
-    }
-  }
-  .aboutus__img-div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .aboutus__image {
-    height: 140px;
-    width: auto;
-    margin: 20px;
-  }
-  .aboutus__dev {
-    position: relative;
-  }
-  .aboutus__dev-image-hover {
-    opacity: 1;
-    position: absolute;
-    top: 160px;
-    left: 100px;
-    background: #ffffff73;
-    height: 3rem;
-    width: 7rem;
-    border-radius: 50%;
-    border: 1px solid vars.$alternative-color;
-  }
-  .aboutus__dev-text {
-    font-size: 0.7rem;
-    padding-top: 0.7rem;
-    color: vars.$alternative-color;
-    line-height: 0.8rem;
-  }
-
   .aboutus__dev-photo {
-    width: 300px;
-    margin: 10px;
+    width: 15rem;
+    height: 15rem;
+  }
+  
+  .aboutus__dev-text {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.3125rem;
+    border-radius: 5px;
+    margin-top: 0.3125rem;;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    border:1px solid vars.$summer-color;
   }
 }
 
-/* Tablet responsive (425px-1024px) */
-
-@media only screen and (min-width: 425px) {
-  .aboutus {
-    border: 0.2rem solid vars.$alternative-color;
-    border-radius: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    height: auto;
-
-    .aboutus__title {
-      padding-top: 1rem;
-      font-size: 2rem;
-      color: vars.$alternative-color;
-    }
-  }
-  .aboutus__subtitle-back,
-  .aboutus__subtitle-front {
-    padding-top: 2rem;
-    font-size: 1.2rem;
-    color: vars.$alternative-color;
-    text-decoration: underline;
-  }
-  .aboutus__img {
-    width: 20%;
-    height: auto;
-    margin: 1.5rem;
-  }
-  .aboutus__dev {
-    position: relative;
-  }
-  .aboutus__dev-image-hover {
-    opacity: 0;
-    position: absolute;
-    top: 100px;
-    right: -80px;
-    background: #ffffff73;
-    height: 5rem;
-    width: 10rem;
-    border-radius: 50%;
-    border: 1px solid vars.$alternative-color;
-  }
-  .aboutus__dev:hover .aboutus__dev-image-hover {
-    opacity: 1;
-  }
-
+/* Tablet responsive (min-width: 425px) */
+@media only screen and (min-width: 425px){
   .aboutus__dev-photo {
-    width: 300px;
-    margin: 10px;
+    width: 20rem;
+    height: 20rem;
   }
   .aboutus__dev-text {
-    font-size: 1rem;
-    padding-top: 1.2rem;
-    color: vars.$alternative-color;
-    line-height: 1.3rem;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.3125rem;;
+    border-radius: 5px;
+    margin-top: 0.3125rem;;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    border:1px solid vars.$summer-color;
   }
 }
 
-/* Desktop responsive (1024px-1440px) */
-
+/* Desktop responsive (min-width: 1024px) */
 @media only screen and (min-width: 1024px) {
-  .aboutus {
-    padding-bottom: 5rem;
+  .aboutus__dev-photo {
+    width: 20rem;
+    height: 20rem;
   }
-  .aboutus__img-back {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-  .aboutus__subtitle-back {
-    width: 100%;
-    height: 3rem;
-    flex-wrap: wrap;
-    padding-top: 2rem;
-    font-size: 1.5rem;
-    color: vars.$alternative-color;
-    text-decoration: underline;
-  }
-
-  .aboutus__img-front {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-
-  .aboutus__subtitle-front {
-    width: 100%;
-    height: 3rem;
-    flex-wrap: wrap;
-    padding-top: 2rem;
-    font-size: 1.5rem;
-    color: vars.$alternative-color;
-    text-decoration: underline;
+  .aboutus__dev-photo:hover .aboutus__dev-text {
+    display: block;
   }
   .aboutus__dev-image-hover {
-    opacity: 0;
     position: absolute;
-    top: 250px;
-    left: 80px;
-    background: #ffffff73;
-    height: 5rem;
-    width: 10rem;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .aboutus__dev-text {
+    display: none;
+    color: white;
+    text-align: center;
+  }
+  .aboutus__dev-photo:hover .aboutus__dev-image-hover {
+    opacity: 1;
   }
 }
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+
+/* Styles généraux */
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: vars.$background-light-color;
+}
+
+.aboutus__title {
+  font-size: 2.5rem;
+  color: vars.$alternative-color;
+  margin-bottom: 1.875rem;
+  text-align: center;
+}
+
+.aboutus__img-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+/* Styles pour les équipes Back-End et Front-End */
+.aboutus__img-back,
+.aboutus__img-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutus__subtitle-back,
+.aboutus__subtitle-front {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  background-color: vars.$summer-color;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Styles pour les développeurs */
+.aboutus__dev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  }
+  
+  .aboutus__dev-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  }
+  
+  .aboutus__image {
+  width: 100%;
+  height: auto;
+  }
+
+

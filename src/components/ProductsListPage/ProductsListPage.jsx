@@ -36,9 +36,12 @@ const ProductsListPage = ({url, config}) => {
         <>
             <Notification />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
-            {(!isLoading && !hasError) && onlyAvailableProducts && <button className="products-list-page__button" onClick={filterProducts}>
-                se limiter aux produits de saison
-            </button>}
+            {(!isLoading && !hasError) && onlyAvailableProducts && (
+                <div>
+                    <input className="products-list__checkbox" type="checkbox" id="filter" name="filter" onClick={filterProducts} title="cliquer pour n'afficher que les produits disponible" aria-label="cliquer pour n'afficher que les produits disponible" />
+                    <label className="products-list__checkbox-label" htmlFor="filter">produits <strong style={{fontWeight: 700}}>disponibles</strong> uniquement</label>
+                </div>)
+            }
             {isLoading && <Loading />}
             {hasError && <Error />}
             {(!isLoading && !hasError) && categories && categories.map(category => (<Carousel key={category.id} category={category} products={isFilterOn ? onlyAvailableProducts : products} nbCardsToSHow={nbProductsPerCarousel}/>))}

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 /**
  * Page element with forms for scholar reservation
@@ -38,14 +37,14 @@ const FormPage = ({url, config}) => {
             slot: timeslot,
             visitAt,
         }, config)
-            .then(function (response) {
+            .then( () => {
                 setError(false);
                 setInscriptionDone(true);
                 setTimeout(() => {
                     naviguate('/');
                 }, 5000);
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log(error);
                 setError(true);
             });
@@ -76,8 +75,8 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.name && <span>{errors.name.message}</span>}
                 </div>
+                {errors.name && <span className="error-message">{errors.name.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="address">Adresse postale</label>
                     <input
@@ -91,8 +90,8 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.address && <span>{errors.address.message}</span>}
                 </div>
+                {errors.address && <span className="error-message">{errors.address.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="code">Code postal</label>
                     <input
@@ -110,8 +109,8 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.zipcode && <span>{errors.zipcode.message}</span>}
                 </div>
+                {errors.zipcode && <span className="error-message">{errors.zipcode.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="city">Ville</label>
                     <input
@@ -125,8 +124,8 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.city && <span>{errors.city.message}</span>}
                 </div>
+                {errors.city && <span className="error-message">{errors.city.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="phone">Téléphone du Responsable</label>
                     <input
@@ -140,8 +139,8 @@ const FormPage = ({url, config}) => {
                             },
                         })}
                     />
-                    {errors.phone && <span>{errors.phone.message}</span>}
                 </div>
+                {errors.phone && <span className="error-message">{errors.phone.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="mail">Adresse Email responsable visite</label>
                     <input
@@ -155,8 +154,8 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.mail && <span>{errors.mail.message}</span>}
                 </div>
+                {errors.mail && <span className="error-message">{errors.mail.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="contact">Nom de l&apos;enseignant/e </label>
                     <input
@@ -170,8 +169,8 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.contact && <span>{errors.contact.message}</span>}
                 </div>
+                {errors.contact && <span className="error-message">{errors.contact.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="studentNumber">Nombre d&apos;élèves</label>
                     <input
@@ -190,8 +189,8 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.studentNumber && <span>{errors.studentNumber.message}</span>}
                 </div>
+                {errors.studentNumber && <span className="error-message">{errors.studentNumber.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="guideNumber">Nombre d&apos;accompagnateurs</label>
                     <input
@@ -210,8 +209,8 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.guideNumber && <span>{errors.guideNumber.message}</span>}
                 </div>
+                {errors.guideNumber && <span className="error-message">{errors.guideNumber.message}</span>}
                 <div className="formpage__input-group">
                     <label htmlFor="group">Nombre de groupes</label>
                     <input
@@ -230,26 +229,24 @@ const FormPage = ({url, config}) => {
                             }
                         })}
                     />
-                    {errors.groupNumber && <span>{errors.groupNumber.message}</span>}
                 </div>
-                <div className="formpage__textarea">
-                    <label htmlFor="transport">Transport</label>
-                    <textarea
+                {errors.groupNumber && <span className="error-message">{errors.groupNumber.message}</span>}
+                <div className="formpage__input-group">
+                    <label htmlFor="transport">Mode de transport</label>
+                    <input
+                        type="text"
                         name="transport"
-                        placeholder="Indiqué le mode de transport"
                         id="transport"
                         className="formpage__transport"
-                        cols="30"
-                        rows="10"
                         {...register('transport', {
                             pattern: {
                                 value: /^[A-Za-z- 0-9]+$/i,
                                 message: 'Erreur dans la saisie',
                             }
                         })}
-                    ></textarea>
-                    {errors.transport && <span>{errors.transport.message}</span>}
+                    ></input>
                 </div>
+                {errors.transport && <span className="error-message">{errors.transport.message}</span>}
                 {inscriptionDone && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}>Votre inscription a bien été prise en compte. Vous allez être redirigé vers la page d&apos;accueil</p>}
                 {error && <p style={{textAlign: 'center', border: '1px solid black', borderRadius: 10, padding: '1rem', marginTop: '1rem'}}> ⚠️ Erreur API</p>}
                 <button className="formpage__btn">Réserver</button>

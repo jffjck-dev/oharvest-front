@@ -1,10 +1,10 @@
 import React from 'react';
 import './AboutUs.scss';
-import carotte from '../../../assets/carotte.png';
-import fraise from '../../../assets/fraise.png';
-import patate from '../../../assets/patate.png';
-import cerise from '../../../assets/cerise.png';
-import brocoli from '../../../assets/brocoli.png';
+import carotte from '../../../assets/avatar_kevin.png';
+import fraise from '../../../assets/avatar_andrea.png';
+import patate from '../../../assets/avatar_jf.png';
+import cerise from '../../../assets/avatar_guillaume.png';
+import brocoli from '../../../assets/avatar_mickael.png';
 
 const AboutUs = () => {
 
@@ -24,6 +24,7 @@ const AboutUs = () => {
                                 <p className="aboutus__dev-text">Kévin H.<br />Product Owner</p>
                             </div>
                         </div>
+                        <p className="aboutus__dev-text">Kévin H.<br />Product Owner</p>
                     </div>
 
                     <div className="aboutus__dev">
@@ -33,6 +34,7 @@ const AboutUs = () => {
                                 <p className="aboutus__dev-text">Guillaume F.<br />Lead Dev Back</p>
                             </div>
                         </div>
+                        <p className="aboutus__dev-text">Guillaume F.<br />Lead Dev Back</p>
                     </div>
                 </div>
 
@@ -47,6 +49,7 @@ const AboutUs = () => {
                                 <p className="aboutus__dev-text">Andréa V.<br />Scrum Master</p>
                             </div>
                         </div>
+                        <p className="aboutus__dev-text">Andréa V.<br />Scrum Master</p>
                     </div>
 
                     <div className="aboutus__dev">
@@ -56,6 +59,7 @@ const AboutUs = () => {
                                 <p className="aboutus__dev-text">Jean-François O.<br />Lead Dev Front</p>
                             </div>
                         </div>
+                        <p className="aboutus__dev-text">Jean-François O.<br />Lead Dev Front</p>
                     </div>
 
                     <div className="aboutus__dev">
@@ -65,11 +69,12 @@ const AboutUs = () => {
                                 <p className="aboutus__dev-text">Mickael M.<br />Git Master</p>
                             </div>
                         </div>
+                        <p className="aboutus__dev-text">Mickael M.<br />Git Master</p>
                     </div>    
                 </div>         
             </div>
-        </div>
-    );
+    </div>
+);
 };
 
 export default AboutUs;

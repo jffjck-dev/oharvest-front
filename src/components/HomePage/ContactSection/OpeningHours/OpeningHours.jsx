@@ -7,49 +7,30 @@ import './OpeningHours.scss';
  * @returns {JSX.Element}
  */
 const OpeningHours = () => {
-    return (
-        <div className="contact__horaire">
-            <h5 className="contact__title"><i className="fa-solid fa-clock"></i>NOS HORAIRES</h5>
+    const days = [
+        {day: 'Dimanche'},
+        {day: 'Lundi'},
+        {day: 'Mardi'},
+        {day: 'Mercredi'},
+        {day: 'Jeudi'},
+        {day: 'Vendredi'},
+        {day: 'Samedi'},
+    ];
 
-            <table className="contact__horaire-table">
-                <tbody>
-                    <tr className="contact__horaire-row">
-                        <td className='contact__horaire-jour'>Lundi</td>
-                        <td>| fermé</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Mardi</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Mercredi</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Jeudi</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Vendredi</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Samedi</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                    <tr className="contact__horaire-table-row">
-                        <td className='contact__horaire-jour'>Dimanche</td>
-                        <td>| 9h00-12h00</td>
-                        <td>| 13h00-18h00</td>
-                    </tr>
-                </tbody>
-            </table>
+    const today = new Date().getDay();
+
+    return (
+        <div className="contact-card">
+            <h5 className="contact-card__title"><i className="fa-solid fa-clock"></i>NOS HORAIRES</h5>
+            <ul className="contact-card__list">
+                {days.map((item, index) => (
+                    <li key={item.day} className={`contact-card__list-item ${today === index ? 'today' : ''}`}>
+                        <span className="contact-card__list-day">{item.day}</span>
+                        <span className="contact-card__list-hour">{index === 0 ? 'Fermé' : '9h00-12h00'}</span>
+                        <span className="contact-card__list-hour">{index === 0 ? '13h00-18h00' : '13h00-18h00'}</span>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
