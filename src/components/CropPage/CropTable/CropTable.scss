@@ -1,5 +1,9 @@
 @use '../../../styles/vars';
 
+.crop-page__page-title {
+    margin-top: 1rem;
+}
+
 .crop-table {
     margin-bottom: 1rem;
 
@@ -10,7 +14,9 @@
     &__title {
         font-size: 2rem;
         font-family: vars.$title-font;
+        margin-top: 1rem;
         margin-bottom: 2rem;
+
     }
 
     &__header {
@@ -36,13 +42,20 @@
 
         &-products {
             display: flex;
-            flex-direction: row
+            flex-direction: column;
+            margin-right: 1rem;
         }
     }
 }
 
+@media only screen and (min-width: 425px) {
+    .crop-table__row-products {
+        flex-direction: row;
+    }
+}
+
 @media only screen and (min-width: 1024px) {
-    crop-table__row-products {
-        flex-direction: column;
+    .crop-table__row-products {
+        flex-direction: row;
     }
 }
