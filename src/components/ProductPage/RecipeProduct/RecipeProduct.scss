@@ -11,6 +11,15 @@
         padding: 1rem;
         margin-top: 1.4rem;
     }
+    .recipe__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+    .recipe__list-card {
+        margin: 0.75rem; // Space between card
+        flex: 0 0 calc(33.333% - 1.5rem); //update width card
+    }
 }
 
 /* Tablet responsive (425px-1024px) */
@@ -22,8 +31,13 @@
 
     .recipe__list {
         display: flex;
-        justify-content: space-around;
-    }
+        flex-direction: column;
+        justify-content: center;
+        }
+        .recipe__list-card {
+            margin: 0.75rem; // Space between card
+            flex: 0 0 calc(33.333% - 1.5rem); //update width card
+        }
 }
 
 /* Desktop responsive (1024px-1440px) */
@@ -35,7 +49,12 @@
 
     .recipe__list {
         display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .recipe__list-card {
+        margin: 1rem; // Space between card
+        flex: 0 0 calc(45% - 1.5rem); //update width card
     }
 }
 
@@ -58,9 +77,6 @@
 }
 
 .recipe__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -75,8 +91,6 @@
     border-radius: 8px;
     padding: 1rem;
     overflow: hidden;
-    margin: 0.75rem; /* Ajustez cette valeur pour modifier l'espacement entre les cartes */
-    flex: 0 0 calc(33.333% - 1.5rem); /* Ajustez cette valeur pour modifier la largeur des cartes */
 }
 
 .recipe__list-card-img {

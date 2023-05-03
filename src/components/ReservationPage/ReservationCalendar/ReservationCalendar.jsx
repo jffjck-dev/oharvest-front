@@ -138,7 +138,7 @@ Utility function
                     />
                 </div>
                 {selectedDate && (
-                    <div className='container_reservation'>
+                    <div className='container__reservation'>
                         <h2 className="calendar__description">Sélectionnez un créneau horaire</h2>
                         <select
                             value={selectedTimeSlot}

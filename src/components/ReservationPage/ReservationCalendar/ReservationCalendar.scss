@@ -14,33 +14,45 @@
     .calendar__description {
         font-size: 1.3rem;
     }
+    .container__reservation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Tablet responsive (425px-1024px) */
 @media only screen and (min-width: 425px) {
     .calendar__title {
-        font-size: 1.7rem;;
-        padding: 1.5rem;
+        font-size: 2.2rem;
+        padding: 2rem;
     }
-
     .calendar__description {
-        font-size: 1.4rem;
+        font-size: 1.9rem;
     }
-
     .react-datepicker__month-container {
-        width: 22rem; // Calendar container
-    }
-    
+        width: 25rem; // Calendar container
+    }  
     .react-datepicker__day-name {
-        width: 2.5rem; // Day on name 
+        width: 3rem; // Day on name
     }
     .react-datepicker__current-month {
-        padding: 0.4rem;  // Padding for month
+        padding: 0.4rem; // Padding for month
     } 
-    //Number of the day
-    .react-datepicker__day,
+    
+    .react-datepicker__day,//Number of the day
     .react-datepicker__day--outside-month {
-        width:2.5rem;  //Day on number
+        width:3rem; //Day on number
+    }
+    .calendar__container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container__reservation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -62,8 +74,8 @@
     .react-datepicker__current-month {
         padding: 0.4rem; // Padding for month
     } 
-    //Number of the day
-    .react-datepicker__day,
+    
+    .react-datepicker__day,//Number of the day
     .react-datepicker__day--outside-month {
         width:5rem; //Day on number
     }
@@ -72,7 +84,7 @@
         align-items: center;
         flex-direction: column;
     }
-    .container_reservation {
+    .container__reservation {
         display: flex;
         flex-direction: column;
         align-items: center;
