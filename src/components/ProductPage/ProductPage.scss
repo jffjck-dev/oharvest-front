@@ -1,4 +1,48 @@
 @use "../../styles/vars";
+
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+  .products-page__button {
+    margin: 1rem;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+  .products-page__button {
+    margin: 1rem;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+  .products-page__button {
+  margin: 1rem;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
 .products-page__button {
   border: none;
   background: none;
