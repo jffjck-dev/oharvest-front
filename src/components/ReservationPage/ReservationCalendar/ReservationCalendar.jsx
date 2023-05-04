@@ -122,7 +122,7 @@ Utility function
     registerLocale('fr', fr);
 
     return (
-        <div className="calendar">
+        <>
             <h1 className="calendar__title">Calendrier de réservations</h1>
             <div className='container__desktop'>
                 <div className='calendar__container'>
@@ -169,7 +169,7 @@ Utility function
                     </div>
                 )}
             </div>
-        </div>
+        </>
     );
 };
 
