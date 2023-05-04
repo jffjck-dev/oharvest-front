@@ -1,28 +1,25 @@
-![oharvest](./src/assets/logo_oharvest_transparent.png)
-# O'HARVEST PROJECT (Front)
+![harvest](./src/assets/logo_oharvest_transparent.png)
+
+# O'HARVEST (Front)
+
 ---
-## Project Creation 
----
-#### Initialization with Vite
-```
-# npm 7+, extra double-dash is needed:
-npm create vite@latest . -- --template react
 
-# yarn
-yarn create vite . --template react
+### set and launch local version
+
+In order to install dependencies and launch local server:
+```
+# with npm 
+npm i
+npm run dev
+
+# with yarn
+yarn
+yarn dev
 ```
 
-#### Activate the eslint config 
 
-```
-#yarn
-yarn init @eslint/config
-
-#npm
-npm init @eslint/config
-```
----
 ## Responsive format
+
 ---
 
 #### Mobile widht: 320px - 425px
@@ -49,28 +46,27 @@ npm init @eslint/config
 }
 ```
 
+## Working flow on a new feature
+
 ---
-## Work on a new feature
----
-Be placed on `dev` branch:
+Be placed on `dev` branch and update your branch:
 ```
 git checkout dev
+git pull origin dev
 ```
 
 Create a new branch to work on a new feature :
 ```
 git checkout -b feat/feature-name>
 ```
-Pour les noms des branches:
+
+### (!) Naming branch convention
 ❌ ~~CamelCase ou pascalCase~~
 ✅ **snake_case**
 
-### ! Name branch !
-❌ ~~CamelCase ou pascalCase~~
-✅ **snake_case**
 
- ---
-## Commits name:
+### (!) Naming commit convention:
+
 - `config:` When configuration is changed
 - `feat:` When adding new feature or new styles
 - `fix:` When bug is resolved
@@ -81,6 +77,7 @@ Pour les noms des branches:
 - `prod:` pour les mises en production (merge de dev dans main)
 - `hotfix:` pour résoudre un bug sur main
 
+
 Then explain in a few words the work done (mention the components/files on which you worked).
  ---
 
@@ -89,7 +86,7 @@ Once the development is finished and committed, we recover any modifications:
 ```
 git pull origin feat/<name-feature>
 ```
-Pour les noms des branches:
+For branch name:
 ❌ ~~CamelCase ou pascalCase~~
 ✅ **snake_case**
 
