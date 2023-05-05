@@ -51,6 +51,16 @@ const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
         ],
     };
 
+    // TODO : refacto pour avoir une seule boucle sur les produits
+    // genre: 
+    // const carouselProducts = [];
+
+    // if(category) {
+    //     carouselProducts = products.filter(item => item.category.name === category.name);
+    // } else {
+    //     carouselProducts = product;
+    // }
+
     if(category) {
         const filteredProducts = products.filter(item => item.category.name === category.name);
         return (

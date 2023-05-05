@@ -62,7 +62,7 @@ git checkout -b feat/feature-name>
 
 ### (!) Naming branch convention
 ❌ ~~CamelCase ou pascalCase~~
-✅ **snake_case**
+✅ **kebab-case**
 
 
 ### (!) Naming commit convention:

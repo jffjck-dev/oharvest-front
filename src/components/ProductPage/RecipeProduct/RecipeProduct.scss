@@ -30,14 +30,13 @@
     }
 
     .recipe__list {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        }
-        .recipe__list-card {
-            margin: 0.75rem; // Space between card
-            flex: 0 0 calc(33.333% - 1.5rem); //update width card
-        }
+    }
+
+    .recipe__list-card {
+        margin: 0.75rem; // Space between card
+        flex: 0 0 calc(33.333% - 1.5rem); //update width card
+    }
 }
 
 /* Desktop responsive (1024px-1440px) */
@@ -48,10 +47,9 @@
     }
 
     .recipe__list {
-        display: flex;
         flex-direction: row;
-        justify-content: space-between;
     }
+
     .recipe__list-card {
         margin: 1rem; // Space between card
         flex: 0 0 calc(45% - 1.5rem); //update width card
@@ -80,6 +78,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .recipe__list-card {
