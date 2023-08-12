@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Rectangle, Tooltip, LayersControl } from 'react-leaflet';
-import ProductTag from '../ProductTag/ProductTag.jsx';
+import ProductTag from '../product-tag/ProductTag.jsx';
 
 import './CropPlan.scss';
 
