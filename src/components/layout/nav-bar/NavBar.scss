@@ -43,7 +43,7 @@
 }
 
 .navbar__img {
-  height: 100%;
+  height: 3.5rem;
 }
 
 
@@ -65,6 +65,10 @@
     gap: 1.5rem;
     width: 100%;
     padding-right: .5rem;
+  }
+
+  .navbar__img {
+    height: 7rem;
   }
 
   .navbar__item-link {
