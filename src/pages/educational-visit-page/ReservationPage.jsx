@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ReservationHeader from './ReservationHeader/ReservationHeader';
-import ReservationModality from './ReservationModality/ReservationModality';
-import ReservationTheme from './ReservationTheme/ReservationTheme';
-import ReservationCalendar from './ReservationCalendar/ReservationCalendar';
+import ReservationHeader from '../../components/visit/ReservationHeader/ReservationHeader.jsx';
+import ReservationModality from '../../components/visit/ReservationModality/ReservationModality.jsx';
+import ReservationTheme from '../../components/visit/ReservationTheme/ReservationTheme.jsx';
+import ReservationCalendar from '../../components/visit/ReservationCalendar/ReservationCalendar.jsx';
 
 /**
  * Page element for school trip containing headers, theme, modality and calendar component
