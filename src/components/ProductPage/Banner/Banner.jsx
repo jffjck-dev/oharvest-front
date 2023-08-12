@@ -13,7 +13,7 @@ const Banner = ({image, name}) => {
     return (
         <div className="banner">
             <div className="banner__img-container">
-                <img className="banner__img" src= {`http://kevin-hesse-server.eddi.cloud/images/${image}`} alt={name}></img>
+                <img className="banner__img" src= {`http://localhost:8000/images/${image}`} alt={name}></img>
                 <div className="banner__title-container">
                     <h2 className="banner__title">{name}</h2>
                 </div>
