@@ -1,17 +1,17 @@
 import React from 'react';
-import CropPage from '../../../pages/crop-page/CropPage';
-import HomePage from '../../../pages/home-page/HomePage';
-import ProductPage from '../../../pages/product-page/ProductPage';
-import ProductsListPage from '../../../pages/products-list-page/ProductsListPage';
-import FormPage from '../../FormPage/FormPage';
-import ReservationPage from '../../ReservationPage/ReservationPage';
-import NotFound from '../../NotFound/NotFound';
+import CropPage from '../../../pages/crop-page/CropPage.jsx';
+import HomePage from '../../../pages/home-page/HomePage.jsx';
+import ProductPage from '../../../pages/product-page/ProductPage.jsx';
+import ProductsListPage from '../../../pages/products-list-page/ProductsListPage.jsx';
+import FormPage from '../../FormPage/FormPage.jsx';
+import ReservationPage from '../../ReservationPage/ReservationPage.jsx';
+import NotFound from '../../../pages/page-404/NotFound.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';
 
 /**
- * Main section of a page. Content displayed depends on path parameter (base on React Router)
+ * main section of a page. Content displayed depends on path parameter (base on React Router)
  * @returns {JSX.Element}
  */
 const Main = () => {

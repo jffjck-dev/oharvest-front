@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Footer.scss';
-import Modal from '../UI/Modal/Modal';
-import CGU from './CGU/CGU';
-import AboutUs from './AboutUs/AboutUs';
+import Modal from '../../UI/Modal/Modal.jsx';
+import CGU from './CGU/CGU.jsx';
+import AboutUs from './AboutUs/AboutUs.jsx';
 
 /**
- * Footer with link on "CGU" and "about us" modals;
+ * footer with link on "CGU" and "about us" modals;
  */
 const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);

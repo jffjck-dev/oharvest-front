@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import './NavBar.scss';
-import logo from '../../assets/logo_oharvest_transparent.png';
+import logo from '../../../assets/logo_oharvest_transparent.png';
 
 /**
  * JSX element displaying the navigation menu on all page

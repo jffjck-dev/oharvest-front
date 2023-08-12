@@ -1,10 +1,10 @@
 import React from 'react';
 import './AboutUs.scss';
-import carotte from '../../../assets/avatar_kevin.png';
-import fraise from '../../../assets/avatar_andrea.png';
-import patate from '../../../assets/avatar_jf.png';
-import cerise from '../../../assets/avatar_guillaume.png';
-import brocoli from '../../../assets/avatar_mickael.png';
+import carotte from '../../../../assets/avatar_kevin.png';
+import fraise from '../../../../assets/avatar_andrea.png';
+import patate from '../../../../assets/avatar_jf.png';
+import cerise from '../../../../assets/avatar_guillaume.png';
+import brocoli from '../../../../assets/avatar_mickael.png';
 
 const AboutUs = () => {
 
