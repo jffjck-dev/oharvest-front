@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
@@ -7,15 +6,14 @@ import axios from 'axios';
 
 /**
  * Page element with forms for scholar reservation
- * @param url {string} API URL
- * @param config {object} headers authorization config
  * @returns {JSX.Element}
  */
-const FormPage = ({url, config}) => {
+const FormPage = () => {
     const [inscriptionDone, setInscriptionDone] = useState(false);
     const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
     const naviguate = useNavigate();
+    const url = import.meta.env.VITE_HARVEST_API_URL;
 
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
@@ -36,7 +34,7 @@ const FormPage = ({url, config}) => {
             groupNumber: Number(data.groupNumber),
             slot: timeslot,
             visitAt,
-        }, config)
+        })
             .then( () => {
                 setError(false);
                 setInscriptionDone(true);
@@ -255,8 +253,4 @@ const FormPage = ({url, config}) => {
     );
 };
 
-FormPage.propTypes = {
-    url: PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired,
-};
 export default FormPage;
