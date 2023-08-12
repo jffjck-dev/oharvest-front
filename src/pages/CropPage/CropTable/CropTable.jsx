@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProductTag from '../ProductTag/ProductTag';
+import ProductTag from '../ProductTag/ProductTag.jsx';
 
 import './CropTable.scss';
 

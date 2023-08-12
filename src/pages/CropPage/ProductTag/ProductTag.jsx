@@ -8,7 +8,7 @@ const ProductTag = ({id, name, image}) => {
     return (
         <li className="product-tag" key={id} title={`cliquez pour accéder à la fiche du ${name}`} aria-label={`cliquez pour accéder à la fiche du ${name}`}>
             <Link to={`/products/${id}`}>
-                <img className="product-tag__img" src={`http://kevin-hesse-server.eddi.cloud/images/${image}`} alt={name}/>
+                <img className="product-tag__img" src={`http://localhost:8000/images/${image}`} alt={name}/>
                 {name}
             </Link>
         </li>

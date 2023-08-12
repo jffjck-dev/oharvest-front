@@ -1,5 +1,5 @@
 import React from 'react';
-import CropPage from '../../CropPage/CropPage';
+import CropPage from '../../../pages/CropPage/CropPage';
 import HomePage from '../../HomePage/HomePage';
 import ProductPage from '../../ProductPage/ProductPage';
 import ProductsListPage from '../../ProductsListPage/ProductsListPage';
