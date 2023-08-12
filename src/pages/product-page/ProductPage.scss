@@ -1,0 +1,94 @@
+@use '../../styles/vars';
+
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (320px-425px) */
+@media only screen and (max-width: 425px) {
+  .products-page__button {
+    margin: 1rem;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+/* Tablet responsive (425px-1024px) */
+@media only screen and (min-width: 425px) {
+  .products-page__button {
+    margin: 1rem;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+/* Desktop responsive (1024px-1440px) */
+@media only screen and (min-width: 1024px) {
+  .products-page__button {
+  margin: 1rem;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+.products-page__button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: vars.$secundary-color;
+  color: white;
+  padding: 0.5rem;
+  border: vars.$primary-border;
+  box-shadow: 0 0 0.3rem black;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 0.3rem darkorange;
+    color: orange;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .card__recipe-absent {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+	margin: auto;
+	display: flex;
+	width: 80%;
+	text-align: center;
+  }
+  .recipe__not-exists {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .card__recipe-absent {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    width: 25rem;
+    margin: auto;
+  }
+
+  .recipe__not-exists {
+    margin: auto;
+  }
+}

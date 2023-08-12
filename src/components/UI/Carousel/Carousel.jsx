@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.scss';
 
 /**
- * UI element based on Slick Carousel library used to display products list per categories or only available products
+ * ui element based on Slick carousel library used to display products list per categories or only available products
  * @param products {array<object>} products to display
  * @param category {array<object>} product categories
  * @param title {string} naming carousel if not using categories

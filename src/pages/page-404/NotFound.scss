@@ -1,0 +1,130 @@
+@use '../../styles/vars';
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+/* Mobile responsive (320px-425px) */
+
+@media only screen and (max-width: 425px) {
+  .notfound {
+    margin-top: -20px;
+  }
+
+  .notfound__div {
+    height: 5rem;
+  }
+
+  .notfound__div-title {
+    color: vars.$background-color;
+    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+    font-size: 1.8rem;
+    text-align: center;
+    padding-top: 3.2rem;
+  }
+
+  .notfound__section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .notfound__section-img {
+    width: 40%;
+    height: auto;
+  }
+
+  .notfound__section-p {
+    font-size: 6.25rem;
+    font-weight: 700;
+    color: vars.$background-color;
+    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+  }
+
+  .notfound__return {
+    display: flex;
+    justify-content: space-around;
+    margin: .5rem;
+  }
+
+  .notfound__return-link {
+    text-align: center;
+    border: 2px solid vars.$secundary-color;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 3px;
+    font-weight: 800;
+    width: 60%;
+    color: vars.$secundary-color;
+  }
+}
+
+/* Tablet responsive (425px-1024px) */
+
+@media only screen and (min-width: 425px) {
+  
+  .notfound__div-title {
+    color: vars.$background-color;
+    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .notfound__section {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .notfound__section-img {
+    width: 30%;
+  }
+
+  .notfound__section-p {
+    font-size: 12.5rem;
+    font-weight: 700;
+    color: vars.$background-color;
+    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+  }
+
+  .notfound__return {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .notfound__return-link {
+    text-align: center;
+    border: 2px solid vars.$secundary-color;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 3px;
+    font-weight: 800;
+    color: vars.$secundary-color;
+    width: 25%;
+  }
+}
+
+/* Desktop (1024px-1440px) */
+
+@media only screen and (min-width: 1024px) {
+  .notfound__div-title {
+    font-size: 3.8rem;
+    padding-top: 4rem;
+  }
+
+  .notfound__section-p {
+    font-size: 18.8rem;
+    height: 20rem;
+  }
+
+  .notfound__section {
+  height: 35rem;
+  }
+
+  .notfound__return-link {
+    width: 15%;
+  }
+}
