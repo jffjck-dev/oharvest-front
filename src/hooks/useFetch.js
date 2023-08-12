@@ -1,32 +1,39 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
 
 /**
  * Custom Hook for fetching API data
  * @param url {string} API url
- * @param config {object} config headers
- * @returns {{isLoading: boolean, data: array<object>, error: object}}
+ * @returns {{isLoading: boolean, data: array, hasError: boolean}}
  */
-export const useFetch = (url, config= {}) => {
+export const useFetch = (url) => {
     const [isLoading, setIsLoading] = useState(false);
     const [hasError, setHasError] = useState(false);
     const [data, setData] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
-        setTimeout(()=> {
-            axios.get(url, config)
-                .then((response) => {
-                    setData(response.data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setHasError(true);
-                })
-                .finally(() => {
-                    setIsLoading(false);
-                });
-        }, 3000);
+        async function simulateSlowFetch(url, delay) {
+            await new Promise(resolve => setTimeout(resolve, delay));
+
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Network response was not ok (${response.status})`);
+            }
+            return await response.json();
+        }
+
+        (async () => {
+            try {
+                const data = await simulateSlowFetch(url, 3000);
+                setData(data);
+            } catch (error) {
+                console.log('Error fetching data:', error);
+                setHasError(true);
+            } finally {
+                setIsLoading(false);
+            }
+        })();
+
     },
     [url]);
 
