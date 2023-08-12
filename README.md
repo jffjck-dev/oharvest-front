@@ -1,30 +1,49 @@
-![harvest](./src/assets/logo_oharvest_transparent.png)
-
-# O'HARVEST (Front)
+![oharvest](./src/assets/logo_oharvest_transparent.png)
+# O'HARVEST PROJECT (Front-end)
 
 ---
+## Launch development server 
 
-### set and launch local version
+#### 1/ create .env.local file
 
-In order to install dependencies and launch local server:
+```shell
+cp .env .env.local
 ```
-# with npm 
-npm i
-npm run dev
+
+#### 2/ fill env variables in .env.local file
+
+#### 3/ Start development server
+
+```shell
+#yarn
+yarn dev
+
+#npm
+npm un dev
+```
+
+---
+#### Activate the eslint config 
+
+```shell
+#yarn
+yarn init @eslint/config
+
 
 # with yarn
 yarn
 yarn dev
 ```
 
+---
 
 ## Responsive format
 
 ---
 
-#### Mobile widht: 320px - 425px
+#### Mobile width: 320px - 425px
 
-```
+```css
 @media only screen and (max-width: 425px) {
 
 }
@@ -32,15 +51,15 @@ yarn dev
 
 #### Tablet width: 425px - 1024px
 
-```
+```css
 @media only screen and (min-width: 425px) {
 
 }
 ```
 
-#### Desktop widht: 1024px - 1440px
+#### Desktop width: 1024px >
 
-```
+```css
 @media only screen and (min-width: 1024px) {
 
 }
@@ -49,7 +68,11 @@ yarn dev
 ## Working flow on a new feature
 
 ---
-Be placed on `dev` branch and update your branch:
+
+## Work on a new feature
+
+Be placed on `dev` branch:
+
 ```
 git checkout dev
 git pull origin dev
@@ -60,39 +83,24 @@ Create a new branch to work on a new feature :
 git checkout -b feat/feature-name>
 ```
 
-### (!) Naming branch convention
+## (!) Naming branch
 ❌ ~~CamelCase ou pascalCase~~
 ✅ **kebab-case**
 
-
-### (!) Naming commit convention:
-
+## Commit convention:
 - `config:` When configuration is changed
-- `feat:` When adding new feature or new styles
+- `feat:` When adding new feature
 - `fix:` When bug is resolved
 - `doc:` When documentation is update
 - `refacto:` When refactoring
-- `style:` pour tous ce qui concerne le style
-- `merge:` pour les merges et résolution de conflit
-- `prod:` pour les mises en production (merge de dev dans main)
-- `hotfix:` pour résoudre un bug sur main
+- `style:` When adding or changing style
+- `merge:` When two branch are merged
+- `prod:` When website is deploy (merge dev into main)
+- `hotfix:` When bug is resolved in production environment
 
 
 Then explain in a few words the work done (mention the components/files on which you worked).
- ---
-
-Once the development is finished and committed, we recover any modifications:
-
-```
-git pull origin feat/<name-feature>
-```
-For branch name:
-❌ ~~CamelCase ou pascalCase~~
-✅ **snake_case**
-
-We resolve conflicts.
 
 Once the conflicts are resolved, we make a pull request on **GitHub**, from the `feat/<feature-name>` branch in the `dev` branch.
-
 Once the features have been collected in the `dev` branch and the bugs fixed,
-we make a pull request on **GitHub**, from the `dev` branch in the `prod` branch.
+we make a pull request on **GitHub**, from the `dev` branch in the `main` branch.
