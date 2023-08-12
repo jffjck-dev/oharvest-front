@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LayersControl, Marker, Popup } from 'react-leaflet';
-import Map from '../../../components/UI/Map/Map.jsx';
+import Map from '../UI/Map/Map.jsx';
 import Plot from './Plot.jsx';
 import UserMarker from './UserMarker.jsx';
 
 import './CropPlan.scss';
-import logo from '../../../assets/logo_oharvest_transparent.png';
+import logo from '../../assets/logo_oharvest_transparent.png';
 
 /**
  * Map element localizing plots and products

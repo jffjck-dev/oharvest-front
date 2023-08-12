@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useFetch} from '../../hooks/useFetch.js';
 import Notification from '../../components/Notification/Notification.jsx';
-import CropPlan from './CropPlan/CropPlan.jsx';
-import CropTable from './CropTable/CropTable.jsx';
+import CropPlan from '../../components/CropPlan/CropPlan.jsx';
+import CropTable from '../../components/CropTable/CropTable.jsx';
 import Loading from '../../components/UI/Loading/Loading.jsx';
 import Error from '../../components/UI/Error/Error.jsx';
 
