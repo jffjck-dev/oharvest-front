@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
@@ -12,18 +11,17 @@ import './ReservationCalendar.scss';
 
 /**
  * Calendar Element for selecting day and moment for school trip
- * @param url API url
- * @param config config headers authorization
  * @returns {JSX.Element}
  */
-const ReservationCalendar = ({url, config}) => {
+const ReservationCalendar = () => {
     const [selectedDate, setSelectedDate] = useState(); // stock the date choosen by user
     const [selectedTimeSlot, setSelectedTimeSlot] = useState(); // stock the time slot choosen by user
     const [reservedSlots, setReservedSlots] = useState([]); // stock time slot already booked
     const [excludeDays, setExcludeDays] = useState([]); // days to disable on the calendar
+    const url = import.meta.env.VITE_HARVEST_API_URL;
 
     useEffect(() => {
-        axios.get(url + '/bookings', config)
+        axios.get(url + '/bookings')
             .then((response) => {
 
                 /**
@@ -171,11 +169,6 @@ Utility function
             </div>
         </>
     );
-};
-
-ReservationCalendar.propTypes = {
-    url : PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired
 };
 
 export default ReservationCalendar;
