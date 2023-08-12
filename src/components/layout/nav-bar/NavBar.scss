@@ -1,4 +1,3 @@
-// import SASS variables from _vars.scss
 @use "../../../styles/vars";
 
 /* --- MOBILE --- */
@@ -13,43 +12,44 @@
   height: 3.5rem;
   box-shadow: 0 0 .3rem black;
   width: 100%;
-}
 
-.navbar__list {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  width: 100%;
-  justify-content: space-around;
-}
+  // brand logo
+  &__img {
+    height: 3.5rem;
+  }
 
-.navbar__list-item {
-  text-align: center;
-}
+  &__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
 
-.navbar__item-link {
-  color: vars.$primary-color;
-  text-align: center;
-  font-size: 1rem;
-  text-shadow: 0 0 0.1rem black;
-  height: 100%;
-}
+    &-item {
+      text-align: center;
 
-.navbar__item-link--active {
-  color: vars.$primary-color;
-  font-weight: 700;
-  font-size: 1rem;
-  text-shadow: 0 0 0.3rem vars.$background-color;
-}
+      &-link {
+        color: vars.$primary-color;
+        text-align: center;
+        font-size: 1rem;
+        text-shadow: 0 0 0.1rem black;
+        height: 100%;
 
-.navbar__img {
-  height: 3.5rem;
+        &--active {
+          color: vars.$primary-color;
+          font-weight: 700;
+          font-size: 1rem;
+          text-shadow: 0 0 0.3rem vars.$background-color;
+        }
+      }
+    }
+  }
 }
 
 
 /* --- DESKTOP --- */
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (width >= 1024px) {
 
   .navbar {
     background: linear-gradient(vars.$background-color-transparent, #00000000);
@@ -58,35 +58,37 @@
     height: 15vh;
     width: 100%;
     box-shadow: none;
-  }
 
-  .navbar__list {
-    justify-content: flex-end;
-    gap: 1.5rem;
-    width: 100%;
-    padding-right: .5rem;
-  }
-
-  .navbar__img {
-    height: 7rem;
-  }
-
-  .navbar__item-link {
-    color: vars.$background-color;
-    font-size: 1.5rem;
-    font-weight: 800;
-    text-shadow: 0 0 0.1rem rgb(0, 0, 0);
-    transition: .3s;
-
-    &:hover {
-      text-shadow: 0 0 0.3rem darkorange;
+    // logo
+    &__img {
+      height: 7rem;
     }
-  }
 
-  .navbar__item-link--active {
-    color: vars.$primary-color;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-shadow: 0 0 0.3rem vars.$background-color;
+    &__list {
+      justify-content: flex-end;
+      gap: 1.5rem;
+      width: 100%;
+      padding-right: .5rem;
+
+      &-item-link {
+        color: vars.$background-color;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-shadow: 0 0 0.1rem rgb(0, 0, 0);
+        transition: .3s;
+
+        &--active {
+          color: vars.$primary-color;
+          font-weight: 700;
+          font-size: 1.5rem;
+          text-shadow: 0 0 0.3rem vars.$background-color;
+        }
+
+        // animation
+        &:hover {
+          text-shadow: 0 0 0.3rem darkorange;
+        }
+      }
+    }
   }
 }

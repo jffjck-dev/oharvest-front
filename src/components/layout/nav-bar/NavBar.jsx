@@ -21,7 +21,7 @@ const NavBar = () => {
             </Link>
             <ul className="navbar__list">
                 <li className="navbar__list-item">
-                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'}
+                    <NavLink className={({isActive}) => isActive ? 'navbar__list-item-link--active' : 'navbar__list-item-link'}
                         to="/products"
                         title="cliquez pour vous diriger vars l'inventaire des produits"
                         aria-label="cliquez pour vous diriger vars l'inventaire des produits"
@@ -30,7 +30,7 @@ const NavBar = () => {
                     </NavLink>
                 </li>
                 <li className="navbar__list-item">
-                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'}
+                    <NavLink className={({isActive}) => isActive ? 'navbar__list-item-link--active' : 'navbar__list-item-link'}
                         to="/map"
                         title="cliquez pour vous diriger vars le plan de la cueillette"
                         aria-label="cliquez pour vous diriger vars le plan de la cueillette"
@@ -39,7 +39,7 @@ const NavBar = () => {
                     </NavLink>
                 </li>
                 <li className="navbar__list-item">
-                    <NavLink className={({isActive}) => isActive ? 'navbar__item-link--active' : 'navbar__item-link'}
+                    <NavLink className={({isActive}) => isActive ? 'navbar__list-item-link--active' : 'navbar__list-item-link'}
                         to="/reservation"
                         title="cliquez pour vous diriger vers les modalités des visites scolaires"
                         aria-label="cliquez pour vous diriger vers les modalités des visites scolaires"
