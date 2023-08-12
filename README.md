@@ -29,12 +29,16 @@ npm un dev
 #yarn
 yarn init @eslint/config
 
-#npm
-npm init @eslint/config
+
+# with yarn
+yarn
+yarn dev
 ```
 
 ---
+
 ## Responsive format
+
 ---
 
 #### Mobile width: 320px - 425px
@@ -61,12 +65,17 @@ npm init @eslint/config
 }
 ```
 
+## Working flow on a new feature
+
 ---
+
 ## Work on a new feature
 
 Be placed on `dev` branch:
+
 ```
 git checkout dev
+git pull origin dev
 ```
 
 Create a new branch to work on a new feature :
@@ -89,7 +98,9 @@ git checkout -b feat/feature-name>
 - `prod:` When website is deploy (merge dev into main)
 - `hotfix:` When bug is resolved in production environment
 
+
 Then explain in a few words the work done (mention the components/files on which you worked).
+
 Once the conflicts are resolved, we make a pull request on **GitHub**, from the `feat/<feature-name>` branch in the `dev` branch.
 Once the features have been collected in the `dev` branch and the bugs fixed,
 we make a pull request on **GitHub**, from the `dev` branch in the `main` branch.

@@ -1,0 +1,144 @@
+@use "../../../../styles/vars";
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Mobile responsive (max-width: 425px) */
+@media only screen and (max-width: 425px) {
+  .aboutus__dev-photo {
+    width: 15rem;
+    height: 15rem;
+  }
+  
+  .aboutus__dev-text {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.3125rem;
+    border-radius: 5px;
+    margin-top: 0.3125rem;;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    border:1px solid vars.$summer-color;
+  }
+}
+
+/* Tablet responsive (min-width: 425px) */
+@media only screen and (min-width: 425px){
+  .aboutus__dev-photo {
+    width: 20rem;
+    height: 20rem;
+  }
+  .aboutus__dev-text {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.3125rem;;
+    border-radius: 5px;
+    margin-top: 0.3125rem;;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    border:1px solid vars.$summer-color;
+  }
+}
+
+/* Desktop responsive (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
+  .aboutus__dev-photo {
+    width: 20rem;
+    height: 20rem;
+  }
+  .aboutus__dev-photo:hover .aboutus__dev-text {
+    display: block;
+  }
+  .aboutus__dev-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .aboutus__dev-text {
+    display: none;
+    color: white;
+    text-align: center;
+  }
+  .aboutus__dev-photo:hover .aboutus__dev-image-hover {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* Commun CSS */
+/* ------------------------------------------------------ */
+
+/* Styles généraux */
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: vars.$background-light-color;
+}
+
+.aboutus__title {
+  font-size: 2.5rem;
+  color: vars.$alternative-color;
+  margin-bottom: 1.875rem;
+  text-align: center;
+}
+
+.aboutus__img-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+/* Styles pour les équipes Back-End et Front-End */
+.aboutus__img-back,
+.aboutus__img-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutus__subtitle-back,
+.aboutus__subtitle-front {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  background-color: vars.$summer-color;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Styles pour les développeurs */
+.aboutus__dev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  }
+  
+  .aboutus__dev-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  }
+  
+  .aboutus__image {
+  width: 100%;
+  height: auto;
+  }
+
+
