@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useFetch } from '../../hooks/useFetch.js';
-import Carousel from '../UI/Carousel/Carousel.jsx';
-import Notification from '../Notification/Notification.jsx';
-import Loading from '../UI/Loading/Loading';
-import Error from '../UI/Error/Error';
+import Carousel from '../../components/UI/Carousel/Carousel.jsx';
+import Notification from '../../components/Notification/Notification.jsx';
+import Loading from '../../components/UI/Loading/Loading.jsx';
+import Error from '../../components/UI/Error/Error.jsx';
 
 import './ProductsListPage.scss';
 import PropTypes from 'prop-types';

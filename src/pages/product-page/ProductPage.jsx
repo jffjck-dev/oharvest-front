@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useFetch} from '../../hooks/useFetch.js';
 import {Link, useParams} from 'react-router-dom';
-import Banner from './Banner/Banner.jsx';
-import Availablity from './Availablity/Availablity.jsx';
-import CalendarHarvest from './CalendarHarvest/CalendarHarvest.jsx';
-import RecipeProduct from './RecipeProduct/RecipeProduct.jsx';
-import Particularity from './Particularity/Particularity.jsx';
-import Variety from './Variety/Variety.jsx';
-import Tips from './Tips/Tips.jsx';
-import Loading from '../UI/Loading/Loading.jsx';
-import Notification from '../Notification/Notification.jsx';
+import Banner from '../../components/product/banner/Banner.jsx';
+import Availablity from '../../components/product/availablity/Availablity.jsx';
+import CalendarHarvest from '../../components/product/calendar-harvest/CalendarHarvest.jsx';
+import RecipeProduct from '../../components/product/recipe-product/RecipeProduct.jsx';
+import Particularity from '../../components/product/particularity/Particularity.jsx';
+import Variety from '../../components/product/variety/Variety.jsx';
+import Tips from '../../components/product/tips/Tips.jsx';
+import Loading from '../../components/UI/Loading/Loading.jsx';
+import Notification from '../../components/Notification/Notification.jsx';
 
 import './ProductPage.scss';
 

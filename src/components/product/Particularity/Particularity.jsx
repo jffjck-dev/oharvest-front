@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Particularity.scss';
 
 
-//Particularity and description of each product
+//particularity and description of each product
 const Particularity = ({description}) => {
     return (
         <div className='particularity'>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Tips.scss';
 
 /**
- * Tips component with event button.
+ * tips component with event button.
  * @param tip {string} some tips about the product.
  * @returns {JSX.Element}
  */
