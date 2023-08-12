@@ -19,7 +19,7 @@ cp .env .env.local
 yarn dev
 
 #npm
-npm un dev
+npm run dev
 ```
 
 ---
