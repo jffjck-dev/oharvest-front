@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useFetch} from '../../hooks/useFetch.js';
-import Carousel from '../UI/Carousel/Carousel.jsx';
-import Welcome from './Welcome/Welcome';
-import ContactSection from './ContactSection/ContactSection';
-import Loading from '../UI/Loading/Loading';
-import Notification from '../Notification/Notification.jsx';
-import Error from '../UI/Error/Error';
+import Carousel from '../../components/UI/Carousel/Carousel.jsx';
+import Welcome from '../../components/home/welcome/Welcome.jsx';
+import ContactSection from '../../components/home/contact-section/ContactSection.jsx';
+import Loading from '../../components/UI/Loading/Loading.jsx';
+import Notification from '../../components/Notification/Notification.jsx';
+import Error from '../../components/UI/Error/Error.jsx';
 
 /**
  * Page element when landing on the website

@@ -1,6 +1,6 @@
 import React from 'react';
 import CropPage from '../../../pages/crop-page/CropPage';
-import HomePage from '../../HomePage/HomePage';
+import HomePage from '../../../pages/home-page/HomePage';
 import ProductPage from '../../../pages/product-page/ProductPage';
 import ProductsListPage from '../../../pages/products-list-page/ProductsListPage';
 import FormPage from '../../FormPage/FormPage';

@@ -1,7 +1,7 @@
 import React from 'react';
-import Location from './Location/Location.jsx';
-import OpeningHours from './OpeningHours/OpeningHours.jsx';
-import ContactInfo from './ContactInfo/ContactInfo';
+import Location from './location/Location.jsx';
+import OpeningHours from './opening-hours/OpeningHours.jsx';
+import ContactInfo from './contact-info/ContactInfo.jsx';
 
 import './ContactSection.scss';
 
