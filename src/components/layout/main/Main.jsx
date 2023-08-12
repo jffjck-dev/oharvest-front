@@ -3,7 +3,7 @@ import CropPage from '../../../pages/crop-page/CropPage.jsx';
 import HomePage from '../../../pages/home-page/HomePage.jsx';
 import ProductPage from '../../../pages/product-page/ProductPage.jsx';
 import ProductsListPage from '../../../pages/products-list-page/ProductsListPage.jsx';
-import FormPage from '../../FormPage/FormPage.jsx';
+import FormPage from '../../../pages/booking-page/FormPage.jsx';
 import ReservationPage from '../../../pages/educational-visit-page/ReservationPage.jsx';
 import NotFound from '../../../pages/page-404/NotFound.jsx';
 import { Routes, Route } from 'react-router-dom';

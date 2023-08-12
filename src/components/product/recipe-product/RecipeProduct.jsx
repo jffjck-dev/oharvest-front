@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {useFetch} from '../../../hooks/useFetch.js';
 
 import './RecipeProduct.scss';
-import Loading from '../../UI/Loading/Loading.jsx';
-import Error from '../../UI/Error/Error.jsx';
+import Loading from '../../ui/loading/Loading.jsx';
+import Error from '../../ui/error/Error.jsx';
 
 /**
  * Section with the recipe card.

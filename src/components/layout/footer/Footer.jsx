@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.scss';
-import Modal from '../../UI/Modal/Modal.jsx';
+import Modal from '../../ui/modal/Modal.jsx';
 import CGU from './CGU/CGU.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
 

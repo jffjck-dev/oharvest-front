@@ -1,12 +1,12 @@
 import React from 'react';
 import { Marker, Popup } from 'react-leaflet';
-import Map from '../../../UI/Map/Map.jsx';
+import Map from '../../../ui/map/Map.jsx';
 
 import logo from '../../../../assets/logo_oharvest_transparent.png';
 import './Location.scss';
 
 /**
- * Map element that geolocalized the harvest
+ * map element that geolocalized the harvest
  * @returns {JSX.Element}
  */
 const Location = () => {

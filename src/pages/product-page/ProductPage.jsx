@@ -9,8 +9,8 @@ import RecipeProduct from '../../components/product/recipe-product/RecipeProduct
 import Particularity from '../../components/product/particularity/Particularity.jsx';
 import Variety from '../../components/product/variety/Variety.jsx';
 import Tips from '../../components/product/tips/Tips.jsx';
-import Loading from '../../components/UI/Loading/Loading.jsx';
-import Notification from '../../components/Notification/Notification.jsx';
+import Loading from '../../components/ui/loading/Loading.jsx';
+import Notification from '../../components/live-info/Notification.jsx';
 
 import './ProductPage.scss';
 

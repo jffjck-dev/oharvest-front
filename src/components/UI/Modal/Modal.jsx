@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
-import Button from '../Button/Button';
+import Button from '../button/Button';
 
 import './Modal.scss';
 
