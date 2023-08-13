@@ -1,3 +1,7 @@
+/**
+ * Utility function to fetch weather data from the api
+ * @returns {Promise<*>}
+ */
 export async function getWeatherReport() {
     const position = {lat: 48.5771821, lon: 7.7488522};
     const apiKey = import.meta.env.VITE_WEATHER_API_TOKEN;
