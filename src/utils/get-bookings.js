@@ -1,3 +1,4 @@
+// TODO: fix issue booking slot not importing properly
 export async function getBookings() {
     const url = import.meta.env.VITE_HARVEST_API_URL;
 

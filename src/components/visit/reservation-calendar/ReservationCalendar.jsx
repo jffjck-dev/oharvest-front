@@ -19,6 +19,7 @@ const ReservationCalendar = () => {
     const [reservedSlots, setReservedSlots] = useState([]); // stock time slot already booked
     const [excludeDays, setExcludeDays] = useState([]); // days to disable on the calendar
 
+    // TODO: fix issue booking slot not importing properly
     useEffect(() => {
         getBookings()
             .then(({ bookingDates, excludeDays }) => {
