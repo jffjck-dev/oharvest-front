@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {useFetch} from '../../hooks/useFetch.js';
 import {Link, useParams} from 'react-router-dom';
 import Banner from '../../components/product/banner/Banner.jsx';
-import Availablity from '../../components/product/availablity/Availablity.jsx';
+import Availability from '../../components/product/availability/Availablity.jsx';
 import CalendarHarvest from '../../components/product/calendar-harvest/CalendarHarvest.jsx';
 import RecipeProduct from '../../components/product/recipe-product/RecipeProduct.jsx';
 import Particularity from '../../components/product/particularity/Particularity.jsx';
@@ -16,13 +15,12 @@ import './ProductPage.scss';
 
 /**
  * Page displaying product image, harvesting calendar, varieties, recipes, tips and tricks
- * @param url {string} API URL
- * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const ProductPage = ({url, config}) => {
+const ProductPage = () => {
     const { id } = useParams();
-    const {data, isLoading, hasError} = useFetch(url + `/products/${id}`, config);
+    const url = import.meta.env.VITE_HARVEST_API_URL;
+    const {data, isLoading, hasError} = useFetch(url + `/products/${id}`);
 
     return (
         <>
@@ -42,7 +40,7 @@ const ProductPage = ({url, config}) => {
                     </Link>
                     <h2 className="crop-page__page-title">Fiche Produit</h2>
                     <Banner name={data.name} image={data.image} />
-                    <Availablity tag={data.isAvailable} />
+                    <Availability tag={data.isAvailable} />
                     <CalendarHarvest startingDate={data.harvestBeginAt} endingDate={data.harvestEndAt} />
                     {(data.category && data.category.name !== 'Fleur') && <RecipeProduct name={data.name} />}
                     <Particularity description={data.description} />
@@ -70,11 +68,6 @@ const ProductPage = ({url, config}) => {
             )}
         </>
     );
-};
-
-ProductPage.propTypes = {
-    url: PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired,
 };
 
 export default ProductPage;

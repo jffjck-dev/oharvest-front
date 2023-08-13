@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
+import './FormPage.scss';
 
 /**
  * Page element with forms for scholar reservation
- * @param url {string} API URL
- * @param config {object} headers authorization config
  * @returns {JSX.Element}
  */
-const FormPage = ({url, config}) => {
+const FormPage = () => {
     const [inscriptionDone, setInscriptionDone] = useState(false);
     const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
     const naviguate = useNavigate();
+    const url = import.meta.env.VITE_HARVEST_API_URL;
 
     const timeslot = searchParams.get('slot');
     const date = new Date(searchParams.get('date'));
@@ -27,27 +25,38 @@ const FormPage = ({url, config}) => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data, event) => {
+    const onSubmit = async (data, event) => {
         event.preventDefault();
-        axios.post(`${url}/bookings`, {
-            ...data,
-            studentNumber: Number(data.studentNumber),
-            guideNumber: Number(data.guideNumber),
-            groupNumber: Number(data.groupNumber),
-            slot: timeslot,
-            visitAt,
-        }, config)
-            .then( () => {
-                setError(false);
-                setInscriptionDone(true);
-                setTimeout(() => {
-                    naviguate('/');
-                }, 5000);
-            })
-            .catch((error) => {
-                console.log(error);
-                setError(true);
+
+        try {
+            const response = await fetch(`${url}/bookings`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...data,
+                    studentNumber: Number(data.studentNumber),
+                    guideNumber: Number(data.guideNumber),
+                    groupNumber: Number(data.groupNumber),
+                    slot: timeslot,
+                    visitAt,
+                }),
             });
+
+            if (!response.ok) {
+                throw new Error(`Network response was not ok ${response.status}`);
+            }
+
+            setError(false);
+            setInscriptionDone(true);
+            setTimeout(() => {
+                naviguate('/');
+            }, 5000);
+        } catch (error) {
+            console.error(error);
+            setError(true);
+        }
     };
 
     return (
@@ -255,8 +264,4 @@ const FormPage = ({url, config}) => {
     );
 };
 
-FormPage.propTypes = {
-    url: PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired,
-};
 export default FormPage;
