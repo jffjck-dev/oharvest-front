@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {useFetch} from '../../hooks/useFetch.js';
 import Notification from '../../components/live-info/Notification.jsx';
 import CropPlan from '../../components/crop/crop-plan/CropPlan.jsx';
@@ -11,12 +10,11 @@ import './CropPage.scss';
 
 /**
  * Page element displaying harvest plot geolocalized map and a table listing products per plot
- * @param url {string} API URL to fetch plots data
- * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const CropPage = ({url, config}) => {
-    const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products', config);
+const CropPage = () => {
+    const url = import.meta.env.VITE_HARVEST_API_URL;
+    const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products');
 
     const noEmptyPlots = plots?.filter(plot => plot.products.length > 0);
 
@@ -35,8 +33,4 @@ const CropPage = ({url, config}) => {
     );
 };
 
-CropPage.propTypes = {
-    url: PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired,
-};
 export default CropPage;
