@@ -6,7 +6,7 @@ export async function getBookings() {
         const response = await fetch(url + '/bookings');
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Network response was not ok: ${response.status}`);
         }
 
         const data = await response.json();
