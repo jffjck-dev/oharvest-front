@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import {getBookings} from '../../../utils/get-bookings.js';
 import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { registerLocale } from 'react-datepicker';
 import fr from 'date-fns/locale/fr';
-import 'react-datepicker/dist/react-datepicker.css';
-import axios from 'axios';
 
+import 'react-datepicker/dist/react-datepicker.css';
 import './ReservationCalendar.scss';
 
 /**
@@ -18,54 +18,21 @@ const ReservationCalendar = () => {
     const [selectedTimeSlot, setSelectedTimeSlot] = useState(); // stock the time slot choosen by user
     const [reservedSlots, setReservedSlots] = useState([]); // stock time slot already booked
     const [excludeDays, setExcludeDays] = useState([]); // days to disable on the calendar
-    const url = import.meta.env.VITE_HARVEST_API_URL;
 
     useEffect(() => {
-        axios.get(url + '/bookings')
-            .then((response) => {
-
-                /**
-                 * array used to push days to disable in the calendar
-                 */
-                const formatData = [];
-                // exemple : un array de 5 elements <== response.data.length = 5
-                // [0] = {visitAt: 23/06/2023, slot: afternoon}; <== we are here / index equal 0 / 1st iteration
-                // [1] = {visitAt: 24/06/2023, slot: afternoon}; <== we are here / index equal 1 / 2nd iteration
-                // [2] = {visitAt: 24/06/2023, slot: morning};  <== we are here / index equal 2 / 2nd iteration
-                // [3] = {visitAt: 26/06/2023, slot: afternoon};  <== we are here / index equal 3 / 3rd iteration
-                // [4] = {visitAt: 27/06/2023, slot: afternoon}; <== we are here / index equal 4 / 4th iteration
-                for(let index=0; index < response.data.length; index++){
-                    if(index !== response.data.length - 1 && response.data[index].visitAt === response.data[index+1].visitAt){
-                        delete response.data[index].slot;
-                        formatData.push(response.data[index]);
-                        index++;
-                    } else {
-                        formatData.push(response.data[index]);
-                    }
-                }
-
-                /**
-                 * formating attributes name
-                 */
-                const bookingDates = formatData.map((item) => ({ date: new Date(item.visitAt), timeSlot: item.slot }));
+        getBookings()
+            .then(({ bookingDates, excludeDays }) => {
                 setReservedSlots(bookingDates);
-                
-                /**
-                 * keep only the day where morning and afternoon are booked (the day is not available on the calendar)
-                 */
-                const lists = bookingDates
-                    .filter(item => item.timeSlot !== 'morning' && item.timeSlot !== 'afternoon')
-                    .map((item) => item.date);
-
-                setExcludeDays(lists);
+                setExcludeDays(excludeDays);
             })
-            .catch((error) => console.log(error));
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     }, []);
 
-
     /* ----------------------------------
-Event function
---------------------------------------- */
+    Event function
+    ----------------------------------- */
     /**
      * on click on the day date, update the date choosen by the user
      */
@@ -81,8 +48,8 @@ Event function
     };
 
     /* ---------------------------------
-Utility function
---------------------------------------- */
+    Utility function
+    ----------------------------------- */
 
     /**
      * check if a day is totally booked (morning and afternoon slots)
@@ -97,7 +64,7 @@ Utility function
     };
 
     /**
-     * Check if a day is out of week-end & not totally booked (morning & afternoon)
+     * Check if a day is out of weekend & not totally booked (morning & afternoon)
      */
     const isWeekday = (date) => {
         const day = date.getDay();

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import './FormPage.scss';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
+import './FormPage.scss';
 
 /**
  * Page element with forms for scholar reservation
@@ -25,27 +25,38 @@ const FormPage = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data, event) => {
+    const onSubmit = async (data, event) => {
         event.preventDefault();
-        axios.post(`${url}/bookings`, {
-            ...data,
-            studentNumber: Number(data.studentNumber),
-            guideNumber: Number(data.guideNumber),
-            groupNumber: Number(data.groupNumber),
-            slot: timeslot,
-            visitAt,
-        })
-            .then( () => {
-                setError(false);
-                setInscriptionDone(true);
-                setTimeout(() => {
-                    naviguate('/');
-                }, 5000);
-            })
-            .catch((error) => {
-                console.log(error);
-                setError(true);
+
+        try {
+            const response = await fetch(`${url}/bookings`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...data,
+                    studentNumber: Number(data.studentNumber),
+                    guideNumber: Number(data.guideNumber),
+                    groupNumber: Number(data.groupNumber),
+                    slot: timeslot,
+                    visitAt,
+                }),
             });
+
+            if (!response.ok) {
+                throw new Error(`Network response was not ok ${response.status}`);
+            }
+
+            setError(false);
+            setInscriptionDone(true);
+            setTimeout(() => {
+                naviguate('/');
+            }, 5000);
+        } catch (error) {
+            console.error(error);
+            setError(true);
+        }
     };
 
     return (
