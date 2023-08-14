@@ -15,7 +15,7 @@ export function configCarousel(cardsNumberToDisplay) {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: cardsNumberToDisplay,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true,

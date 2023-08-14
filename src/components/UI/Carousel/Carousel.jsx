@@ -6,7 +6,7 @@ import {configCarousel} from '../../../utils/config-carousel.js';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './Carousel.scss';
+import classes from './Carousel.module.css';
 
 /**
  * reusable carousel element based on Slick library in order to display products list per categories or only available products
@@ -26,15 +26,15 @@ const Carousel = ({products, category, title, nbCardsToSHow = 4}) => {
 
     return (
         <div>
-            <div className='highlight'>
-                <h2 className='highlight__title'>{category ? category.name : title}</h2>
+            <div className={classes.carousel}>
+                <h2 className={classes.carousel__title}>{category ? category.name : title}</h2>
                 {(carouselProducts.length > 0) && <Slider {...settings}>
                     {
                         (carouselProducts.map((product) => (
-                            <div key={product.id} className="highlight__div">
+                            <div key={product.id} >
                                 <Link to={`/products/${product.id}`} title="cliquer pour vous diriger vers la fiche produit correspondant" aria-label="cliquer pour vous diriger vers la fiche produit correspondant">
-                                    <span className={ product.isAvailable ? 'highlight__tag--available' : 'highlight__tag--unavailable'}>{product.isAvailable ? 'disponible' : 'indisponible'}</span>
-                                    <img className="highlight__card" src={`http://localhost:8000/images/${product.image}`} alt={`${product.image}`} />
+                                    <span className={ product.isAvailable ? classes.available : classes.unavailable}>{product.isAvailable ? 'disponible' : 'indisponible'}</span>
+                                    <img className={classes.carousel__card} src={`http://localhost:8000/images/${product.image}`} alt={`${product.image}`} />
                                 </Link>
                             </div>
                         )))

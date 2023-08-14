@@ -1,0 +1,81 @@
+.available,
+.unavailable {
+  border-radius: 5px;
+  padding: 0.2rem;
+  font-size: 0.5rem;
+  box-shadow: 0 0 0.3rem hsl(359, 100%, 0%);
+  margin-left: 0.2rem;
+}
+
+.available {
+  background-color: lightgreen;
+  border: 1px solid darkgreen;
+  color: darkgreen;
+}
+
+.unavailable {
+  background-color: lightcoral;
+  border: 1px solid darkred;
+  color: darkred;
+}
+
+.carousel {
+  margin-left: 0.2rem;
+}
+
+.carousel__card {
+  border-radius: 50%;
+  box-shadow: 0 0 0.3rem hsl(359, 100%, 0%);
+  margin: 0.5rem;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* Responsive styles */
+
+@media screen and (width >= 425px) {
+  .carousel {
+    height: 20vh;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .carousel__title {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+    margin-top: 0.4rem;
+  }
+
+  .carousel__card {
+    height: 8vh;
+  }
+
+  .available,
+  .unavailable {
+    padding: 0.1rem;
+    font-size: 0.7rem;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .carousel__title {
+    font-size: 1.8rem;
+  }
+
+  .carousel__card {
+    height: 12vh;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    padding: 0;
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0 0 0.5rem hsl(359, 100%, 0%);
+    }
+  }
+}

@@ -20,7 +20,7 @@ const Home = () => {
             {<Notification/>}
             {isLoading && <Loading />}
             {hasError && <Error />}
-            {data && <Carousel products={data} title="Produits disponibles" />}
+            {data && <Carousel products={data} title="Produits disponibles" nbCardsToSHow={5}/>}
             <Welcome />
             <ContactSection />
         </>

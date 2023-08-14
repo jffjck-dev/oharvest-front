@@ -1,0 +1,6 @@
+:root {
+    --color-success: hsl(120, 100%, 20%);
+    --color-danger: hsl(0, 100%, 27%);
+    --bg-color-success: hsl(120, 73%, 75%);
+    --bg-color-danger: hsl(0, 79%, 72%);
+}
