@@ -2,7 +2,7 @@
 .unavailable {
   border-radius: 5px;
   padding: 0.2rem;
-  font-size: 0.5rem;
+  font-size: clamp(0.2rem, 2.5vw, 0.7rem);
   box-shadow: 0 0 0.3rem hsl(359, 100%, 0%);
   margin-left: 0.2rem;
 }
@@ -34,6 +34,10 @@
   align-content: center;
 }
 
+.carousel__title {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+}
+
 /* Responsive styles */
 
 @media screen and (width >= 425px) {
@@ -45,7 +49,6 @@
 
   .carousel__title {
     text-align: center;
-    font-size: 1rem;
     margin-bottom: 0.7rem;
     margin-top: 0.4rem;
   }
@@ -64,10 +67,6 @@
 }
 
 @media screen and (width >= 1024px) {
-  .carousel__title {
-    font-size: 1.8rem;
-  }
-
   .carousel__card {
     height: 12vh;
     margin-bottom: 0.5rem;
