@@ -15,6 +15,7 @@ dist-ssr
 .pnp.*
 yarn.lock
 .yarnrc.yml
+package-lock.json
 
 TODO.txt
 

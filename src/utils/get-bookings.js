@@ -1,4 +1,8 @@
 // TODO: fix issue booking slot not importing properly
+/**
+ * Utility function to fetch bookings data from the api
+ * @returns {Promise<{bookingDates: *[], excludeDays: *[]}>}
+ */
 export async function getBookings() {
     const url = import.meta.env.VITE_HARVEST_API_URL;
 
@@ -6,7 +10,7 @@ export async function getBookings() {
         const response = await fetch(url + '/bookings');
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Network response was not ok: ${response.status}`);
         }
 
         const data = await response.json();
