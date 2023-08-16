@@ -5,7 +5,7 @@ import { Marker, useMapEvents, Tooltip, Popup } from 'react-leaflet';
 const UserMarker = () => {
     const [position, setPosition] = useState(null);
     const map = useMapEvents({
-        click() {
+        dblclick() {
             map.locate();
         },
         locationfound(event) {
