@@ -1,36 +1,24 @@
-import React, { useState, useEffect} from 'react';
-
+import React, { useState, useEffect } from 'react';
 import './Loading.scss';
 
 const Loading = () => {
-    const [text, setText] = useState('chargement');
+    // to avoid code repetition on intervals
+    const loadingTexts = ['chargement', 'chargement.', 'chargement..', 'chargement...'];
+    // to avoid multiple timers and handling stop
+    const [textIndex, setTextIndex] = useState(0);
 
     useEffect(() => {
-        setTimeout(() => {
-            setText('chargement.');
-            setInterval(() => {
-                setText('chargement.');
-            }, 2000);
-        }, 500);
-        setTimeout(() => {
-            setText('chargement..');
-            setInterval(() => {
-                setText('chargement..');
-            }, 2000);
-        }, 1000);
-        setTimeout(() => {
-            setText('chargement...');
-            setInterval(() => {
-                setText('chargement...');
-            }, 2000);
-        }, 1500);
-        setInterval(() => {
-            setText('chargement');
-        }, 2000);
+        const interval = setInterval(() => {
+            setTextIndex((prevIndex) => (prevIndex + 1) % loadingTexts.length);
+        }, 250);
+
+        return () => {
+            clearInterval(interval);
+        };
     }, []);
 
     return (
-        <h1 className="loading">🌀{text}</h1>
+        <h1 className="loading"><span className="spinner">🌀</span> {loadingTexts[textIndex]}</h1>
     );
 };
 

@@ -11,7 +11,7 @@ const Plot = ({plot}) => {
     return (
         <LayersControl.Overlay name={plot.name}>
             <Rectangle className="plot" key={plot.id} bounds={plot.coordinate} pathOptions={options}>
-                <Tooltip direction="top" offset={[0, 20]} opacity={1} sticky>
+                <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
                     <ul>
                         {plot.products.map(product => (<ProductTag key={product.id} {...product} />))}
                     </ul>
