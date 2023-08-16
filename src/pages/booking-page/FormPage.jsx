@@ -3,12 +3,14 @@ import { useForm } from 'react-hook-form';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
 import './FormPage.scss';
+import SeoMetadata from '../../components/ui/seo/SeoMetadata.jsx';
 
 /**
  * Page element with forms for scholar reservation
  * @returns {JSX.Element}
  */
 const FormPage = () => {
+    const pageInfo = 'Formulaire d\'inscription visite - La cueillette O\'Harvest';
     const [inscriptionDone, setInscriptionDone] = useState(false);
     const [error, setError] = useState(false);
     const [searchParams] = useSearchParams();
@@ -61,6 +63,7 @@ const FormPage = () => {
 
     return (
         <div>
+            <SeoMetadata title={pageInfo} content={pageInfo}/>
             <h2 className="formpage__title">
                 Formulaire de réservation pour la visite
             </h2>
