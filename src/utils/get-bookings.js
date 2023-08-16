@@ -1,4 +1,8 @@
 // TODO: fix issue booking slot not importing properly
+/**
+ * Utility function to fetch bookings data from the api
+ * @returns {Promise<{bookingDates: *[], excludeDays: *[]}>}
+ */
 export async function getBookings() {
     const url = import.meta.env.VITE_HARVEST_API_URL;
 
