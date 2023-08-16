@@ -9,6 +9,7 @@ import NotFound from '../../../pages/page-404/NotFound.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 import './Main.scss';
+import {Helmet} from 'react-helmet-async';
 
 /**
  * main section of a page. Content displayed depends on path parameter (base on React Router)

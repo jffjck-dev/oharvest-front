@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/">
+    <url>
+        <loc>https://projet-02-o-harvest-front.vercel.app/</loc>
+    </url>
+    <url>
+        <loc>https://projet-02-o-harvest-front.vercel.app/products</loc>
+    </url>
+    <url>
+        <loc>https://projet-02-o-harvest-front.vercel.app/map</loc>
+    </url>
+    <url>
+        <loc>https://projet-02-o-harvest-front.vercel.app/reservation</loc>
+    </url>
+    <url>
+        <loc>https://projet-02-o-harvest-front.vercel.app/reservation/inscription</loc>
+    </url>
+</urlset>

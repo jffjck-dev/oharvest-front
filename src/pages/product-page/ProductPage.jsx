@@ -12,18 +12,24 @@ import Loading from '../../components/ui/loading/Loading.jsx';
 import Notification from '../../components/live-info/Notification.jsx';
 
 import './ProductPage.scss';
+import SeoMetadata from '../../components/ui/seo/SeoMetadata.jsx';
+import img from '../../assets/carrot-in-plate.png';
+import {FaHandPointRight} from 'react-icons/fa';
 
 /**
  * Page displaying product image, harvesting calendar, varieties, recipes, tips and tricks
  * @returns {JSX.Element}
  */
 const ProductPage = () => {
+    const pageInfo = 'Produit de saison - La cueillette O\'Harvest';
+
     const { id } = useParams();
     const url = import.meta.env.VITE_HARVEST_API_URL;
     const {data, isLoading, hasError} = useFetch(url + `/products/${id}`);
 
     return (
         <>
+            <SeoMetadata title={pageInfo} content={pageInfo} />
             {isLoading && <Loading />}
             {(!isLoading && !hasError) && data && (
                 <>
