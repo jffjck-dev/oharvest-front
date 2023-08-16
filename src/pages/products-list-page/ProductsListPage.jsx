@@ -6,21 +6,19 @@ import Loading from '../../components/ui/loading/Loading.jsx';
 import Error from '../../components/ui/error/Error.jsx';
 
 import './ProductsListPage.scss';
-import PropTypes from 'prop-types';
 
 /**
  * Page listing all products (possibility to filter according to their availability)
- * @param url {string} API url used to fetch data
- * @param config {object} config authorization headers
  * @returns {JSX.Element}
  */
-const ProductsListPage = ({url, config}) => {
+const ProductsListPage = () => {
     const [nbProductsPerCarousel, setNbProductsPerCarousel] = useState(4);
     const [isFilterOn, setIsFilterOn] = useState(false);
 
-    const { data: products, isLoading, hasError } = useFetch(url + '/products', config);
-    const { data: onlyAvailableProducts} = useFetch(url + '/products/available', config);
-    const { data: categories} = useFetch(url + '/categories', config);
+    const url = import.meta.env.VITE_HARVEST_API_URL;
+    const { data: products, isLoading, hasError } = useFetch(url + '/products');
+    const { data: onlyAvailableProducts} = useFetch(url + '/products/available');
+    const { data: categories} = useFetch(url + '/categories');
 
     const filterProducts = () => {
         if (!isFilterOn) {
@@ -47,11 +45,6 @@ const ProductsListPage = ({url, config}) => {
             {(!isLoading && !hasError) && categories && categories.map(category => (<Carousel key={category.id} category={category} products={isFilterOn ? onlyAvailableProducts : products} nbCardsToSHow={nbProductsPerCarousel}/>))}
         </>
     );
-};
-
-ProductsListPage.propTypes = {
-    url: PropTypes.string.isRequired,
-    config: PropTypes.object.isRequired,
 };
 
 export default ProductsListPage;

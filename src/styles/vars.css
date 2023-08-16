@@ -3,4 +3,9 @@
     --background-color: hsl(135, 51%, 69%);
     --background-light-color: hsl(98, 73%, 86%);
     --background-color-transparent: hsl(204, 71%, 15%);
+
+    --color-success: hsl(120, 100%, 20%);
+    --color-danger: hsl(0, 100%, 27%);
+    --bg-color-success: hsl(120, 73%, 75%);
+    --bg-color-danger: hsl(0, 79%, 72%);
 }
