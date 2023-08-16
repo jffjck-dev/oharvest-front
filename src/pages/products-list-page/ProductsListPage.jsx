@@ -6,12 +6,15 @@ import Loading from '../../components/ui/loading/Loading.jsx';
 import Error from '../../components/ui/error/Error.jsx';
 
 import './ProductsListPage.scss';
+import SeoMetadata from '../../components/ui/seo/SeoMetadata.jsx';
 
 /**
  * Page listing all products (possibility to filter according to their availability)
  * @returns {JSX.Element}
  */
 const ProductsListPage = () => {
+    const pageInfo = 'Produits de saison - La cueillette O\'Harvest';
+
     const [nbProductsPerCarousel, setNbProductsPerCarousel] = useState(4);
     const [isFilterOn, setIsFilterOn] = useState(false);
 
@@ -32,6 +35,7 @@ const ProductsListPage = () => {
 
     return (
         <>
+            <SeoMetadata title={pageInfo} content={pageInfo} />
             <Notification />
             <h2 className="products-list__page-title">Inventaire des produits</h2>
             {(!isLoading && !hasError) && onlyAvailableProducts && (

@@ -7,12 +7,14 @@ import Loading from '../../components/ui/loading/Loading.jsx';
 import Error from '../../components/ui/error/Error.jsx';
 
 import './CropPage.scss';
+import SeoMetadata from '../../components/ui/seo/SeoMetadata.jsx';
 
 /**
  * Page element displaying harvest plot geolocalized map and a table listing products per plot
  * @returns {JSX.Element}
  */
 const CropPage = () => {
+    const pageInfo = 'Plan des parcelles - La cueillette O\'Harvest';
     const url = import.meta.env.VITE_HARVEST_API_URL;
     const {data: plots, isLoading, hasError} = useFetch(url + '/plots/products');
 
@@ -20,6 +22,7 @@ const CropPage = () => {
 
     return (
         <section>
+            <SeoMetadata title={pageInfo} content={pageInfo}/>
             <Notification />
             <h2 className="crop-page__page-title">Plan de la Cueillette</h2>
             {isLoading && <Loading />}
