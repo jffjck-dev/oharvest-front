@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Footer.scss';
 import Modal from '../../ui/modal/Modal.jsx';
-import CGU from './CGU/CGU.jsx';
-import AboutUs from './AboutUs/AboutUs.jsx';
+import GTU from './gtu/GTU.jsx';
+import AboutUs from './about-us/AboutUs.jsx';
 
 /**
- * footer with link on "CGU" and "about us" modals;
+ * footer with link on "gtu" and "about us" modals;
  */
 const Footer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,7 +43,7 @@ const Footer = () => {
                 </ul>
                 <Modal isModalOpen={isModalOpen} closeModal={closeModal}>
                     {isAboutUsOn && <AboutUs />}
-                    {isCGUOn && <CGU />}
+                    {isCGUOn && <GTU />}
                 </Modal>
             </footer>
         </>
