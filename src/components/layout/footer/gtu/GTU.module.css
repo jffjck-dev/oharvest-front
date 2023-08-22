@@ -1,0 +1,14 @@
+@import '../../../../styles/vars.css';
+
+.header-spacing {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: clamp(.8rem, 2.5vw, 1.2rem);
+}
+
+.text-spacing {
+  margin: 1rem;
+  padding-left: 1rem;
+  color: var(--primary-color);
+  font-size: clamp(.5rem, 2.5vw, 1rem);
+}
