@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import classes from './TeamMember.module.css';
+
 /**
  * Component representing a team member's information.
  *
@@ -14,16 +16,16 @@ const TeamMember = ({ member }) => {
     const { image, name, role } = member;
 
     return (
-        <div className="aboutus__dev">
-            <div className="aboutus__dev-photo">
+        <div className={classes['aboutus__dev']}>
+            <div className={classes['aboutus__dev-photo']}>
                 <img
-                    className="aboutus__image"
+                    className={classes['aboutus__image']}
                     src={image} alt={`Avatar de ${name}`}
                     title={`${name}, ${role}`}
                     aria-label={`${name}, ${role}`}
                 />
-                <div className="aboutus__dev-image-hover">
-                    <p className="aboutus__dev-text">{name}<br />{role}</p>
+                <div className={classes['aboutus__dev-image-hover']}>
+                    <p className={classes['aboutus__dev-text']}>{name}<br />{role}</p>
                 </div>
             </div>
         </div>

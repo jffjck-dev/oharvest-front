@@ -1,0 +1,71 @@
+@import '../../../../styles/vars.css';
+
+/* ------------------------------------------------------ */
+/* Responsive CSS */
+/* ------------------------------------------------------ */
+
+/* Styles généraux */
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-light-color);
+}
+
+.aboutus__title {
+  font-size: 2.5rem;
+  color: var(--alternative-color);
+  margin-bottom: 1.875rem;
+  text-align: center;
+  text-shadow: 2px 4px 8px white;
+}
+
+.aboutus__img-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 75%;
+  margin-bottom: 1.875rem;
+}
+
+/* Styles pour les titre des équipes front et back */
+.aboutus__img-back,
+.aboutus__img-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutus__subtitle-back,
+.aboutus__subtitle-front {
+  font-size: 2rem;
+  width: auto;
+  color: white;
+  padding: 1rem;
+  background-color: var(--summer-color);
+  border-radius: 50px;
+  margin-top: 2rem;
+  text-align: center;
+  text-shadow: 2px 4px 8px var(--alternative-color);
+  box-shadow: 2px 4px 8px var(--alternative-color);
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .aboutus__title {
+    margin-bottom: 0;
+  }
+
+  .aboutus__img-back,
+  .aboutus__img-front {
+    flex-direction: row;
+  }
+
+  .aboutus__subtitle-back,
+  .aboutus__subtitle-front {
+    align-self: center;
+  }
+
+  .aboutus__dev-text {
+    display: none;
+  }
+}

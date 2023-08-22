@@ -1,0 +1,54 @@
+@import '../../../../../styles/vars.css';
+
+/* Styles pour les avatars */
+.aboutus__dev {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.aboutus__dev-photo {
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.aboutus__dev:hover .aboutus__dev-photo {
+    transform: scale(1.1);
+}
+
+.aboutus__image {
+    width: auto;
+    height: 15rem;
+    filter: drop-shadow(2px 4px 8px var(--alternative-color));
+}
+
+.aboutus__dev-text {
+    width: 55%;
+    color: white;
+    text-shadow: 2px 4px 3px var(--primary-color);
+    text-align: center;
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.3125rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(1px) brightness(98%);
+}
+
+.aboutus__dev-photo:hover .aboutus__dev-text {
+    display: block; /* Show text on hover */
+    opacity: 1;
+}
+
+@media only screen and (min-width: 1024px) {
+    .aboutus__dev-text {
+        display: none;
+    }
+}

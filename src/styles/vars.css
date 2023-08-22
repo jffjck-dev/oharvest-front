@@ -1,6 +1,7 @@
 :root {
     --primary-color: hsl(203, 71%, 15%);
     --alternative-color: hsl(208, 68%, 27%);
+    --summer-color: hsl(29, 100%, 50%);
     --action-color: hsl(23, 80%, 60%);
     --background-color: hsl(135, 51%, 69%);
     --background-light-color: hsl(98, 73%, 86%);
