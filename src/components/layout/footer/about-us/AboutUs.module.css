@@ -1,0 +1,58 @@
+@import '../../../../styles/vars.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-light-color);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--alternative-color);
+  margin-bottom: 1.875rem;
+  text-align: center;
+  text-shadow: 2px 4px 8px white;
+}
+
+/* container for team bloc items */
+.teams {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 75%;
+  margin-bottom: 1.875rem;
+}
+
+/* bloc item for each group of devs */
+.team-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-subtitle {
+  font-size: 2rem;
+  width: auto;
+  color: white;
+  padding: 1rem;
+  background-color: var(--summer-color);
+  border-radius: 50px;
+  margin-top: 2rem;
+  text-align: center;
+  text-shadow: 2px 4px 8px var(--alternative-color);
+  box-shadow: 2px 4px 8px var(--alternative-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  .title {
+    margin-bottom: 0;
+  }
+
+  .team-block {
+    flex-direction: row;
+  }
+
+  .team-subtitle {
+    align-self: center;
+  }
+}

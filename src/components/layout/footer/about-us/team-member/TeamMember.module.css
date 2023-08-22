@@ -1,0 +1,52 @@
+@import '../../../../../styles/vars.css';
+
+.member {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.member-photo {
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.member:hover .member-photo {
+    transform: scale(1.1);
+}
+
+.member img {
+    width: auto;
+    height: 15rem;
+    filter: drop-shadow(2px 4px 8px var(--alternative-color));
+}
+
+.member-text {
+    width: 55%;
+    color: white;
+    text-shadow: 2px 4px 3px var(--primary-color);
+    text-align: center;
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.3125rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(1px) brightness(98%);
+}
+
+@media only screen and (min-width: 1024px) {
+    .member-text {
+        display: none;
+    }
+
+    .member-photo:hover .member-text {
+        display: block; /* Show text on hover */
+    }
+}
