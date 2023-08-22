@@ -16,7 +16,12 @@ const TeamMember = ({ member }) => {
     return (
         <div className="aboutus__dev">
             <div className="aboutus__dev-photo">
-                <img src={image} alt={name} className="aboutus__image" />
+                <img
+                    className="aboutus__image"
+                    src={image} alt={`Avatar de ${name}`}
+                    title={`${name}, ${role}`}
+                    aria-label={`${name}, ${role}`}
+                />
                 <div className="aboutus__dev-image-hover">
                     <p className="aboutus__dev-text">{name}<br />{role}</p>
                 </div>
