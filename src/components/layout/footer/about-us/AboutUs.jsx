@@ -13,12 +13,12 @@ import classes from './AboutUs.module.css';
  */
 const AboutUs = () => {
     return (
-        <div className={classes.aboutus}>
-            <h2 className={classes['aboutus__title']}>Qui sommes-nous ?</h2>
-            <div className={classes['aboutus__img-div']}>
+        <div className={classes.container}>
+            <h2 className={classes.title}>Qui sommes-nous ?</h2>
+            <div className={classes.teams}>
                 {teamMembers.map((team, index) => (
-                    <div key={index} className={classes[`aboutus__img-${team.type}`]}>
-                        <h3 className={classes[`aboutus__subtitle-${team.type}`]}>{team.title}</h3>
+                    <div key={index} className={classes['team-block']}>
+                        <h3 className={classes['team-subtitle']}>{team.title}</h3>
                         {team.members.map((member, memberIndex) => (
                             <TeamMember key={memberIndex} member={member} />
                         ))}

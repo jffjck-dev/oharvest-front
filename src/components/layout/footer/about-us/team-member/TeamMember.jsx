@@ -16,17 +16,15 @@ const TeamMember = ({ member }) => {
     const { image, name, role } = member;
 
     return (
-        <div className={classes['aboutus__dev']}>
-            <div className={classes['aboutus__dev-photo']}>
+        <div className={classes.member}>
+            <div className={classes['member-photo']}>
                 <img
-                    className={classes['aboutus__image']}
-                    src={image} alt={`Avatar de ${name}`}
+                    src={image}
+                    alt={`Avatar de ${name}`}
                     title={`${name}, ${role}`}
                     aria-label={`${name}, ${role}`}
                 />
-                <div className={classes['aboutus__dev-image-hover']}>
-                    <p className={classes['aboutus__dev-text']}>{name}<br />{role}</p>
-                </div>
+                <div className={classes['member-text']}>{name}<br />{role}</div>
             </div>
         </div>
     );

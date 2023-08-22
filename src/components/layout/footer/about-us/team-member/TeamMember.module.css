@@ -1,7 +1,6 @@
 @import '../../../../../styles/vars.css';
 
-/* Styles pour les avatars */
-.aboutus__dev {
+.member {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,23 +9,23 @@
     margin-top: 1rem;
 }
 
-.aboutus__dev-photo {
+.member-photo {
     position: relative;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
 }
 
-.aboutus__dev:hover .aboutus__dev-photo {
+.member:hover .member-photo {
     transform: scale(1.1);
 }
 
-.aboutus__image {
+.member img {
     width: auto;
     height: 15rem;
     filter: drop-shadow(2px 4px 8px var(--alternative-color));
 }
 
-.aboutus__dev-text {
+.member-text {
     width: 55%;
     color: white;
     text-shadow: 2px 4px 3px var(--primary-color);
@@ -42,13 +41,12 @@
     backdrop-filter: blur(1px) brightness(98%);
 }
 
-.aboutus__dev-photo:hover .aboutus__dev-text {
-    display: block; /* Show text on hover */
-    opacity: 1;
-}
-
 @media only screen and (min-width: 1024px) {
-    .aboutus__dev-text {
+    .member-text {
         display: none;
+    }
+
+    .member-photo:hover .member-text {
+        display: block; /* Show text on hover */
     }
 }

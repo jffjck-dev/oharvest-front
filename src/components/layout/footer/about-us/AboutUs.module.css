@@ -1,18 +1,13 @@
 @import '../../../../styles/vars.css';
 
-/* ------------------------------------------------------ */
-/* Responsive CSS */
-/* ------------------------------------------------------ */
-
-/* Styles généraux */
-.aboutus {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--background-light-color);
 }
 
-.aboutus__title {
+.title {
   font-size: 2.5rem;
   color: var(--alternative-color);
   margin-bottom: 1.875rem;
@@ -20,7 +15,8 @@
   text-shadow: 2px 4px 8px white;
 }
 
-.aboutus__img-div {
+/* container for team bloc items */
+.teams {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -28,15 +24,13 @@
   margin-bottom: 1.875rem;
 }
 
-/* Styles pour les titre des équipes front et back */
-.aboutus__img-back,
-.aboutus__img-front {
+/* bloc item for each group of devs */
+.team-block {
   display: flex;
   flex-direction: column;
 }
 
-.aboutus__subtitle-back,
-.aboutus__subtitle-front {
+.team-subtitle {
   font-size: 2rem;
   width: auto;
   color: white;
@@ -50,22 +44,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
-
-  .aboutus__title {
+  .title {
     margin-bottom: 0;
   }
 
-  .aboutus__img-back,
-  .aboutus__img-front {
+  .team-block {
     flex-direction: row;
   }
 
-  .aboutus__subtitle-back,
-  .aboutus__subtitle-front {
+  .team-subtitle {
     align-self: center;
-  }
-
-  .aboutus__dev-text {
-    display: none;
   }
 }
